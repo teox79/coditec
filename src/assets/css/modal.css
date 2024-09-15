@@ -1,0 +1,56 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Sovrapposizione scura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Metti la modale sopra tutto */
+    overflow: hidden;
+    /* Evita lo scroll della pagina sotto */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    max-width: 80vw;
+    max-height: 80vh;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    /* Mantieni le proporzioni dell'immagine */
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #FFFFFF;
+}
+
+/* Disabilita lo scroll quando la modale è aperta */
+body.modal-open {
+    overflow: hidden;
+}

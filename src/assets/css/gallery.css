@@ -1,0 +1,75 @@
+/* CSS per il layout Masonry */
+.my-masonry-grid {
+    display: flex;
+    margin-left: -30px;
+    /* gutter size */
+}
+
+.my-masonry-grid_column {
+    padding-left: 30px;
+    /* gutter size */
+    background-clip: padding-box;
+}
+
+/* Stile per le immagini della galleria */
+.gallery-image {
+    width: 100%;
+    /* L'immagine occupa tutta la larghezza della colonna */
+    max-width: 100%;
+    /* Limita la larghezza massima a quella della colonna */
+    height: auto;
+    /* Mantiene le proporzioni dell'immagine */
+    max-height: 300px;
+    /* Limite massimo dell'altezza (modificabile) */
+    object-fit: contain;
+    /* Assicura che l'immagine venga ridimensionata mantenendo le proporzioni */
+    display: block;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    /* Cambia il cursore in un puntatore */
+}
+
+/* Aggiungi un effetto di sovrapposizione e ombra quando si passa sopra l'immagine */
+.gallery-image:hover {
+    transform: scale(1.05);
+    /* Ingrandisce leggermente l'immagine */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Aggiunge un'ombra sottile */
+}
+
+/* Stile per l'elemento che si sbiadisce */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Pulsante "Load More" */
+.load-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.load-more-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.load-more-button:hover {
+    background-color: #0056b3;
+}
