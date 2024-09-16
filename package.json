@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "test": "jest",
     "typia-generate": "typia generate --output typia/generated --input src/context --project tsconfig.json",
-    "prepare": "husky"
+    "prepare": "husky && ts-patch install"
   },
   "dependencies": {
     "@srexi/purecounterjs": "^1.5.0",
