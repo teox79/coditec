@@ -8,6 +8,8 @@
       "path": "./tsconfig.node.json"
     }
   ],
+  "strict": true,
+  "strictNullChecks": true,
   "compilerOptions": {
     "composite": true,
     "emitDeclarationOnly": false,
