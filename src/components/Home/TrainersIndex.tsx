@@ -21,7 +21,7 @@ const TrainersIndex: React.FC<TrainersIndexProps> = ({ trainers }) => {
                             key={index}
                         >
                             <div className="member">
-                                <img src={`/assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
+                                <img src={`assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
                                 <div className="member-content">
                                     <h4>{trainer.name}</h4>
                                     <span>{trainer.role}</span>

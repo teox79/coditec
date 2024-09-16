@@ -51,10 +51,10 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
 
         const updateImages = async () => {
             // Carica immagini per il percorso '/assets/img/courses/'
-            const courseImages = await loadImages('/assets/img/courses/', 'imgSrc', courses);
+            const courseImages = await loadImages('assets/img/courses/', 'imgSrc', courses);
 
             // Carica immagini per il percorso '/assets/img/trainers/'
-            const trainerImages = await loadImages('/assets/img/trainers/', 'trainerImg', courses);
+            const trainerImages = await loadImages('assets/img/trainers/', 'trainerImg', courses);
 
             // Combina le immagini caricate con quelle esistenti
             setImages((prevImages) => ({

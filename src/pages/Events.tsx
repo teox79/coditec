@@ -21,7 +21,7 @@ const Events: React.FC = () => {
                             <div key={event.id} className="col-md-6 d-flex align-items-stretch">
                                 <div className="card">
                                     <div className="card-img">
-                                        <img src={`/assets/img/events/${event.imageUrl}`} alt={event.title} className="img-fluid" style={{ maxWidth: "636px", maxHeight: "424px" }} />
+                                        <img src={`assets/img/events/${event.imageUrl}`} alt={event.title} className="img-fluid" style={{ maxWidth: "636px", maxHeight: "424px" }} />
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title">
