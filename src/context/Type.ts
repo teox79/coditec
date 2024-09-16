@@ -39,7 +39,7 @@ interface Newsletter {
     description: string;
 }
 
-export interface FooterData {
+export interface FooterState {
     sitename: string;
     contactInfo: ContactInfo;
     socialLinks: SocialLinks;
@@ -55,7 +55,7 @@ export interface FooterData {
 // Stato globale dell'applicazione
 export interface AppState {
     home: HomeState;
-    footer: FooterData;
+    footer: FooterState;
     about: AboutState;
     course: CourseState;
     trainer: TrainerState;

@@ -1,6 +1,6 @@
-import { FooterData } from "../context/Type"
+import { FooterState } from "../context/Type"
 
-export const footerData: FooterData = {
+export const footerData: FooterState = {
     sitename: "Coditec",
     contactInfo: {
         address: "Via Cesare Battisti, 14",
