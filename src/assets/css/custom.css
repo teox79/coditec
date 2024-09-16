@@ -170,34 +170,37 @@
 }
 
 
-/* Stile di base per il menu nav */
-.navmenu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-    width: 100%;
-    height: 100vh;
-    transform: translateX(100%);
-    /* Nasconde il menu fuori dallo schermo */
-    opacity: 0;
-    transition: transform 0.3s linear, opacity 0.3s linear;
-    /* Aggiungi una transizione per l'animazione */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 999;
-}
+@media (max-width: 992px) {
 
-/* Quando il menu è attivo */
-.navmenu.active {
-    transform: translateX(0);
-    /* Mostra il menu mobile */
-    opacity: 1;
-}
+    /* Stile di base per il menu nav */
+    .navmenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        transform: translateX(100%);
+        /* Nasconde il menu fuori dallo schermo */
+        opacity: 0;
+        transition: transform 0.3s linear, opacity 0.3s linear;
+        /* Aggiungi una transizione per l'animazione */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 999;
+    }
 
-/* Transizione per il pulsante hamburger */
-.mobile-nav-toggle {
-    cursor: pointer;
+    /* Quando il menu è attivo */
+    .navmenu.active {
+        transform: translateX(0);
+        /* Mostra il menu mobile */
+        opacity: 1;
+    }
+
+    /* Transizione per il pulsante hamburger */
+    .mobile-nav-toggle {
+        cursor: pointer;
+    }
 }
