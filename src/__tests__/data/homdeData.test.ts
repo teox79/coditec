@@ -1,4 +1,4 @@
-// aboutState.test.ts
+
 import typia from 'typia';
 import { HomeState } from '../../context/HomeType';
 import { homeData } from '../../data/home';

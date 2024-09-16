@@ -1,4 +1,3 @@
-// aboutState.test.ts
 import typia from 'typia';
 import { AboutState } from '../../context/AboutTypes';
 import { aboutData } from '../../data/about';
