@@ -1,5 +1,4 @@
 import React from "react";
-import about from '/assets/img/about/about.jpg';
 import { AboutProps } from "../../context/HomeType";
 
 const About: React.FC<AboutProps> = ({ title, subtitle, description, points }) => {
@@ -13,7 +12,7 @@ const About: React.FC<AboutProps> = ({ title, subtitle, description, points }) =
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
-                        <img src={about} className="img-fluid" alt="About Us" />
+                        <img src="assets/img/about/about.jpg" className="img-fluid" alt="About Us" />
                     </div>
 
                     {/* Contenuto About */}
