@@ -1,4 +1,4 @@
-name: Pipeline coditec
+name: CI
 
 on:
   push:
