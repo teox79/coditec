@@ -22,6 +22,9 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Generate typia transformers
+      run: npm run typia-generate
+
     - name: Run tests
       run: npm test
       
