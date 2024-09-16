@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "typia-generate": "typia generate --output typia/generated --input src/context --project tsconfig.json",
+    "prepare": "ts-patch install && typia patch"
   },
   "dependencies": {
     "@srexi/purecounterjs": "^1.5.0",

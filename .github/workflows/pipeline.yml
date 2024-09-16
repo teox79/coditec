@@ -22,11 +22,14 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build the project
-      run: npm run build
+    - name: Generate typia transformers
+      run: npm run typia-generate
 
     - name: Run tests
       run: npm test
+      
+    - name: Build the project
+      run: npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4  # Usa la versione aggiornata
