@@ -212,3 +212,5 @@ Sostituire ```10``` con il nuovo numero d'immagini da visualizzare
 │   │   ├── utils.ts          # utility varie
 ```
 
+
+
