@@ -19,7 +19,6 @@
     /* Limita la larghezza massima a quella della colonna */
     height: auto;
     /* Mantiene le proporzioni dell'immagine */
-    max-height: 300px;
     /* Limite massimo dell'altezza (modificabile) */
     object-fit: contain;
     /* Assicura che l'immagine venga ridimensionata mantenendo le proporzioni */
@@ -28,6 +27,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     /* Cambia il cursore in un puntatore */
+    border-radius: var(--radius);
 }
 
 /* Aggiungi un effetto di sovrapposizione e ombra quando si passa sopra l'immagine */
