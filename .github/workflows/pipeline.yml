@@ -26,6 +26,7 @@ jobs:
       run: npm test
 
     - name: Build the project
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: npm run build
 
     # Semantic Release: solo sui push su main, NON nelle pull request
