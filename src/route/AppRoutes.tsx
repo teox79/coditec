@@ -21,7 +21,7 @@ const AppRoutes: React.FC = () => {
                 <Route path="/events" element={<Events />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/course/:id" element={<CourseDetail />} /> {/* Aggiungi questa route */}
+                <Route path="/course/:id" element={<CourseDetail />} />
             </Routes>
         </ScrollToTop>
     );
