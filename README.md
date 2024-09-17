@@ -48,6 +48,15 @@ Segui questi passaggi per installare e avviare il progetto in locale.
 
 3. Eseguire ```serve -s dist``` per buieseguire il progetto buildato
 
+## Come committare
+
+1. Eseguire ```npm run commit``` selezionado 
+
+### Dove chiesto :
+
+1. Are there any breaking changes? ```rispondere NO ```
+2. Does this change affect any open issues? ```rispondere YES ```
+
 # Gestione dei Contenuti del Sito
 Il sito gestisce i contenuti attraverso file JSON situati nella cartella ```data```. Ogni file JSON rappresenta una pagina o una sezione del sito, e le modifiche ai contenuti si riflettono direttamente nelle pagine senza dover modificare il codice.
 
