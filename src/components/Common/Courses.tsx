@@ -88,7 +88,7 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                             data-aos-delay={course.delay}
                             key={index}
                         >
-                            <a href={course.detail ? `course/${course.id}` : '#'}
+                            <a href={course.detail ? `#/course/${course.id}` : '#'}
                                 target={course.detail ? "_blank" : undefined}
 
                                 onClick={(e) => {
