@@ -13,7 +13,7 @@ export interface ManageUiState {
     galleryUi?: GalleryUi;
     homeUi?: HomeUi;
     trainersUi?: TrainersUi;
-    HeaderUi?: HeaderUi;
+    headerUi?: HeaderUi;
 }
 
 export interface AboutUi {
@@ -23,6 +23,11 @@ export interface ContactUi {
 }
 
 export interface CourseUi {
+    filters: {
+        showPrice: boolean,
+        showCaregory: boolean,
+        showYear: boolean,
+    }
 }
 
 export interface EventsUi {
