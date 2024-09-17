@@ -113,7 +113,7 @@ const Header: React.FC = () => {
                 >
                     Contatti
                 </NavLink>
-                {manageUiData.HeaderUi?.showGoogleTranslatorWidget && (
+                {manageUiData.headerUi?.showGoogleTranslatorWidget && (
                     <GoogleTranslate />
                 )}
             </div>
