@@ -5,18 +5,7 @@
     "plugins": [
         "@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",
-        [
-            "@semantic-release/github",
-            {
-                "assets": [
-                    {
-                        "path": "dist/**/*.js",
-                        "label": "JavaScript files"
-                    }
-                ]
-            }
-        ],
-        "@semantic-release/git",
-        "@semantic-release/npm"
+        "@semantic-release/npm",
+        "@semantic-release/git"
     ]
 }
