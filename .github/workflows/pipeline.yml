@@ -34,7 +34,6 @@ jobs:
       run: npx semantic-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     # Deploy solo su push su main
     - name: Deploy to GitHub Pages
