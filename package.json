@@ -9,7 +9,6 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "test": "jest",
-    "typia-generate": "typia generate --output typia/generated --input src/context --project tsconfig.json",
     "prepare": "husky && ts-patch install",
     "commit": "cz"
   },
