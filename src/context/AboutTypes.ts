@@ -2,6 +2,7 @@ import { PageBase } from "./Type";
 
 // Stato specifico per ogni pagina
 export interface AboutState extends PageBase {
+    id: string;
     title?: string;
     subtitle?: string;
     testimonial?: {
