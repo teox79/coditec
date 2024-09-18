@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Questo consente la scrittura sul repository, incluso il push di tag e modifiche
 
     steps:
     - name: Checkout code
