@@ -38,7 +38,7 @@ const Gallery: React.FC = () => {
                 <GalleryModal
                     isOpen={isModalOpen}
                     onClose={closeModal}
-                    imageSrc={`assets/img/gallery/${currentImage.src}`}
+                    imageSrc={`/assets/img/gallery/${currentImage.src}`}
                     imageAlt={currentImage.alt}
                 />
             )}

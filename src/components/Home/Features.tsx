@@ -22,7 +22,7 @@ const Features: React.FC<FeaturesProps> = ({ features }) => {
                             key={index}
                         >
                             <div className="features-item">
-                                <img src={`assets/img/features/${feature.icon}`} alt={feature.title} height="32" />
+                                <img src={`/assets/img/features/${feature.icon}`} alt={feature.title} height="32" />
                                 <h3>
                                     {feature.url ? (
                                         <a href={feature.url} className="stretched-link" target="_blank">

@@ -44,7 +44,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ title, subtitle, testimonia
               <div className="testimonial-wrap">
                 <div className="testimonial-item">
                   <img
-                    src={`assets/img/testimonials/${testimonial.imgSrc}`}
+                    src={`/assets/img/testimonials/${testimonial.imgSrc}`}
                     className="testimonial-img"
                     alt={testimonial.name}
                   />

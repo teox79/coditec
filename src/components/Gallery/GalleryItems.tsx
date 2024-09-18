@@ -41,7 +41,7 @@ const GalleryItems: React.FC<GalleryItemsProps> = ({ setCurrentImage, setModalOp
             >
                 {images.slice(0, visibleImages).map((image) => (
                     <div key={image.id} className="fade-in" onClick={() => openModal(image)}>
-                        <img src={`assets/img/gallery/${image.src}`} alt={image.alt} className="gallery-image" />
+                        <img src={`/assets/img/gallery/${image.src}`} alt={image.alt} className="gallery-image" />
                     </div>
                 ))}
             </Masonry>
