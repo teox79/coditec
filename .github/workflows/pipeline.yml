@@ -5,6 +5,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,10 +14,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4  # Usa la versione aggiornata
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v4  # Usa Node.js 20
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
 
@@ -29,17 +31,32 @@ jobs:
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: npm run build
 
-    # Semantic Release: solo sui push su main, NON nelle pull request
+    - name: Create release branch
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: git checkout -b release-${{ github.run_number }} && git push origin release-${{ github.run_number }}
+
     - name: Run Semantic Release
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: npx semantic-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    # Deploy solo su push su main
+    - name: Push release branch
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: git push origin release-${{ github.run_number }}
+
+    - name: Create Pull Request
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: 'Release ${GITHUB_REF}'
+        body: 'Automated release'
+        base: main
+        branch: release-${{ github.run_number }}
+
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v4  # Usa la versione aggiornata
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
