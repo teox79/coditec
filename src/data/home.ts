@@ -1,6 +1,8 @@
 import { HomeState } from "../context/HomeType";
+import { getPersistentUUID } from "../utils/utils";
 
 export const homeData: HomeState = {
+    id: getPersistentUUID("home"),
     title: "Il modo migliore per imparare è divertendosi.",
     description: "Siamo un team di professionisti che insegna ai ragazzi la logica di programmazione.",
     link: {

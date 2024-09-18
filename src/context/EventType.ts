@@ -8,7 +8,7 @@ export interface EventState extends PageBase {
 }
 
 export interface Event {
-    id: number;
+    id: string;
     title?: string;
     date?: string;
     location?: string;

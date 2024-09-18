@@ -17,6 +17,7 @@ export interface SocialLinks {
 
 // Interfaccia base per le proprietà comuni a tutte le pagine
 export interface PageBase {
+    id: string;
     title?: string;
     description?: string;
     link?: LinkType;

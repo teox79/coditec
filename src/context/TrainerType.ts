@@ -9,7 +9,7 @@ export interface TrainerState extends PageBase {
 
 
 export interface Trainer {
-    id: number;
+    id: string;
     name: string;
     role: string;
     description: string;

@@ -1,12 +1,14 @@
 import { EventState } from "../context/EventType";
+import { getPersistentUUID } from "../utils/utils";
 
 
 export const eventData: EventState = {
+    id: getPersistentUUID("event"),
     title: "Prossimi Eventi",
     description: "Eventi in programma nei prossimi mesi..",
     events: [
         {
-            id: 1,
+            id: getPersistentUUID("event-1"),
             title: "Coderdojo",
             date: "Sabato, 2 Settembre 2023 alle 15:00",
             location: "Via Fratelli d'italia 21 Mariano Comense",
@@ -15,7 +17,7 @@ export const eventData: EventState = {
             startDate: "2023-09-02",
         },
         {
-            id: 2,
+            id: getPersistentUUID("event-2"),
             title: "Coderdojo",
             date: "Sabato, 28 Settembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -24,7 +26,7 @@ export const eventData: EventState = {
             startDate: "2024-09-28",
         },
         {
-            id: 3,
+            id: getPersistentUUID("event-3"),
             title: "Coderdojo",
             date: "Sabato, 26 Ottobre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -33,7 +35,7 @@ export const eventData: EventState = {
             startDate: "2024-10-26",
         },
         {
-            id: 4,
+            id: getPersistentUUID("event-4"),
             title: "Coditec",
             date: "Sabato, 09 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -43,7 +45,7 @@ export const eventData: EventState = {
             startDate: "2024-11-09",
         },
         {
-            id: 5,
+            id: getPersistentUUID("event-5"),
             title: "Coditec",
             date: "Sabato, 19 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -53,7 +55,7 @@ export const eventData: EventState = {
             startDate: "2024-11-19",
         },
         {
-            id: 6,
+            id: getPersistentUUID("event-6"),
             title: "Coditec",
             date: "Sabato, 23 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -63,7 +65,7 @@ export const eventData: EventState = {
             startDate: "2024-11-23",
         },
         {
-            id: 7,
+            id: getPersistentUUID("event-7"),
             title: "Coderdojo",
             date: "Sabato, 14 Dicembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -72,7 +74,7 @@ export const eventData: EventState = {
             startDate: "2024-12-14",
         },
         {
-            id: 8,
+            id: getPersistentUUID("event-8"),
             title: "Coderdojo",
             date: "Sabato, 18 Gennaio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -81,7 +83,7 @@ export const eventData: EventState = {
             startDate: "2025-01-18",
         },
         {
-            id: 9,
+            id: getPersistentUUID("event-9"),
             title: "Coditec",
             date: "Sabato, 08 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -90,7 +92,7 @@ export const eventData: EventState = {
             startDate: "2025-02-08",
         },
         {
-            id: 10,
+            id: getPersistentUUID("event-10"),
             title: "Coditec",
             date: "Sabato, 15 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -99,7 +101,7 @@ export const eventData: EventState = {
             startDate: "2025-02-15",
         },
         {
-            id: 11,
+            id: getPersistentUUID("event-11"),
             title: "Coditec",
             date: "Sabato, 22 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -108,7 +110,7 @@ export const eventData: EventState = {
             startDate: "2025-02-22",
         },
         {
-            id: 12,
+            id: getPersistentUUID("event-12"),
             title: "Coderdojo",
             date: "Sabato, 22 Marzo 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -117,7 +119,7 @@ export const eventData: EventState = {
             startDate: "2025-03-22",
         },
         {
-            id: 13,
+            id: getPersistentUUID("event-13"),
             title: "Coderdojo",
             date: "Sabato, 12 Aprile 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
@@ -126,7 +128,7 @@ export const eventData: EventState = {
             startDate: "2025-04-12",
         },
         {
-            id: 14,
+            id: getPersistentUUID("event-14"),
             title: "Coderdojo",
             date: "Sabato, 07 Giugno 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",

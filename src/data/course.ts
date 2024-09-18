@@ -1,10 +1,12 @@
 import { Category, CourseState } from "../context/CourseTypes";
+import { getPersistentUUID } from "../utils/utils";
 
 export const courseData: CourseState = {
+    id: getPersistentUUID("course-id"),
     title: "Corsi",
     description: "Le nostra offerta propone corsi per:\n\n1. **Bambini dai 6 ai 9 anni** dove si propongono attività per comprendere le basi del coding con giochi o piccole applicazioni.\n2. **Ragazzi dai 10 ai 13 anni** dove implementiamo un piccolo mini gioco con due livelli di difficoltà BASE e AVANZATO.\n3. **Insegnanti** che vogliono avvicinarsi al mondo del coding con scratch.\n4. Altro.",
     courses: [{
-        id: "1",
+        id: getPersistentUUID("course-id"),
         imgSrc: "scratchprogramming.jpg",
         category: Category.Programmazione,
         price: "Da Definire",
@@ -19,7 +21,7 @@ export const courseData: CourseState = {
 
     },
     {
-        id: "2",
+        id: getPersistentUUID("course-id-1"),
         imgSrc: "scratchprogramming.jpg",
         category: Category.Programmazione,
         price: "50,00 €",
@@ -76,7 +78,7 @@ export const courseData: CourseState = {
         }
     },
     {
-        id: "3",
+        id: getPersistentUUID("course-id-2"),
         imgSrc: "scratchprogramming.jpg",
         category: Category.Programmazione,
         price: "55,00 €",
@@ -90,7 +92,7 @@ export const courseData: CourseState = {
         startDate: "2023-11-20"
     },
     {
-        id: "4",
+        id: getPersistentUUID("course-id-3"),
         imgSrc: "scratchprogramming.jpg",
         category: Category.LegoWedo2,
         price: "Da Definire",
@@ -104,7 +106,7 @@ export const courseData: CourseState = {
         startDate: "2024-09-10"
     },
     {
-        id: "5",
+        id: getPersistentUUID("course-id-4"),
         imgSrc: "scratchprogramming.jpg",
         category: Category.Programmazione,
         price: "50,00 €",
@@ -118,7 +120,7 @@ export const courseData: CourseState = {
         startDate: "2024-12-25"
     },
     {
-        id: "6",
+        id: getPersistentUUID("course-id-5"),
         imgSrc: "scratchprogramming.jpg",
         category: Category.Programmazione,
         price: "55,00 €",
