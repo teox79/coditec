@@ -156,10 +156,12 @@ export const createImagesArray = (count: number): Image[] => {
 }
 
 export const getPersistentUUID = (key: string) => {
+    /*
     let uuid = localStorage.getItem(key);
     if (!uuid) {
         uuid = uuidv4();
         localStorage.setItem(key, uuid);
     }
-    return uuid;
+        */
+    return null;
 };
