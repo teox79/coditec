@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "test": "jest",
     "prepare": "husky && ts-patch install",
-    "commit": "cz"
+    "commit": "cz",
+    "rename-images": "sh ./sh/rename_gallery_images.sh"
   },
   "dependencies": {
     "@srexi/purecounterjs": "^1.5.0",
