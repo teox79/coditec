@@ -57,4 +57,4 @@ export enum Category {
     LegoWedo2 = "Lego wedo2",
     Stampa3D = "Stampa 3D",
     DaDefinire = "Da Definire"
-  }
+}

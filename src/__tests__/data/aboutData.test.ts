@@ -4,7 +4,6 @@ import { aboutData } from '../../data/about';
 
 describe('AboutState Validation', () => {
     it('should validate valid data', () => {
-
         expect(typia.is<AboutState>(aboutData)).toBe(true);
     });
 });

@@ -1,6 +1,8 @@
 import { ContactState } from "../context/Contact";
+import { getPersistentUUID } from "../utils/utils";
 
 export const contactData: ContactState = {
+    id: getPersistentUUID("contact-id"),
     title: "Contattaci",
     description: "Se vuoi più informazioni contattaci con il form sotto o inviaci un email all'indirizzo indicato.",
     contactInfo: {

@@ -1,6 +1,7 @@
 import { Course, FiltersType } from "../context/CourseTypes";
 import { Event } from "../context/EventType";
 import { Image } from "../context/GalleryTypes";
+import { v4 as uuidv4 } from 'uuid';
 
 export const getCoursesByDateOrYear = (
     courses: Course[],
@@ -134,7 +135,7 @@ export const formatDays = (days: { day: string }[]) => {
         let days = '';
 
         for (let i = 0; i < daysArray.length; i++) {
-            const day =  daysArray[i]
+            const day = daysArray[i]
             days = days === '' ? day.toString() : `${days}-${day.toString()}`;
         }
 
@@ -145,11 +146,21 @@ export const formatDays = (days: { day: string }[]) => {
 
 export const createImagesArray = (count: number): Image[] => {
     return Array.from({ length: count }, (_, i) => {
-      const srcIndex = (i % 10) + 1;
-      return {
-        id: i + 1,
-        src: `${srcIndex}.jpg`,
-        alt: `Image ${i + 1}`
-      };
+        const srcIndex = (i % 10) + 1;
+        return {
+            id: i + 1,
+            src: `${srcIndex}.jpg`,
+            alt: `Image ${i + 1}`
+        };
     });
-  }
+}
+
+export const getPersistentUUID = (key: string) => {
+    let uuid = localStorage.getItem(key);
+    if (!uuid) {
+        uuid = uuidv4();
+        localStorage.setItem(key, uuid);
+    }
+    return uuid;
+};
+
