@@ -15,8 +15,8 @@ const Trainers: React.FC = () => {
             <section id="mentors" className="section trainers">
                 <div className="container">
                     <div className="row gy-5">
-                        {trainerData.trainers.map((trainer) => (
-                            <div key={trainer.id} className="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay={`${trainer.id * 100}`}>
+                        {trainerData.trainers.map((trainer, index) => (
+                            <div key={trainer.id} className="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                                 <div className="member-img">
                                     <img src={`/assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
                                     {trainer.socialLinks && (
