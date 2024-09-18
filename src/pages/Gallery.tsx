@@ -8,7 +8,7 @@ import { Image } from "../context/GalleryTypes";
 const Gallery: React.FC = () => {
 
     const { state } = useAppContext();
-    const { gallery: galleryData } = state;
+    const { gallery: galleryData, ui: ui } = state;
     const [isModalOpen, setModalOpen] = useState<boolean>(false);
     const [currentImage, setCurrentImage] = useState<Image | null>(null);
     const breadcrumbs = [{ label: 'Home', url: '/' }, { label: 'Galleria', url: '' }]
@@ -38,7 +38,7 @@ const Gallery: React.FC = () => {
                 <GalleryModal
                     isOpen={isModalOpen}
                     onClose={closeModal}
-                    imageSrc={`/assets/img/gallery/${currentImage.src}`}
+                    imageSrc={`${ui.globalUi.baseUrl}assets/img/gallery/${currentImage.src}`}
                     imageAlt={currentImage.alt}
                 />
             )}

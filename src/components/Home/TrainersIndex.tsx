@@ -1,5 +1,6 @@
 import React from "react";
 import { Trainer } from "../../context/TrainerType";
+import { useAppContext } from "../../context/AppContext";
 
 
 // Dichiarazione delle props che accettano la lista dei trainers
@@ -8,6 +9,8 @@ interface TrainersIndexProps {
 }
 
 const TrainersIndex: React.FC<TrainersIndexProps> = ({ trainers }) => {
+    const { state } = useAppContext();
+    const { ui: ui } = state;
 
     return (
         <section id="trainers-index" className="section trainers-index">
@@ -21,7 +24,7 @@ const TrainersIndex: React.FC<TrainersIndexProps> = ({ trainers }) => {
                             key={index}
                         >
                             <div className="member">
-                                <img src={`/assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
+                                <img src={`${ui.globalUi.baseUrl}assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
                                 <div className="member-content">
                                     <h4>{trainer.name}</h4>
                                     <span>{trainer.role}</span>

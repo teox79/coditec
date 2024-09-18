@@ -5,6 +5,7 @@ export enum Alignment {
 }
 
 export interface ManageUiState {
+    globalUi: GlobalUi;
     aboutUi?: AboutUi;
     contactUi?: ContactUi;
     courseUi?: CourseUi;
@@ -14,6 +15,10 @@ export interface ManageUiState {
     homeUi?: HomeUi;
     trainersUi?: TrainersUi;
     headerUi?: HeaderUi;
+}
+
+export interface GlobalUi {
+    baseUrl: string;
 }
 
 export interface AboutUi {

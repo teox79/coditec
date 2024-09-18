@@ -1,7 +1,12 @@
 import React from "react";
 import { AboutProps } from "../../context/HomeType";
+import { useAppContext } from "../../context/AppContext";
 
 const About: React.FC<AboutProps> = ({ title, subtitle, description, points }) => {
+
+    const { state } = useAppContext();
+    const { ui: ui } = state;
+
     return (
         <section id="about" className="about section">
             <div className="container">
@@ -12,7 +17,7 @@ const About: React.FC<AboutProps> = ({ title, subtitle, description, points }) =
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
-                        <img src="/assets/img/about/about.jpg" className="img-fluid img-rounded" alt="About Us" />
+                        <img src={`${ui.globalUi.baseUrl}assets/img/about/about.jpg`} className="img-fluid img-rounded" alt="About Us" />
                     </div>
 
                     {/* Contenuto About */}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Feature } from "../../context/HomeType";
+import { useAppContext } from "../../context/AppContext";
 
 
 interface FeaturesProps {
@@ -8,7 +9,8 @@ interface FeaturesProps {
 
 
 const Features: React.FC<FeaturesProps> = ({ features }) => {
-
+    const { state } = useAppContext();
+    const { ui: ui } = state;
 
     return (
         <section id="features" className="features section">
@@ -22,7 +24,7 @@ const Features: React.FC<FeaturesProps> = ({ features }) => {
                             key={index}
                         >
                             <div className="features-item">
-                                <img src={`/assets/img/features/${feature.icon}`} alt={feature.title} height="32" />
+                                <img src={`${ui.globalUi.baseUrl}assets/img/features/${feature.icon}`} alt={feature.title} height="32" />
                                 <h3>
                                     {feature.url ? (
                                         <a href={feature.url} className="stretched-link" target="_blank">

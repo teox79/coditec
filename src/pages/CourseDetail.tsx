@@ -9,7 +9,8 @@ import { Course } from '../context/CourseTypes';
 const CourseDetail: React.FC = () => {
 
     const { state } = useAppContext();
-    const { course: courseData } = state;
+    const { course: courseData, ui: ui } = state;
+
 
     const { id } = useParams<{ id: string }>();
     const course = getCourseById(courseData.courses || [], id || '');
@@ -38,7 +39,7 @@ const CourseDetail: React.FC = () => {
 
                     <div className="row text-start">
                         <div className="col-lg-8">
-                            <img src={`/assets/img/courses/${courseImage}`} className="img-fluid" alt="" />
+                            <img src={`${ui.globalUi.baseUrl}assets/img/courses/${courseImage}`} className="img-fluid" alt="" />
                             <h3>{detail?.title}</h3>
                             <p>
                                 {detail?.subtitle}
@@ -116,7 +117,7 @@ const CourseDetail: React.FC = () => {
                                                     <p className="fst-italic">{day.dayDescription}</p>
                                                 </div>
                                                 <div className="col-lg-4 text-center order-1 order-lg-2">
-                                                    <img src={`/assets/img/courses/${day.imgSrc}`} alt={day.dayTitle} className="img-fluid" />
+                                                    <img src={`${ui.globalUi.baseUrl}assets/img/courses/${day.imgSrc}`} alt={day.dayTitle} className="img-fluid" />
                                                 </div>
                                             </div>
                                         </div >
