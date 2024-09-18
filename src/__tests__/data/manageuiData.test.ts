@@ -1,10 +1,10 @@
 import typia from 'typia';
 import { ManageUiState } from '../../context/UiTypes';
-import { manageUiData } from '../../data/manageui';
+import { testManageUiData } from '../../__mock__/manageui';
 
 describe('ManageUiState Validation', () => {
     it('should validate valid data', () => {
 
-        expect(typia.is<ManageUiState>(manageUiData)).toBe(true);
+        expect(typia.is<ManageUiState>(testManageUiData)).toBe(true);
     });
 });
