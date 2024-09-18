@@ -12,7 +12,7 @@ const About: React.FC<AboutProps> = ({ title, subtitle, description, points }) =
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
-                        <img src="assets/img/about/about.jpg" className="img-fluid img-rounded" alt="About Us" />
+                        <img src="/assets/img/about/about.jpg" className="img-fluid img-rounded" alt="About Us" />
                     </div>
 
                     {/* Contenuto About */}
