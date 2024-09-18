@@ -40,13 +40,21 @@ Segui questi passaggi per installare e avviare il progetto in locale.
 
 2. Eseguire ```npm run dev``` per eseguire app in locale
 
-## Buildare il progetto
+## Buildare il progetto in fase di sviluppo
 
 1. Eseguire ```npm install -g serve``` Installa serve globalmente (solo la prima volta se non avete serve installato)
 
 2. Eseguire ```npm run build``` per buildare il porogetto
 
 3. Eseguire ```serve -s dist``` per buieseguire il progetto buildato
+
+## Buildare il progetto in produzione (gitHub)
+
+Nella pipeline viene eseguita ```npm run build:production``` perchè bisogna caricare una variabile d'ambiente 
+```VITE_PUBLIC_URL``` diversa per gestire le immagine di un progetto buildato su github.
+Nello specifico la variabile ```VITE_PUBLIC_URL``` vale:
+1. '/' nella modalita development (build locale)
+2. '/coditec/' nella modalita production 
 
 ## Come committare
 
