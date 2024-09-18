@@ -25,9 +25,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run gallery image renaming script
-      run: npm run rename-images 
-
     - name: Run tests
       run: npm test
 
