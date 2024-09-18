@@ -30,9 +30,10 @@ jobs:
 
     - name: Build the project
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-      run: npm run build:github-pages
+      run: build:github-pages
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
+        #VITE_PUBLIC_URL: 'coditec'
 
     # Semantic Release: solo sui push su main, NON nelle pull request
     - name: Run Semantic Release
