@@ -136,6 +136,8 @@ Per garantire un corretto funzionamento della galleria, è fondamentale mantener
 Per configurare il numero di immagini da visualizzare nella galleria, è necessario aggiornare la funzione ```createImagesArray``` nel file ```data/gallery.ts```.
 
 ## Passaggi per Aggiornare il Numero di Immagini
+E' possibile eseguire lo script ```npm run rename-images``` per rinominare e aggiornare il parametro da passare alla funzione ```createImagesArray```
+Se ci dovessero essere problemi fare la modifica manualmente.
 Apri ```data/gallery.ts```: Trova il file dove è definita la funzione createImagesArray.
 Aggiorna il numero di immagini: Modifica il parametro ```count``` passato alla funzione per impostare il numero di immagini da visualizzare.
 Esempio di utilizzo:
