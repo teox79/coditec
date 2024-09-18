@@ -122,6 +122,8 @@ Rimuovi il file dalla cartella corrispondente sotto public/assets/img. Assicurat
 # Gestione della Galleria di Immagini
 
 ## Sintassi delle Immagini
+E' possibile eseguire lo script ```npm run rename-images``` per rinominare e aggiornare il parametro da passare alla funzione ```createImagesArray```
+Se ci dovessero essere problemi fare la modifica manualmente.
 Per garantire un corretto funzionamento della galleria, è fondamentale mantenere una sintassi coerente per le immagini:
 
 1. Numerazione: Le immagini devono essere numerate consecutivamente, partendo da 1 fino a n.
