@@ -8,7 +8,7 @@ const Trainers: React.FC = () => {
     const { state } = useAppContext();
     const { trainer: trainerData } = state;
     const breadcrumbs = [{ label: 'Home', url: '/' }, { label: 'Mentors', url: '' }]
-    const baseurl = import.meta.env.VITE_PUBLIC_URL ? import.meta.env.VITE_PUBLIC_URL.split('/')[1] : '';
+    const baseurl = import.meta.env.VITE_PUBLIC_URL ? import.meta.env.VITE_PUBLIC_URL : '';
 
     return (
         <main className="main">
@@ -20,7 +20,7 @@ const Trainers: React.FC = () => {
                         {trainerData.trainers.map((trainer, index) => (
                             <div key={trainer.id} className="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay={`${index * 100}`}>
                                 <div className="member-img">
-                                    <img src={`${baseurl}/assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
+                                    <img src={`${baseurl}assets/img/trainers/${trainer.imageUrl}`} className="img-fluid" alt={trainer.name} />
                                     {trainer.socialLinks && (
                                         <div className="social">
                                             {trainer.socialLinks?.twitter && <a href={trainer.socialLinks.twitter}><i className="bi bi-twitter"></i></a>}
