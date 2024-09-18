@@ -5,6 +5,6 @@ export const galleryData: GalleryState = {
     id: getPersistentUUID("gallery"),
     title: "Galleria",
     description: "",
-    images: createImagesArray(24)
+    images: createImagesArray(30)
 }
 
