@@ -1,10 +1,8 @@
 import { ManageUiState } from "../context/UiTypes";
 
-// ATTENZIONE QUANDO MODIFICATE QUESTO FILE MODIFICATE ANCHE IL CORRISPETTIVO 
-// FILE MOCK SOTTO LA CARTELLA __mock__
-export const manageUiData: ManageUiState = {
+export const testManageUiData: ManageUiState = {
     globalUi: {
-        baseUrl: import.meta.env.VITE_PUBLIC_URL ? import.meta.env.VITE_PUBLIC_URL : '',
+        baseUrl: '',
     },
     headerUi: {
         showGoogleTranslatorWidget: false,
@@ -16,4 +14,4 @@ export const manageUiData: ManageUiState = {
             showYear: true,
         }
     }
-}
+};

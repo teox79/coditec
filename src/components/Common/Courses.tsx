@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { formatDate } from "../../utils/utils";
 import { Course } from "../../context/CourseTypes";
+import { useAppContext } from "../../context/AppContext";
 
 
 
@@ -14,6 +15,8 @@ interface CoursesProps {
 const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = [] }) => {
 
     const [images, setImages] = useState<{ [key: string]: string }>({});
+    const { state } = useAppContext();
+    const { ui: ui } = state;
 
     useEffect(() => {
         const loadImages = async (path: string, imgKey: keyof Course, courses: Course[]) => {
@@ -51,10 +54,10 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
 
         const updateImages = async () => {
             // Carica immagini per il percorso '/assets/img/courses/'
-            const courseImages = await loadImages('/assets/img/courses/', 'imgSrc', courses);
+            const courseImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/courses/`, 'imgSrc', courses);
 
             // Carica immagini per il percorso '/assets/img/trainers/'
-            const trainerImages = await loadImages('/assets/img/trainers/', 'trainerImg', courses);
+            const trainerImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/trainers/`, 'trainerImg', courses);
 
             // Combina le immagini caricate con quelle esistenti
             setImages((prevImages) => ({

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
 import '../../assets/css/gallery.css'; // Per lo stile opzionale
 import { Image } from "../../context/GalleryTypes";
+import { useAppContext } from '../../context/AppContext';
 
 interface GalleryItemsProps {
     setCurrentImage: React.Dispatch<React.SetStateAction<Image | null>>;
@@ -12,7 +13,8 @@ interface GalleryItemsProps {
 const GalleryItems: React.FC<GalleryItemsProps> = ({ setCurrentImage, setModalOpen, images = [] }) => {
 
     const [visibleImages, setVisibleImages] = useState<number>(5); // Mostra inizialmente 5 immagini
-
+    const { state } = useAppContext();
+    const { ui: ui } = state;
 
     // Funzione per caricare più immagini
     const loadMoreImages = () => {
@@ -41,7 +43,7 @@ const GalleryItems: React.FC<GalleryItemsProps> = ({ setCurrentImage, setModalOp
             >
                 {images.slice(0, visibleImages).map((image) => (
                     <div key={image.id} className="fade-in" onClick={() => openModal(image)}>
-                        <img src={`/assets/img/gallery/${image.src}`} alt={image.alt} className="gallery-image" />
+                        <img src={`${ui.globalUi.baseUrl}assets/img/gallery/${image.src}`} alt={image.alt} className="gallery-image" />
                     </div>
                 ))}
             </Masonry>

@@ -5,6 +5,7 @@ import "swiper/css/pagination";  // Stile per la paginazione
 import SwiperCore from "swiper";
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Testimonial } from "../../context/AboutTypes";
+import { useAppContext } from "../../context/AppContext";
 
 // Install Swiper modules
 SwiperCore.use([Pagination, Autoplay]);
@@ -16,6 +17,9 @@ interface TestimonialsProps {
 }
 
 const Testimonials: React.FC<TestimonialsProps> = ({ title, subtitle, testimonials }) => {
+
+  const { state } = useAppContext();
+  const { ui: ui } = state;
 
   return (
     <section id="testimonials" className="testimonials section">
@@ -44,7 +48,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ title, subtitle, testimonia
               <div className="testimonial-wrap">
                 <div className="testimonial-item">
                   <img
-                    src={`/assets/img/testimonials/${testimonial.imgSrc}`}
+                    src={`${ui.globalUi.baseUrl}assets/img/testimonials/${testimonial.imgSrc}`}
                     className="testimonial-img"
                     alt={testimonial.name}
                   />
