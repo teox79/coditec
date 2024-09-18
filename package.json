@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build:github-pages": "vite build --mode github-pages",
+    "build:github-pages": "tsc -b && vite build --mode github-pages",
     "lint": "eslint .",
     "test": "jest",
     "prepare": "husky && ts-patch install",
