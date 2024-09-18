@@ -30,6 +30,8 @@ jobs:
     - name: Build the project
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
       run: npm run build
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
 
     - name: Create release branch
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
