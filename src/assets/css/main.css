@@ -103,6 +103,7 @@ h6 {
   font-family: var(--heading-font);
 }
 
+
 .img-fluid.img-rounded {
   border-radius: var(--radius);
 }
