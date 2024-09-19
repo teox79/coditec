@@ -52,7 +52,7 @@ const GalleryItems: React.FC<GalleryItemsProps> = ({ setCurrentImage, setModalOp
             {visibleImages < images.length && (
                 <div className="load-more-container">
                     <button onClick={loadMoreImages} className="load-more-button">
-                        Load More
+                        Carica altre
                     </button>
                 </div>
             )}

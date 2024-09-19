@@ -28,18 +28,13 @@ const Footer: React.FC = () => {
                         <div className="footer-contact pt-3">
                             <p>{contactInfo.address}</p>
                             <p>{contactInfo.city}</p>
-                            <p className="mt-3">
-                                <strong>Telefono:</strong> <span>{contactInfo.phone}</span>
-                            </p>
                             <p>
                                 <strong>Email:</strong> <span>{contactInfo.email}</span>
                             </p>
                         </div>
                         <div className="social-links d-flex mt-4">
-                            <a href={socialLinks.twitter}><i className="bi bi-twitter-x"></i></a>
                             <a href={socialLinks.facebook}><i className="bi bi-facebook"></i></a>
                             <a href={socialLinks.instagram}><i className="bi bi-instagram"></i></a>
-                            <a href={socialLinks.linkedin}><i className="bi bi-linkedin"></i></a>
                         </div>
                     </div>
 
