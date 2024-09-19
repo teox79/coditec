@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="container copyright text-center mt-4">
-                <p><Markdown>{copyright}</Markdown></p>
+                <Markdown>{copyright}</Markdown>
                 {credits && creditsUrl && (
                     <div className="credits">
                         Designed by <a href={creditsUrl}>{credits}</a>

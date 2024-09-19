@@ -146,7 +146,8 @@ export const formatDays = (days: { day: string }[]) => {
 
 export const createImagesArray = (count: number): Image[] => {
     return Array.from({ length: count }, (_, i) => {
-        const srcIndex = (i % 10) + 1;
+        const srcIndex = i + 1;
+
         return {
             id: i + 1,
             src: `${srcIndex}.jpg`,
