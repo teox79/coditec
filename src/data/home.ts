@@ -8,7 +8,7 @@ export const homeData: HomeState = {
     link: {
         url: '/courses',
         label: 'Corsi',
-        target: '_blank'
+        target: ''
     },
     organization: {
         title: "CODITECT",

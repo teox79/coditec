@@ -19,12 +19,12 @@ export const trainerData: TrainerState = {
             role: "Designer",
             description: "Lavoro nel mondo del Design ormadi da più di 10 anni. Mi piace dilettarmi con il bricolage.",
             imageUrl: "andrea_sironi.png",
-            socialLinks: {
+            /*socialLinks: {
                 twitter: "#",
                 facebook: "#",
                 instagram: "#",
                 linkedin: "#",
-            },
+            },*/
         },
         // Aggiungi altri membri
     ]

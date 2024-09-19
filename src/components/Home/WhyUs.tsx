@@ -12,8 +12,8 @@ const WhyUs: React.FC<AboutProps> = ({ title, description, points }) => {
                             <h3>{title}</h3>
                             <p>{description}</p>
                             <div className="text-center">
-                                <a href="#" className="more-btn">
-                                    <span>Learn More</span> <i className="bi bi-chevron-right"></i>
+                                <a href="#/about" className="more-btn">
+                                    <span>Scopri di più</span> <i className="bi bi-chevron-right"></i>
                                 </a>
                             </div>
                         </div>

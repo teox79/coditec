@@ -10,8 +10,8 @@ export const footerData: FooterState = {
     },
     socialLinks: {
         twitter: "#",
-        facebook: "#",
-        instagram: "#",
+        facebook: "https://www.facebook.com/CoDiTec2022/",
+        instagram: "https://www.instagram.com/comitato_coditec/",
         linkedin: "#"
     },
     usefulLinks: [
