@@ -12,13 +12,13 @@ interface GalleryItemsProps {
 
 const GalleryItems: React.FC<GalleryItemsProps> = ({ setCurrentImage, setModalOpen, images = [] }) => {
 
-    const [visibleImages, setVisibleImages] = useState<number>(5); // Mostra inizialmente 5 immagini
+    const [visibleImages, setVisibleImages] = useState<number>(10); // Mostra inizialmente 5 immagini
     const { state } = useAppContext();
     const { ui: ui } = state;
 
     // Funzione per caricare più immagini
     const loadMoreImages = () => {
-        setVisibleImages((prevVisible) => prevVisible + 3); // Aggiunge altre 3 immagini
+        setVisibleImages((prevVisible) => prevVisible + 10); // Aggiunge altre 3 immagini
     };
 
     // Funzione per aprire la modale
