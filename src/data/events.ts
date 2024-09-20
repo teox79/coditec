@@ -17,7 +17,7 @@ export const eventData: EventState = {
             startDate: "2023-09-02",
             registration: {
                 maxParticipants: 10,
-                participants: 5,
+                participants: 10,
                 url: "https://www.eventbrite.it/"
             }
         },
@@ -31,7 +31,7 @@ export const eventData: EventState = {
             startDate: "2024-09-28",
             registration: {
                 maxParticipants: 10,
-                participants: 5,
+                participants: 10,
                 url: "https://www.eventbrite.it/"
             }
         },
