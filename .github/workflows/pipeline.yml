@@ -50,19 +50,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
 
-    - name: Debug FTP variables
-      run: |
-        echo "FTP_SERVER: ${{ secrets.FTP_SERVER }}"
-        echo "FTP_USERNAME: ${{ secrets.FTP_USERNAME }}"
-        echo "FTP_PASSWORD: ***"  # Non stampiamo direttamente il valore del segreto    
-
-    # Deploy via FTP
-    - name: Deploy to FTP
-      if: github.ref == 'refs/heads/main'  # Solo su push su main
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0  # Aggiungi questa azionegit 
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/  # Specifica la cartella di build
-        server-dir: /www.coditec.it/  # Percorso di destinazione sul server
