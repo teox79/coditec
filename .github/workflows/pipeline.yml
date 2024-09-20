@@ -50,7 +50,6 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
 
-
     # Deploy via FTP
     - name: Deploy to FTP
       if: github.ref == 'refs/heads/main'  # Solo su push su main
