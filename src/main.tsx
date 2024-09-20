@@ -20,6 +20,9 @@ AOS.init({
     easing: 'ease-in-out', // Tipo di easing dell'animazione
 });
 
+const base = document.createElement('base');
+base.href = `${window.location.origin}${window.location.pathname}`;
+document.head.appendChild(base);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
