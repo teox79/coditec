@@ -8,6 +8,13 @@ const Events: React.FC = () => {
     const { state } = useAppContext();
     const { event: eventData, ui: ui } = state;
     const breadcrumbs = [{ label: 'Home', url: '/' }, { label: 'Eventi', url: '' }];
+<<<<<<< HEAD
+=======
+
+    // Ottenere la data corrente
+    const now = new Date();
+
+>>>>>>> origin/main
     const futureEvents = getFutureEvents(eventData.events || []);
 
     return (
