@@ -21,7 +21,7 @@ AOS.init({
 });
 
 const base = document.createElement('base');
-base.href = `${window.location.origin}${window.location.pathname}`;
+base.href = `${window.location.pathname}`;
 document.head.appendChild(base);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
