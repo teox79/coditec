@@ -64,5 +64,5 @@ jobs:
         server: ftp://${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist  # Specifica la cartella di build
+        local-dir: ./dist/  # Specifica la cartella di build
         server-dir: /path/on/server/  # Percorso di destinazione sul server
