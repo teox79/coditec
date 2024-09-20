@@ -48,11 +48,6 @@ export const eventData: EventState = {
                 participants: 5,
                 url: "https://www.eventbrite.it/"
             }
-            registration: {
-                maxParticipants: 10,
-                participants: 5,
-                url: "https://www.eventbrite.it/"
-            }
         },
         {
             id: getPersistentUUID("event-4"),
@@ -63,11 +58,6 @@ export const eventData: EventState = {
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
             imageUrl: "scratchprogramming.jpg",
             startDate: "2024-11-09",
-            registration: {
-                maxParticipants: 10,
-                participants: 5,
-                url: "https://www.eventbrite.it/"
-            }
             registration: {
                 maxParticipants: 10,
                 participants: 5,
