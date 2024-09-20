@@ -30,6 +30,18 @@ const Events: React.FC = () => {
                                         <p className="fst-italic text-center" style={{ marginBottom: 0 }}>{event.date}</p>
                                         <p className="fst-italic text-center">{event.location}</p>
                                         <p className="card-text">{event.description}</p>
+                                        {event.registration && (
+                                            <div className="registration">
+                                                <div className="button-container">
+                                                    <a className="load-more-button" href={event.registration.url}>Iscriviti</a>
+                                                </div>
+                                                <div className="trainer-rank d-flex align-items-center info-container">
+                                                    Posti disponibili:
+                                                    &nbsp;&nbsp;
+                                                    <i className="bi bi-person heart-icon"></i>&nbsp;{event.registration.participants} / {event.registration.maxParticipants}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>

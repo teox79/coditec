@@ -204,3 +204,38 @@
         cursor: pointer;
     }
 }
+
+
+/*--------------------------------------------------------------
+    # Event Registration
+--------------------------------------------------------------*/
+
+.registration {
+    background: #f6f7f6;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*gap: 20px;*/
+    padding: 20px;
+    grid-template-areas:
+        "button info";
+    justify-content: space-between;
+}
+
+.button-container {
+    grid-area: button;
+}
+
+.info-container {
+    grid-area: info;
+    justify-content: flex-end;
+}
+
+.registration &>button {
+    background: #f6f7f6;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
