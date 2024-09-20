@@ -61,7 +61,7 @@ jobs:
       if: github.ref == 'refs/heads/main'  # Solo su push su main
       uses: SamKirkland/FTP-Deploy-Action@4.3.0  # Aggiungi questa azionegit 
       with:
-        server: ftp://${{ secrets.FTP_SERVER }}
+        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/  # Specifica la cartella di build
