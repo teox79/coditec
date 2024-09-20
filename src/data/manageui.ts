@@ -4,7 +4,7 @@ import { ManageUiState } from "../context/UiTypes";
 // FILE MOCK SOTTO LA CARTELLA __mock__
 export const manageUiData: ManageUiState = {
     globalUi: {
-        baseUrl: `${window.location.pathname}`,
+        baseUrl: import.meta.env.VITE_PUBLIC_URL ? import.meta.env.VITE_PUBLIC_URL : '',
     },
     headerUi: {
         showGoogleTranslatorWidget: false,

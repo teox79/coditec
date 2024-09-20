@@ -42,27 +42,13 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-
-    - name: Checkout the ftp-deploy branch
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git fetch origin ftp-deploy
-        git checkout ftp-deploy || git checkout -b ftp-deploy
-
-    - name: Copy the dist folder contents to the root
-      run: |
-        rm -rf *
-        cp -r dist/* .
-        rm -rf dist
-
-    - name: Commit changes
-      run: |
-        git add .
-        git commit -m "Update FTP deploy"
-        git push origin ftp-deploy
-      
+    # Deploy solo su push su main
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main'
+      uses: peaceiris/actions-gh-pages@v4  # Usa la versione aggiornata
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
 
     # Deploy via FTP
     - name: Deploy to FTP
