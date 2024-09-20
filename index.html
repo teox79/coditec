@@ -21,9 +21,10 @@
 <body>
   <div id="root"></div>
   <script>
-    // Imposta il valore di base in base al pathname
-    const base = document.getElementById('base-url');
+    // Crea e imposta il tag base
+    const base = document.createElement('base');
     base.href = `${window.location.pathname}`;
+    document.head.appendChild(base);
   </script>
 </body>
 
