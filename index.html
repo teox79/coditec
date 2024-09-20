@@ -24,10 +24,10 @@
     base.href = `${window.location.pathname}`;
     document.head.appendChild(base);
 
-    const stylesheets = document.querySelectorAll('link[rel="stylesheet"]');
+    const stylesheets = document.querySelectorAll('link');
     stylesheets.forEach(stylesheet => {
       const stylesheetPath = stylesheet.getAttribute('href').replace(/.*?(\/assets\/.*)/, '$1'); // Mantiene solo il percorso da /assets
-      stylesheet.href = base.href + stylesheetPath; // Aggiorna l'href con base
+      stylesheet.href = stylesheetPath; // Aggiorna l'href con base
     });
 
     const scripts = document.querySelectorAll('script[type="module"]');
