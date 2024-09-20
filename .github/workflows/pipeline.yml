@@ -45,10 +45,35 @@ jobs:
     # Deploy solo su push su main
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v4  # Usa la versione aggiornata
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+
+    - name: Deploy to ftp-deploy branch
+      run: |
+        # Configura Git
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+        # Inizializza il branch ftp-deploy
+        git checkout -b ftp-deploy || git checkout ftp-deploy
+
+        # Rimuovi tutti i file nella root del branch
+        find . -maxdepth 1 ! -name '.git' -exec rm -rf {} \;
+
+        # Sposta i contenuti di dist nella root
+        mv dist/* ./
+        rm -rf dist
+
+        # Aggiungi tutti i file e fai il commit
+        git add .
+        git commit -m "Deploy to ftp-deploy branch" || echo "No changes to commit"
+
+        # Push sul branch ftp-deploy
+        git push -f origin ftp-deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Deploy via FTP
     - name: Deploy to FTP
