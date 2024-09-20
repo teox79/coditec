@@ -18,6 +18,11 @@
 
 <body>
   <div id="root"></div>
+  <script>
+    // Imposta il valore di base in base al pathname
+    const base = document.getElementById('base-url');
+    base.href = `${window.location.pathname}`;
+  </script>
   <script type="module" src="src/main.tsx"></script>
 </body>
 
