@@ -14,32 +14,12 @@
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
     rel="stylesheet">
   <title>Coditec</title>
-  <script type="module" crossorigin src="/coditec/assets/index-BD9T3Ett.js"></script>
+  <script type="module" crossorigin src="/coditec/assets/index-CiL9j9Zc.js"></script>
   <link rel="stylesheet" crossorigin href="/coditec/assets/index-qAxlKZZs.css">
 </head>
 
 <body>
   <div id="root"></div>
-  <script>
-    // Crea e imposta il tag base
-    const base = document.createElement('base');
-    base.href = `${window.location.pathname}`;
-    document.head.appendChild(base);
-
-    const stylesheets = document.querySelectorAll('link');
-    stylesheets.forEach(stylesheet => {
-      const stylesheetPath = stylesheet.getAttribute('href').replace(/.*?(\/assets\/.*)/, '$1'); // Mantiene solo il percorso da /assets
-      stylesheet.href = stylesheetPath; // Aggiorna l'href con base
-    });
-
-    const scripts = document.querySelectorAll('script[type="module"]');
-    scripts.forEach(script => {
-      const scriptPath = script.getAttribute('src').replace(/.*?(\/assets\/.*)/, '$1'); // Mantiene solo il percorso da /assets
-      script.src = scriptPath; // Aggiorna il src con base
-    });
-
-
-  </script>
 </body>
 
 </html>
