@@ -65,4 +65,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/  # Specifica la cartella di build
-        server-dir: /path/on/server/  # Percorso di destinazione sul server
+        server-dir: /www.coditec.it/  # Percorso di destinazione sul server
