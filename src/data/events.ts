@@ -15,6 +15,11 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2023-09-02",
+            registration: {
+                maxParticipants: 10,
+                participants: 5,
+                url: "https://www.eventbrite.it/"
+            }
         },
         {
             id: getPersistentUUID("event-2"),
@@ -24,6 +29,11 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2024-09-28",
+            registration: {
+                maxParticipants: 10,
+                participants: 5,
+                url: "https://www.eventbrite.it/"
+            }
         },
         {
             id: getPersistentUUID("event-3"),
@@ -33,6 +43,11 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2024-10-26",
+            registration: {
+                maxParticipants: 10,
+                participants: 5,
+                url: "https://www.eventbrite.it/"
+            }
         },
         {
             id: getPersistentUUID("event-4"),
@@ -43,6 +58,11 @@ export const eventData: EventState = {
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
             imageUrl: "scratchprogramming.jpg",
             startDate: "2024-11-09",
+            registration: {
+                maxParticipants: 10,
+                participants: 5,
+                url: "https://www.eventbrite.it/"
+            }
         },
         {
             id: getPersistentUUID("event-5"),

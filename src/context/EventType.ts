@@ -15,4 +15,11 @@ export interface Event {
     description?: string;
     imageUrl?: string;
     startDate?: string;
+    registration?: Registration;
+}
+
+export interface Registration {
+    maxParticipants?: number;
+    participants?: number;
+    url?: string;
 }
