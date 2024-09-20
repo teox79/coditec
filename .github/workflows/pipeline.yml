@@ -62,25 +62,16 @@ jobs:
         # Rimuovi tutti i file nella root del branch tranne la cartella .git
         find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
     
-        # Assicurati che la cartella dist esista prima di procedere
-        if [ -d "dist" ]; then
-          # Sposta i contenuti di dist nella root
-          mv dist/* ./
-          rm -rf dist
+        # Aggiungi tutti i file e fai il commit
+        git add .
+        git commit -m "Deploy to ftp-deploy branch" || echo "No changes to commit"
     
-          # Aggiungi tutti i file e fai il commit
-          git add .
-          git commit -m "Deploy to ftp-deploy branch" || echo "No changes to commit"
-    
-          # Push sul branch ftp-deploy
-          git push -f origin ftp-deploy
-        else
-          echo "La cartella dist non esiste. La build potrebbe non essere riuscita."
-          exit 1
-        fi
+        # Push sul branch ftp-deploy
+        git push -f origin ftp-deploy
       shell: /usr/bin/bash -e {0}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       
 
     # Deploy via FTP
