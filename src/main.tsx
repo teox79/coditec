@@ -20,7 +20,6 @@ AOS.init({
     easing: 'ease-in-out', // Tipo di easing dell'animazione
 });
 
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <React.StrictMode>
