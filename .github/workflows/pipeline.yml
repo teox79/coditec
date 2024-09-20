@@ -44,31 +44,24 @@ jobs:
 
 
 
-    - name: Deploy to ftp-deploy branch
+    - name: Checkout the ftp-deploy branch
       run: |
-        # Configura Git
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git fetch origin ftp-deploy
+        git checkout ftp-deploy || git checkout -b ftp-deploy
 
-        # Inizializza il branch ftp-deploy
-        git checkout -b ftp-deploy || git checkout ftp-deploy
-
-        # Rimuovi tutti i file nella root del branch tranne la cartella .git
-        find . -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
-
-        # Sposta i contenuti di dist nella root
-        mv dist/* ./
+    - name: Copy the dist folder contents to the root
+      run: |
+        rm -rf *
+        cp -r dist/* .
         rm -rf dist
 
-        # Aggiungi tutti i file e fai il commit
+    - name: Commit changes
+      run: |
         git add .
-        git commit -m "Deploy to ftp-deploy branch" || echo "No changes to commit"
-
-        # Push sul branch ftp-deploy
-        git push -f origin ftp-deploy
-      shell: /usr/bin/bash -e {0}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git commit -m "Update FTP deploy"
+        git push origin ftp-deploy
       
 
     # Deploy via FTP
