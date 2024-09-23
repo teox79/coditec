@@ -17,13 +17,7 @@ const About: React.FC<AboutProps> = ({ title, subtitle, description, points }) =
                         data-aos="fade-up"
                         data-aos-delay="100"
                     >
-                        <div>IMG UNO {ui.globalUi.baseUrl} :
-                            <img src={`${ui.globalUi.baseUrl}assets/img/about/about.jpg`} className="img-fluid img-rounded" alt="About Us" />
-                        </div>
-                        <div>
-                            IMG DUE
-                            <img src={`assets/img/about/about.jpg`} className="img-fluid img-rounded" alt="About Us" />
-                        </div>
+                        <img src={`${ui.globalUi.baseUrl}assets/img/about/about.jpg`} className="img-fluid img-rounded" alt="About Us" />
                     </div>
 
                     {/* Contenuto About */}
