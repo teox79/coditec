@@ -58,8 +58,9 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/index.html  # Specifica il file da caricare
+        local-dir: ./dist/  # Specifica il file da caricare
         server-dir: /www.coditec.it/  # Destinazione del file index.html
+        exclude: assets/**  # Escludi la cartella assets
 
     # Deploy via FTP per la cartella assets
     - name: Deploy assets to FTP
