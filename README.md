@@ -158,6 +158,21 @@ Sostituire ```10``` con il nuovo numero d'immagini da visualizzare
 1. Verifica il percorso: Assicurati che imageDirectory punti alla cartella corretta dove sono memorizzate le immagini.
 2. Assicurati che tutte le immagini necessarie siano presenti e numerate correttamente.
 
+## Configurazione del Deploy FTP per il Progetto su Aruba
+
+Per gestire il deploy FTP del progetto su un server Aruba, è necessario configurare alcune variabili in GitHub Actions. Queste variabili consentono di stabilire la connessione al server FTP.
+
+### Variabili Secrete
+
+Nella sezione **Actions secrets and variables** di GitHub, assicurati di configurare le seguenti variabili segrete (il valore non sarà visibile):
+
+- **FTP_SERVER**: Indirizzo del server FTP.
+- **FTP_USERNAME**: Nome utente per l'accesso FTP.
+- **FTP_PASSWORD**: Password per l'accesso FTP.
+
+### Variabile d'Ambiente
+
+Inoltre, è disponibile una variabile d'ambiente chiamata **ENABLE_FTP_DEPLOY**. Il suo valore predefinito è `false`. Se desideri abilitare il deploy FTP su Aruba, imposta questa variabile su `true`. Se non è valorizzata o è impostata su `false`, il processo di deploy FTP sarà saltato.
 
 ## Struttura del progetto 
 
