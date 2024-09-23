@@ -30,7 +30,7 @@ export const trainerData: TrainerState = {
             id: getPersistentUUID("trainer-3"),
             name: "Davide",
             role: "Faccio tutto",
-            description: "Mi chiamo Davide .........",
+            description: "Mi chiamo Davide e faccio tutto io.........",
             imageUrl: "trainer-1.jpg",
         },
         {
