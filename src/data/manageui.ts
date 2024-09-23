@@ -15,5 +15,8 @@ export const manageUiData: ManageUiState = {
             showCaregory: true,
             showYear: true,
         }
+    },
+    homeUi: {
+        showTrainersSection: false,
     }
 }

@@ -45,6 +45,7 @@ export interface GalleryUi {
 }
 
 export interface HomeUi {
+    showTrainersSection: boolean
 }
 
 export interface TrainersUi {
