@@ -28,7 +28,7 @@ export const homeData: HomeState = {
     ],
     whyUs: {
         title: "Perchè scegliere Coditec",
-        description: "Scegliere dei professionisti è sempre la scelta migliore quando si cerca un servizio di qualità. Noi cerchiamo di esserlo, ma desideriamo siano i nostri ragazzi a ritenerci tali, per questo c’impegnano per migliorarci. Se dovessimo rispondere alla domanda: “perchè; sceglierci?” molto probabilmente lo faremmo elencando questi 5 semplici ma importanti aspetti:",
+        description: "Scegliere dei professionisti è sempre la scelta migliore quando si cerca un servizio di qualità. Noi cerchiamo di esserlo, ma desideriamo siano i nostri ragazzi a ritenerci tali, per questo c’impegnano per migliorarci. Se dovessimo rispondere alla domanda: “perchè; sceglierci?” molto probabilmente lo faremmo elencando questi 3 semplici ma importanti aspetti:",
         points: [
             {
                 title: "Passione",
