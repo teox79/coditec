@@ -231,5 +231,3 @@ Sostituire ```10``` con il nuovo numero d'immagini da visualizzare
 │   │   ├── AppRoutes.tsx     # gestione delle rotte del sito
 │   ├── utils
 │   │   ├── utils.ts          # utility varie
-```
-
