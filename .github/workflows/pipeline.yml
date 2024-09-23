@@ -50,14 +50,24 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
 
-    # Deploy via FTP
-    - name: Deploy to FTP
-    # if: false  # Questo impedisce l'esecuzione permanente
+    # Deploy via FTP per index.html
+    - name: Deploy index.html to FTP root
       if: github.ref == 'refs/heads/main'  # Solo su push su main
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0  # Aggiungi questa azionegit 
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./dist/  # Specifica la cartella di build
-        server-dir: /www.coditec.it/  # Percorso di destinazione sul server
+        local-dir: ./dist/index.html  # Specifica il file da caricare
+        server-dir: /www.coditec.it/  # Destinazione del file index.html
+
+    # Deploy via FTP per la cartella assets
+    - name: Deploy assets to FTP
+      if: github.ref == 'refs/heads/main'  # Solo su push su main
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./dist/assets/  # Specifica la cartella da caricare
+        server-dir: /www.coditec.it/coditec/  # Destinazione della cartella assets
