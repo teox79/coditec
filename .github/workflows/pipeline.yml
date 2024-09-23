@@ -52,6 +52,10 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+    
+    # Step di debug per stampare il valore della variabile
+    - name: Print ENV VARIABLE
+      run: echo "ENABLE_FTP_DEPLOY is set to ${{ env.ENABLE_FTP_DEPLOY }}"    
 
     # Deploy via FTP per index.html
     - name: Deploy index.html to FTP root
