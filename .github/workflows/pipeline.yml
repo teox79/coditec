@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+env:
+  ENABLE_FTP_DEPLOY: false   
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -52,7 +55,7 @@ jobs:
 
     # Deploy via FTP per index.html
     - name: Deploy index.html to FTP root
-      if: github.ref == 'refs/heads/main'  # Solo su push su main
+      if: env.ENABLE_FTP_DEPLOY == 'true' && github.ref == 'refs/heads/main'
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_SERVER }}
@@ -64,7 +67,7 @@ jobs:
 
     # Deploy via FTP per la cartella assets
     - name: Deploy assets to FTP
-      if: github.ref == 'refs/heads/main'  # Solo su push su main
+      if: env.ENABLE_FTP_DEPLOY == 'true' && github.ref == 'refs/heads/main'
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
         server: ${{ secrets.FTP_SERVER }}
