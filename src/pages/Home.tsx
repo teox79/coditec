@@ -7,7 +7,7 @@ import TrainersIndexSection from '../components/Home/TrainersIndex';
 import HeroSection from '../components/Home/Hero';
 import AboutSection from '../components/Common/About';
 import { useAppContext } from '../context/AppContext';
-import { getCoursesByDateOrYear } from '../utils/utils';
+import { getCoursesByDateOrYear, getRandomTrainers } from '../utils/utils';
 
 const Home: React.FC = () => {
 
@@ -16,6 +16,7 @@ const Home: React.FC = () => {
     const { home: homeData, course: courseData, trainer: trainerData } = state;
     const today = new Date();
     const nextCourses = getCoursesByDateOrYear(courseData.courses || [], 3, today);
+    const trainers = getRandomTrainers(trainerData.trainers || [], 3);
 
     console.log("nextCourses :", nextCourses)
 
@@ -50,8 +51,8 @@ const Home: React.FC = () => {
                     subtitle={homeData.course?.subtitle}
                     courses={nextCourses} />
             )}
-            {trainerData.trainers && (
-                <TrainersIndexSection trainers={trainerData.trainers} />
+            {trainers && (
+                <TrainersIndexSection trainers={trainers} />
             )}
         </main>
     );

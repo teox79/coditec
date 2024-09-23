@@ -2,6 +2,7 @@ import { Course, FiltersType } from "../context/CourseTypes";
 import { Event } from "../context/EventType";
 import { Image } from "../context/GalleryTypes";
 import { v4 as uuidv4 } from 'uuid';
+import { Trainer } from "../context/TrainerType";
 
 export const getCoursesByDateOrYear = (
     courses: Course[],
@@ -165,3 +166,18 @@ export const getPersistentUUID = (key: string) => {
     return uuid;
 };
 
+export const getRandomTrainers = (trainers: Trainer[], count: number = 3): Trainer[] => {
+    const selected: Trainer[] = [];
+    const usedIndices = new Set<number>();
+
+    while (selected.length < count && selected.length < trainers.length) {
+        const randomIndex = Math.floor(Math.random() * trainers.length);
+
+        if (!usedIndices.has(randomIndex)) {
+            usedIndices.add(randomIndex);
+            selected.push(trainers[randomIndex]);
+        }
+    }
+
+    return selected;
+}

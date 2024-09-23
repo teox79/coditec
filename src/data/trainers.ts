@@ -26,6 +26,35 @@ export const trainerData: TrainerState = {
                 linkedin: "#",
             },*/
         },
+        {
+            id: getPersistentUUID("trainer-3"),
+            name: "Davide",
+            role: "Faccio tutto",
+            description: "Mi chiamo Davide .........",
+            imageUrl: "trainer-1.jpg",
+        },
+        {
+            id: getPersistentUUID("trainer-4"),
+            name: "Gionata",
+            role: "Software Engineer",
+            description: "Mi chiamo Gionata .........",
+            imageUrl: "trainer-3.jpg",
+        },
+        {
+            id: getPersistentUUID("trainer-5"),
+            name: "Sabina",
+            role: "Professoressa",
+            description: "Mi chiamo Sabina .........",
+            imageUrl: "trainer-2.jpg",
+        },
+        {
+            id: getPersistentUUID("trainer-6"),
+            name: "Emanuela",
+            role: "Impiegata",
+            description: "Mi chiamo Emanuela .........",
+            imageUrl: "trainer-2-2.jpg",
+        },
+
         // Aggiungi altri membri
     ]
 }
