@@ -12,6 +12,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENABLE_FTP_DEPLOY: ${{ vars.ENABLE_FTP_DEPLOY }}
     
     permissions:
       contents: write  # Questo consente la scrittura sul repository, incluso il push di tag e modifiche
