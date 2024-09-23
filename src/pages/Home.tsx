@@ -13,12 +13,10 @@ const Home: React.FC = () => {
 
     const { state } = useAppContext();
 
-    const { home: homeData, course: courseData, trainer: trainerData } = state;
+    const { home: homeData, course: courseData, trainer: trainerData, ui: uiData } = state;
     const today = new Date();
     const nextCourses = getCoursesByDateOrYear(courseData.courses || [], 3, today);
     const trainers = getRandomTrainers(trainerData.trainers || [], 3);
-
-    console.log("nextCourses :", nextCourses)
 
     return (
         <main className="main">
@@ -51,7 +49,7 @@ const Home: React.FC = () => {
                     subtitle={homeData.course?.subtitle}
                     courses={nextCourses} />
             )}
-            {trainers && (
+            {trainers && uiData.homeUi?.showTrainersSection && (
                 <TrainersIndexSection trainers={trainers} />
             )}
         </main>
