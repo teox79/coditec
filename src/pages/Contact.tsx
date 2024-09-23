@@ -54,14 +54,6 @@ const Contact: React.FC = () => {
                                     </div>
                                 </div>
 
-                                <div className="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                                    <i className="bi bi-telephone flex-shrink-0"></i>
-                                    <div>
-                                        <h3>Telefono</h3>
-                                        <p>{contactData.contactInfo.phone}</p>
-                                    </div>
-                                </div>
-
                                 <div className="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
                                     <i className="bi bi-envelope flex-shrink-0"></i>
                                     <div>
