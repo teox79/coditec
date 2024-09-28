@@ -36,7 +36,6 @@ const Trainers: React.FC = () => {
                                 </div>
                             </div>
                         ))}
-                        <TrainersIndexSection trainers={trainerData.trainers} />
                     </div>
                 </div>
             </section>
