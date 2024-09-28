@@ -1,8 +1,6 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import PageTitle from '../components/Common/PageTitle';
-import TrainersIndexSection from '../components/Home/TrainersIndex';
-
 
 const Trainers: React.FC = () => {
 
