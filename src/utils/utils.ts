@@ -87,7 +87,7 @@ export const getFilters = (courses: Course[]): FiltersType => {
         )
     ).sort((a, b) => a - b); // Ordina gli anni in ordine crescente
 
-    return { categories, years, prices };
+    return { categories, years };
 };
 
 
