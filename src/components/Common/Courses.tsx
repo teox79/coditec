@@ -112,17 +112,24 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                         </h3>
                                         <p className="description">{course.description}</p>
                                         <p className="description">Data Inizio: {formatDate(course.startDate)}</p>
+                                        {/*
                                         <div className="trainer d-flex justify-content-between align-items-center">
                                             <div className="trainer-profile d-flex align-items-center">
                                                 <img src={images[course.trainerImg]} className="img-fluid" alt={course.trainerName} />
                                                 <a href="#" className="trainer-link">{course.trainerName}</a>
                                             </div>
                                         </div>
+                                        */}
                                     </div>
                                 </div>
                             </a>
                         </div>
                     ))}
+                    {courses.length === 0 && (
+                        <div className="col text-center">
+                            <h3>Non ci sono corsi disponibili</h3>
+                        </div>
+                    )}
                 </div>
             </div>
         </section >
