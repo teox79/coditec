@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiltersType } from '../../context/CourseTypes';
+import { FiltersType, SelectedFilterType } from '../../context/CourseTypes';
 import { useAppContext } from '../../context/AppContext';
 
 
@@ -7,15 +7,15 @@ import { useAppContext } from '../../context/AppContext';
 type Props = {
     filters: FiltersType;
     onFilterChange: (filters: { category?: string; year?: number; price?: string }) => void;
+    setSelectedFilters: React.Dispatch<React.SetStateAction<SelectedFilterType>>;
 };
 
-const Filters: React.FC<Props> = ({ filters, onFilterChange }) => {
+const Filters: React.FC<Props> = ({ filters, onFilterChange, setSelectedFilters }) => {
     const { state } = useAppContext();
     const { ui: manageUiData } = state;
 
     const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
     const [selectedYear, setSelectedYear] = useState<number | undefined>(undefined);
-    const [selectedPrice, setSelectedPrice] = useState<string | undefined>(undefined);
 
 
     const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -30,20 +30,14 @@ const Filters: React.FC<Props> = ({ filters, onFilterChange }) => {
         onFilterChange({ year });
     };
 
-    const handlePriceChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const price = e.target.value || undefined;
-        setSelectedPrice(price);
-        onFilterChange({ price });
-    };
-
     const resetFilters = () => {
         setSelectedCategory(undefined);
         setSelectedYear(undefined);
-        setSelectedPrice(undefined);
-        onFilterChange({ category: undefined, year: undefined, price: undefined });
+        setSelectedFilters({ category: undefined, year: undefined });
+        onFilterChange({ category: undefined, year: undefined });
     };
 
-    const showResetButton = selectedCategory || selectedYear || selectedPrice;
+    const showResetButton = selectedCategory || selectedYear;
 
     return (
         <div className="container my-4">
@@ -58,7 +52,7 @@ const Filters: React.FC<Props> = ({ filters, onFilterChange }) => {
                                 value={selectedCategory || ''}
                                 onChange={handleCategoryChange}
                             >
-                                <option value="">Tutte le categorie</option>
+                                <option value="all">Tutte le categorie</option>
                                 {filters.categories.map((category) => (
                                     <option key={category} value={category}>
                                         {category}
@@ -80,7 +74,7 @@ const Filters: React.FC<Props> = ({ filters, onFilterChange }) => {
                                 value={selectedYear || ''}
                                 onChange={handleYearChange}
                             >
-                                <option value="">Tutti gli anni</option>
+                                <option value="0">Tutti gli anni</option>
                                 {filters.years.map((year) => (
                                     <option key={year} value={year}>
                                         {year}
@@ -88,29 +82,6 @@ const Filters: React.FC<Props> = ({ filters, onFilterChange }) => {
                                 ))}
                             </select>
                             <label htmlFor="yearFilter">Anni</label>
-                        </div>
-                    </div>
-                )}
-
-
-                {/* Price Filter */}
-                {manageUiData.courseUi?.filters.showPrice && (
-                    <div className="col-md-4">
-                        <div className="form-floating">
-                            <select
-                                className="form-select"
-                                id="priceFilter"
-                                value={selectedPrice || ''}
-                                onChange={handlePriceChange}
-                            >
-                                <option value="">Tutti i prezzi</option>
-                                {filters.prices.map((price) => (
-                                    <option key={price} value={price}>
-                                        {price}
-                                    </option>
-                                ))}
-                            </select>
-                            <label htmlFor="priceFilter">Prezzi</label>
                         </div>
                     </div>
                 )}

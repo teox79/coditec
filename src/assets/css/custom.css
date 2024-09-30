@@ -232,3 +232,20 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+/*--------------------------------------------------------------
+    # Reset Filter
+--------------------------------------------------------------*/
+.reset-filter {
+    border-color: #ff8700;
+    color: #ff8700;
+}
+
+.reset-filter:hover,
+.reset-filter:focus,
+.reset-filter:first-child:active {
+    background-color: color-mix(in srgb, #ff8700, transparent 15%);
+    color: #fff;
+    border-color: #ff8700;
+}

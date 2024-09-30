@@ -10,7 +10,11 @@ export interface CourseState extends PageBase {
 export type FiltersType = {
     categories: string[];
     years: number[];
-    prices: string[];
+};
+
+export type SelectedFilterType = {
+    category: string | undefined;
+    year: number | undefined;
 };
 
 export interface Detail {
@@ -42,8 +46,8 @@ export interface Course {
     price: string;
     title: string;
     description: string;
-    trainerName: string;
-    trainerImg: string;
+    trainerName?: string;
+    trainerImg?: string;
     usersCount: number;
     heartsCount: number;
     delay: number;

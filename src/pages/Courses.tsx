@@ -4,7 +4,7 @@ import PageTitle from '../components/Common/PageTitle';
 import CoursesSection from '../components/Common/Courses';
 import { getFilters, sortCourses } from '../utils/utils';
 import Filters from '../components/Courses/Filters';
-import { Course, FiltersType } from '../context/CourseTypes';
+import { Course, FiltersType, SelectedFilterType } from '../context/CourseTypes';
 import { Alignment } from '../context/UiTypes';
 
 const Courses: React.FC = () => {
@@ -18,23 +18,41 @@ const Courses: React.FC = () => {
     const [filters, setFilters] = useState<FiltersType>({
         categories: [],
         years: [],
-        prices: []
     });
+
+    const [selectedFilters, setSelectedFilters] = useState<SelectedFilterType>({
+        category: undefined,
+        year: undefined,
+    });
+
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
     const handleSortOrderChange = () => {
         setSortOrder(prevOrder => (prevOrder === 'asc' ? 'desc' : 'asc'));
     };
+    const handleFilterChange = (newFilters: { category?: string; year?: number }) => {
 
-    const handleFilterChange = (newFilters: { category?: string; year?: number; price?: string }) => {
-        // Filtra i corsi in base ai filtri selezionati
-        const filtered = courses?.filter(course => {
-            const matchesCategory = newFilters.category ? course.category === newFilters.category : true;
-            const matchesYear = newFilters.year ? new Date(course.startDate || '').getFullYear() === newFilters.year : true;
-            const matchesPrice = newFilters.price ? course.price === newFilters.price : true;
-            return matchesCategory && matchesYear && matchesPrice;
-        });
-        setFilteredCourses(filtered || []);
+        const category = newFilters.category === 'all' ? undefined : newFilters.category || selectedFilters.category;
+        const year = newFilters.year === 0 ? undefined : newFilters.year || selectedFilters.year;
+
+        const filteredByYear = courses?.filter(course =>
+            year ? new Date(course.startDate || '').getFullYear() === year : true
+        );
+
+        // Se c'è una categoria selezionata, filtro i risultati per anno anche per categoria
+        const filtered = filteredByYear?.filter(course =>
+            category ? course.category === category : true
+        );
+
+        if (selectedFilters.category !== category || selectedFilters.year !== year) {
+            setSelectedFilters({
+                category: category || undefined,
+                year: year || undefined,
+            })
+        }
+
+        // Se non ci sono corsi che soddisfano i criteri, l'elenco sarà vuoto
+        setFilteredCourses(filtered?.length ? filtered : []);
     };
 
 
@@ -42,7 +60,6 @@ const Courses: React.FC = () => {
         const fetchCourses = async () => {
             setCourses(courseData.courses || []);
             setFilteredCourses(courseData.courses || []); // Mostra tutti i corsi inizialmente
-
             setFilters(getFilters(courseData.courses || []))
         };
 
@@ -54,11 +71,19 @@ const Courses: React.FC = () => {
         setFilteredCourses(sortCourses(courseData.courses || [], sortOrder));
     }, [sortOrder]);
 
+    useEffect(() => {
+        if (selectedFilters.category || selectedFilters.year)
+            handleFilterChange({ category: selectedFilters.category, year: selectedFilters.year });
+        else
+            setFilteredCourses(courseData.courses || []);
+    }, [selectedFilters]);
+
+
 
     return (
         <main className="main">
             <PageTitle description={courseData.description || ''} title={courseData.title || ''} breadcrumbs={breadcrumbs} alignDescription={Alignment.Left} />
-            <Filters filters={filters} onFilterChange={handleFilterChange} />
+            <Filters filters={filters} onFilterChange={handleFilterChange} setSelectedFilters={setSelectedFilters} />
             {filteredCourses && (
                 <>
                     <div className="container my-4">
