@@ -12,6 +12,10 @@ export const trainerData: TrainerState = {
             role: "Software Engineer",
             description: "Sono Papà di due splendide bambine, lavoro da più di 20 anni nel mondo della programmazione. Ritengo importante per i bambini e non solo avvicinarsi al mondo dell’informatica.",
             imageUrl: "matteo_balestrini.png",
+            socialLinks: {
+                linkedin: "www.linkedin.com/in/matteo-balestrini-64a13225",
+                facebook: "https://www.facebook.com/teox79",
+            }
         },
         {
             id: getPersistentUUID("trainer-2"),

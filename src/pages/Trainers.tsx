@@ -1,8 +1,6 @@
 import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import PageTitle from '../components/Common/PageTitle';
-import TrainersIndexSection from '../components/Home/TrainersIndex';
-
 
 const Trainers: React.FC = () => {
 
@@ -36,7 +34,6 @@ const Trainers: React.FC = () => {
                                 </div>
                             </div>
                         ))}
-                        <TrainersIndexSection trainers={trainerData.trainers} />
                     </div>
                 </div>
             </section>

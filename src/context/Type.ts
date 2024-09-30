@@ -9,10 +9,10 @@ import { ManageUiState } from "./UiTypes";
 
 
 export interface SocialLinks {
-    twitter: string;
-    facebook: string;
-    instagram: string;
-    linkedin: string;
+    twitter?: string;
+    facebook?: string;
+    instagram?: string;
+    linkedin?: string;
 }
 
 // Interfaccia base per le proprietà comuni a tutte le pagine
