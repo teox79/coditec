@@ -71,9 +71,6 @@ export const getFilters = (courses: Course[]): FiltersType => {
     // Raccogli le categorie uniche
     const categories = Array.from(new Set(courses.map(course => course.category))).sort();
 
-    // Raccogli i prezzi unici
-    const prices = Array.from(new Set(courses.map(course => course.price))).sort();
-
     // Raccogli gli anni unici a partire da startDate
     const years = Array.from(
         new Set(
