@@ -16,8 +16,6 @@ export const eventData: EventState = {
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2023-09-02",
             registration: {
-                maxParticipants: 10,
-                participants: 10,
                 url: "https://www.eventbrite.it/"
             }
         },
@@ -30,9 +28,7 @@ export const eventData: EventState = {
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2024-09-28",
             registration: {
-                maxParticipants: 10,
-                participants: 10,
-                url: "https://www.eventbrite.it/"
+                url: "https://docs.google.com/forms/d/1rOki8kfKIBmCYH-So_4ccMmZ0UcKMeJE2hhoyIqZBWg/prefill",
             }
         },
         {
@@ -44,9 +40,8 @@ export const eventData: EventState = {
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2024-10-26",
             registration: {
-                maxParticipants: 10,
-                participants: 5,
-                url: "https://www.eventbrite.it/"
+                url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
+                isOpen: true
             }
         },
         {
@@ -59,8 +54,8 @@ export const eventData: EventState = {
             imageUrl: "scratchprogramming.jpg",
             startDate: "2024-11-09",
             registration: {
-                maxParticipants: 10,
-                participants: 5,
+                maxParticipants: 0,
+                participants: 0,
                 url: "https://www.eventbrite.it/"
             }
         },

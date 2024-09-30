@@ -22,4 +22,5 @@ export interface Registration {
     maxParticipants?: number;
     participants?: number;
     url?: string;
+    isOpen?: boolean;
 }

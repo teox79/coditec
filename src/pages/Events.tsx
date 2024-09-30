@@ -19,7 +19,7 @@ const Events: React.FC = () => {
                         {futureEvents.map((event) => {
 
                             const { registration } = event;
-                            const isFull = (registration?.participants || 0) >= (registration?.maxParticipants || 0);
+                            const isOpen = (registration?.isOpen || false && registration?.url || '');
 
                             return (
                                 <div key={event.id} className="col-md-6 d-flex align-items-stretch">
@@ -27,37 +27,42 @@ const Events: React.FC = () => {
                                         <div className="card-img">
                                             <img src={`${ui.globalUi.baseUrl}assets/img/events/${event.imageUrl}`} alt={event.title} className="img-fluid" style={{ maxWidth: "636px", maxHeight: "424px" }} />
                                         </div>
-                                        <div className="card-body">
-                                            <h5 className="card-title">
-                                                <a href="#">{event.title}</a>
-                                            </h5>
-                                            <p className="fst-italic text-center" style={{ marginBottom: 0 }}>{event.date}</p>
-                                            <p className="fst-italic text-center">{event.location}</p>
-                                            <p className="card-text">{event.description}</p>
-                                            {isFull ? (
-                                                <p className="text-warning text-center">Evento al completo</p>
-                                            ) : (
-                                                registration && (
-                                                    <div className="registration">
+                                        <div className="card-body" style={{ justifyContent: 'space-between', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                            <div>
+                                                <h5 className="card-title">
+                                                    <a href="#">{event.title}</a>
+                                                </h5>
+                                                <p className="fst-italic text-center" style={{ marginBottom: 0 }}>{event.date}</p>
+                                                <p className="fst-italic text-center">{event.location}</p>
+                                                <p className="card-text">{event.description}</p>
+                                            </div>
+                                            <div>
+                                                {registration && (
+                                                    <div className="registration" style={{ textAlign: 'center' }}>
                                                         <div className="button-container">
-                                                            <a
-                                                                className="load-more-button"
-                                                                href={registration.url}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                            >
-                                                                Iscriviti
-                                                            </a>
+                                                            {!isOpen ? (
+                                                                <span className="text-warning text-center">Le iscrizioni apriranno a breve</span>
+                                                            ) : (
+                                                                <a
+                                                                    className="load-more-button"
+                                                                    href={registration.url}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                >
+                                                                    Iscriviti
+                                                                </a>
+                                                            )}
                                                         </div>
-                                                        <div className="trainer-rank d-flex align-items-center info-container">
-                                                            Posti disponibili:
-                                                            &nbsp;&nbsp;
-                                                            <i className="bi bi-person heart-icon"></i>&nbsp;
-                                                            {registration.participants} / {registration.maxParticipants}
-                                                        </div>
+                                                        {registration?.participants || 0 > 0 && registration?.maxParticipants || 0 > 0 && (
+                                                            <div className="trainer-rank d-flex align-items-center info-container">
+                                                                Posti disponibili:&nbsp;&nbsp;
+                                                                <i className="bi bi-person heart-icon"></i>&nbsp;
+                                                                {registration.participants} / {registration.maxParticipants}
+                                                            </div>
+                                                        )}
                                                     </div>
-                                                )
-                                            )}
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
