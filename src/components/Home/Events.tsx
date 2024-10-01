@@ -41,6 +41,7 @@ const EventsSection: React.FC<EventsSectionProps> = ({ futureEvents }) => {
                                             <p className="fst-italic text-center" style={{ marginBottom: 0 }}>{event.date}</p>
                                             <p className="fst-italic text-center">{event.location}</p>
                                             <p className="card-text">{event.description}</p>
+                                            {event.isFreeEvent && (<div className='free-badge-container'><span className="free-badge">EVENTO GRATUITO</span></div>)}
                                         </div>
                                     </div>
                                     <div style={{ textAlign: 'center' }}>

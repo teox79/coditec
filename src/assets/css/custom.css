@@ -249,3 +249,24 @@
     color: #fff;
     border-color: #ff8700;
 }
+
+/*--------------------------------------------------------------
+    # Evento gratuito
+--------------------------------------------------------------*/
+.free-badge-container {
+    display: flex;
+    justify-content: center;
+}
+
+.free-badge {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.5em 1em;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
