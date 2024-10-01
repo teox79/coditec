@@ -17,7 +17,8 @@ export const eventData: EventState = {
             startDate: "2023-09-02",
             registration: {
                 url: "https://www.eventbrite.it/"
-            }
+            },
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-2"),
@@ -29,7 +30,8 @@ export const eventData: EventState = {
             startDate: "2024-09-28",
             registration: {
                 url: "https://docs.google.com/forms/d/1rOki8kfKIBmCYH-So_4ccMmZ0UcKMeJE2hhoyIqZBWg/prefill",
-            }
+            },
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-3"),
@@ -42,7 +44,8 @@ export const eventData: EventState = {
             registration: {
                 url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
                 isOpen: true
-            }
+            },
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-4"),
@@ -87,6 +90,7 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2024-12-14",
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-8"),
@@ -96,6 +100,7 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2025-01-18",
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-9"),
@@ -132,6 +137,7 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2025-03-22",
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-13"),
@@ -141,6 +147,7 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2025-04-12",
+            isFreeEvent: true
         },
         {
             id: getPersistentUUID("event-14"),
@@ -150,6 +157,7 @@ export const eventData: EventState = {
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2025-06-07",
+            isFreeEvent: true
         },
     ]
 

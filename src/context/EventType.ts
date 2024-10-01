@@ -16,6 +16,7 @@ export interface Event {
     imageUrl?: string;
     startDate?: string;
     registration?: Registration;
+    isFreeEvent?: boolean;
 }
 
 export interface Registration {
