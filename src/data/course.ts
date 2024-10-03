@@ -7,7 +7,7 @@ export const courseData: CourseState = {
     description: "Le nostra offerta propone corsi per:\n\n1. **Bambini dai 6 ai 9 anni** dove si propongono attività per comprendere le basi del coding con giochi o piccole applicazioni.\n2. **Ragazzi dai 10 ai 13 anni** dove implementiamo un piccolo mini gioco con due livelli di difficoltà BASE e AVANZATO.\n3. **Insegnanti** che vogliono avvicinarsi al mondo del coding con scratch.\n4. Altro.",
     courses: [{
         id: getPersistentUUID("course-id"),
-        imgSrc: "scratchprogramming.jpg",
+        imgSrc: "banner_scratch.jpeg",
         category: Category.Programmazione,
         price: "Da Definire",
         title: "Introduzione a Scratch per insegnati",
@@ -20,7 +20,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-1"),
-        imgSrc: "scratchprogramming.jpg",
+        imgSrc: "banner_scratch.jpeg",
         category: Category.Programmazione,
         price: "50,00 €",
         title: "Dusty Base",
@@ -77,11 +77,11 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-2"),
-        imgSrc: "scratchprogramming.jpg",
-        category: Category.Programmazione,
+        imgSrc: "banner_legowedo.jpeg",
+        category: Category.LegoWedo2,
         price: "55,00 €",
-        title: "Dusty Avanzato",
-        description: "Rispetto alla versione base, verranno introdotte delle nozioni più complesse per rendere il gioco più fluido e avvincente.",
+        title: "Introduzione a LEGO WeDo con Scratch",
+        description: "E' pensato per avvicinare i bambini al mondo della robotica e della programmazione. Utilizzando i kit LEGO WeDo e il linguaggio visivo Scratch, i partecipanti impareranno a creare e programmare semplici robot, sviluppando capacità logiche e creative in modo divertente e interattivo.",
         usersCount: 8,
         heartsCount: 85,
         delay: 300,
@@ -89,8 +89,8 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-3"),
-        imgSrc: "scratchprogramming.jpg",
-        category: Category.LegoWedo2,
+        imgSrc: "banner_scratch.jpeg",
+        category: Category.Programmazione,
         price: "Da Definire",
         title: "Introduzione a Scratch per insegnati",
         description: "Il corso è propedeutico per l’introduzione degli insegnati delle scuole primarie all’utilizzo di Scratch come strumenti didattico.",
@@ -101,7 +101,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-4"),
-        imgSrc: "scratchprogramming.jpg",
+        imgSrc: "banner_scratch.jpeg",
         category: Category.Programmazione,
         price: "50,00 €",
         title: "Dusty Base",
@@ -113,15 +113,27 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-5"),
-        imgSrc: "scratchprogramming.jpg",
-        category: Category.Programmazione,
+        imgSrc: "banner_3d.jpeg",
+        category: Category.Stampa3D,
         price: "55,00 €",
-        title: "Dusty Avanzato",
-        description: "Rispetto alla versione base, verranno introdotte delle nozioni più complesse per rendere il gioco più fluido e avvincente.",
+        title: "Introduzione alla stampa 3D",
+        description: "E' progettato per avvicinare i giovani al mondo della progettazione e della stampa 3D, offrendo un'esperienza creativa e pratica. Durante il corso, i partecipanti impareranno a utilizzare software di modellazione 3D, esploreranno il funzionamento delle stampanti 3D e realizzeranno i loro primi oggetti personalizzati. Un'opportunità per scoprire le tecnologie digitali divertendosi e sviluppando nuove competenze tecniche e artistiche",
         usersCount: 8,
         heartsCount: 85,
         delay: 300,
         startDate: "2025-05-01"
+    },
+    {
+        id: getPersistentUUID("course-id-6"),
+        imgSrc: "banner_microbit.jpeg",
+        category: Category.Microbit,
+        price: "55,00 €",
+        title: "Introduzionie a Microbit",
+        description: "Introduzione a Microbt è pensato per fornire le basi sull'uso della scheda Microbit, uno strumento educativo versatile per l'apprendimento della programmazione e dell'elettronica. Durante il corso, esplorerai le funzionalità del dispositivo, imparerai a programmare semplici applicazioni interattive e scoprirai come creare progetti creativi utilizzando sensori, LED e altri componenti. Il corso è ideale per principianti e appassionati di tecnologia",
+        usersCount: 8,
+        heartsCount: 85,
+        delay: 300,
+        startDate: "2025-05-05"
     }
     ]
 
