@@ -100,10 +100,10 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                     }
                                 }}
                             >
-                                <div className="course-item" style={{ cursor: course.detail ? "pointer" : "default" }}>
+                                <div className="d-flex flex-column course-item" style={{ cursor: course.detail ? "pointer" : "default" }}>
                                     <img src={images[course.imgSrc]} className="img-fluid_rem" alt={course.title}
                                         width="398" height="200" />
-                                    <div className="course-content">
+                                    <div className="flex-fill d-flex flex-column course-content">
                                         <div className="d-flex justify-content-between align-items-center mb-3">
                                             <p className="category">{course.category}</p>
                                             <p className="price">Prezzo: {course.price}</p>
@@ -111,8 +111,8 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                         <h3>
                                             {course.title}
                                         </h3>
-                                        <p className="description">{course.description}</p>
-                                        <p className="description">Data Inizio: {formatDate(course.startDate)}</p>
+                                        <p className="flex-fill description">{course.description}</p>
+                                        <p className="description description-date">Data Inizio: {formatDate(course.startDate)}</p>
                                         {/*
                                         <div className="trainer d-flex justify-content-between align-items-center">
                                             <div className="trainer-profile d-flex align-items-center">

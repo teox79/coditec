@@ -11,7 +11,7 @@ export const homeData: HomeState = {
         target: ''
     },
     organization: {
-        title: "CODITECT",
+        title: "CODITEC",
         subtitle: "Comitato per la divulgazione tecnologica al cittadino",
         description: "Il nostro comitato si basa su 3 punti fondamentali:",
         points: [
@@ -54,6 +54,6 @@ export const homeData: HomeState = {
     ],
     course: {
         title: 'corsi',
-        subtitle: 'corsi più popolari',
+        subtitle: 'I prossimi corsi',
     }
 }

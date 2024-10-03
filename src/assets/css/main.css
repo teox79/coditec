@@ -103,7 +103,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-
 .img-fluid.img-rounded {
   border-radius: var(--radius);
 }
@@ -243,7 +242,6 @@ h6 {
     opacity: 0;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Global Header
@@ -1218,6 +1216,7 @@ section,
   margin-bottom: 40px;
   border-radius: var(--radius);
   overflow: hidden;
+  height: calc(100% - 40px);
 }
 
 .courses .course-content {
@@ -1257,7 +1256,12 @@ section,
 .courses .course-content .description {
   font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  min-height: 63px;
+}
+
+.courses .course-content .description.description-date {
+  margin-top:24px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .courses .trainer {
@@ -1738,6 +1742,7 @@ section,
   margin-top: -60px;
   transition: 0.3s;
   border-radius: var(--radius);
+  position: relative;
 }
 
 .events .card-title {

@@ -211,15 +211,8 @@
 --------------------------------------------------------------*/
 
 .registration {
-    background: #f6f7f6;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: grid;
-    grid-template-columns: 1fr;
-    /*gap: 20px;*/
     padding: 20px;
-    grid-template-areas:
-        "button";
 }
 
 .button-container {
@@ -265,8 +258,9 @@
     padding: 0.5em 1em;
     font-weight: bold;
     text-align: center;
-    font-size: 0.9em;
-    margin-top: 10px;
+    font-size: 0.8em;
+    margin-top: 8px;
+    margin-bottom:24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
 }
