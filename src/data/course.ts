@@ -128,7 +128,7 @@ export const courseData: CourseState = {
         imgSrc: "banner_microbit.jpeg",
         category: Category.Microbit,
         price: "55,00 €",
-        title: "Introduzionie a Microbit",
+        title: "Introduzione a Microbit",
         description: "Introduzione a Microbt è pensato per fornire le basi sull'uso della scheda Microbit, uno strumento educativo versatile per l'apprendimento della programmazione e dell'elettronica. Durante il corso, esplorerai le funzionalità del dispositivo, imparerai a programmare semplici applicazioni interattive e scoprirai come creare progetti creativi utilizzando sensori, LED e altri componenti. Il corso è ideale per principianti e appassionati di tecnologia",
         usersCount: 8,
         heartsCount: 85,
