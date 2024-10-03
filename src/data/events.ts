@@ -54,7 +54,7 @@ export const eventData: EventState = {
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (1 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
-            imageUrl: "scratchprogramming.jpg",
+            imageUrl: "banner_coditec.jpeg",
             startDate: "2024-11-09",
             registration: {
                 maxParticipants: 0,
@@ -69,7 +69,7 @@ export const eventData: EventState = {
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (2 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
-            imageUrl: "scratchprogramming.jpg",
+            imageUrl: "banner_coditec.jpeg",
             startDate: "2024-11-19",
         },
         {
@@ -79,7 +79,7 @@ export const eventData: EventState = {
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (3 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
-            imageUrl: "scratchprogramming.jpg",
+            imageUrl: "banner_coditec.jpeg",
             startDate: "2024-11-23",
         },
         {
@@ -108,7 +108,7 @@ export const eventData: EventState = {
             date: "Sabato, 08 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Partecipa a un'esperienza unica di apprendimento e creatività dedicata ai ragazzi! Durante questo corso (1 giornata), i partecipanti scopriranno il mondo della stampa 3D, imparando a progettare e realizzare oggetti tridimensionali utilizzando software di modellazione. Attraverso attività pratiche e divertenti, i ragazzi svilupperanno competenze tecniche e creative, portando a casa le loro creazioni personalizzate. Un'occasione perfetta per esplorare le possibilità della tecnologia e dare forma alle idee!",
-            imageUrl: "scratchprogramming.jpg",
+            imageUrl: "banner_coditec.jpeg",
             startDate: "2025-02-08",
         },
         {
@@ -117,7 +117,7 @@ export const eventData: EventState = {
             date: "Sabato, 15 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Partecipa a un'esperienza unica di apprendimento e creatività dedicata ai ragazzi! Durante questo corso (2 giornata), i partecipanti scopriranno il mondo della stampa 3D, imparando a progettare e realizzare oggetti tridimensionali utilizzando software di modellazione. Attraverso attività pratiche e divertenti, i ragazzi svilupperanno competenze tecniche e creative, portando a casa le loro creazioni personalizzate. Un'occasione perfetta per esplorare le possibilità della tecnologia e dare forma alle idee!",
-            imageUrl: "scratchprogramming.jpg",
+            imageUrl: "banner_coditec.jpeg",
             startDate: "2025-02-15",
         },
         {
@@ -126,7 +126,7 @@ export const eventData: EventState = {
             date: "Sabato, 22 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Partecipa a un'esperienza unica di apprendimento e creatività dedicata ai ragazzi! Durante questo corso (3 giornata), i partecipanti scopriranno il mondo della stampa 3D, imparando a progettare e realizzare oggetti tridimensionali utilizzando software di modellazione. Attraverso attività pratiche e divertenti, i ragazzi svilupperanno competenze tecniche e creative, portando a casa le loro creazioni personalizzate. Un'occasione perfetta per esplorare le possibilità della tecnologia e dare forma alle idee!",
-            imageUrl: "scratchprogramming.jpg",
+            imageUrl: "banner_coditec.jpeg",
             startDate: "2025-02-22",
         },
         {

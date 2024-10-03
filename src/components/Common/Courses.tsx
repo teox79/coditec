@@ -101,7 +101,8 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                 }}
                             >
                                 <div className="course-item" style={{ cursor: course.detail ? "pointer" : "default" }}>
-                                    <img src={images[course.imgSrc]} className="img-fluid" alt={course.title} />
+                                    <img src={images[course.imgSrc]} className="img-fluid_rem" alt={course.title}
+                                        width="398" height="200" />
                                     <div className="course-content">
                                         <div className="d-flex justify-content-between align-items-center mb-3">
                                             <p className="category">{course.category}</p>
