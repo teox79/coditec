@@ -16,7 +16,10 @@ export const courseData: CourseState = {
         heartsCount: 65,
         delay: 100,
         startDate: "2023-09-15",
-
+        registration: {
+            url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
+            isOpen: true
+        },
     },
     {
         id: getPersistentUUID("course-id-1"),
@@ -97,7 +100,7 @@ export const courseData: CourseState = {
         usersCount: 8,
         heartsCount: 65,
         delay: 100,
-        startDate: "2024-09-10"
+        startDate: "2023-09-10"
     },
     {
         id: getPersistentUUID("course-id-4"),
@@ -109,7 +112,7 @@ export const courseData: CourseState = {
         usersCount: 10,
         heartsCount: 42,
         delay: 200,
-        startDate: "2024-12-25"
+        startDate: "2023-12-25"
     },
     {
         id: getPersistentUUID("course-id-5"),
@@ -133,8 +136,24 @@ export const courseData: CourseState = {
         usersCount: 8,
         heartsCount: 85,
         delay: 300,
-        startDate: "2025-05-05"
-    }
+        startDate: "2023-05-05"
+    },
+    {
+        id: getPersistentUUID("course-id-7"),
+        imgSrc: "banner_legowedo.jpeg",
+        category: Category.LegoWedo2,
+        price: "55,00 €",
+        title: "Introduzione a LEGO WeDo con Scratch",
+        description: "E' pensato per avvicinare i bambini al mondo della robotica e della programmazione. Utilizzando i kit LEGO WeDo e il linguaggio visivo Scratch, i partecipanti impareranno a creare e programmare semplici robot, sviluppando capacità logiche e creative in modo divertente e interattivo.",
+        usersCount: 8,
+        heartsCount: 85,
+        delay: 300,
+        startDate: "2024-11-20",
+        registration: {
+            url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
+            isOpen: true
+        },
+    },
     ]
 
 }

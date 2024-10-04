@@ -10,13 +10,19 @@ interface CoursesProps {
     title?: string;
     subtitle?: string;
     courses?: Course[];
+    showDate?: boolean;
+    isHistory?: boolean;
 }
 
-const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = [] }) => {
+const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = [], showDate = true, isHistory = false }) => {
 
     const [images, setImages] = useState<{ [key: string]: string }>({});
     const { state } = useAppContext();
-    const { ui: ui } = state;
+    const { ui: ui, footer: footerData } = state;
+
+    const {
+        contactInfo,
+    } = footerData;
 
     useEffect(() => {
         const loadImages = async (path: string, imgKey: keyof Course, courses: Course[]) => {
@@ -24,7 +30,6 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                 const imgPath = course[imgKey] as string;
                 try {
                     const imageUrl = `${path}${imgPath}`;
-                    console.log('Requested image URL:', imageUrl);
 
                     // Usa l'URL direttamente
                     const image = new Image();
@@ -57,13 +62,13 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
             const courseImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/courses/`, 'imgSrc', courses);
 
             // Carica immagini per il percorso '/assets/img/trainers/'
-            const trainerImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/trainers/`, 'trainerImg', courses);
+            //const trainerImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/trainers/`, 'trainerImg', courses);
 
             // Combina le immagini caricate con quelle esistenti
             setImages((prevImages) => ({
                 ...prevImages,
                 ...courseImages,
-                ...trainerImages
+                //...trainerImages
             }));
         };
 
@@ -71,6 +76,18 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
         updateImages();
 
     }, [courses]);
+
+    const handleEmailClick = (subject: string, body: string) => {
+        const subjectEncoded = encodeURIComponent(subject);
+        const bodyEncoded = encodeURIComponent(body);
+        const email = contactInfo.email;  // Assicurati che `contactInfo.email` sia un valore definito
+
+        if (email) {
+            window.location.href = `mailto:${email}?subject=${subjectEncoded}&body=${bodyEncoded}`;
+        } else {
+            console.error('Indirizzo email non disponibile.');
+        }
+    };
 
 
     return (
@@ -84,36 +101,63 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
 
             <div className="container">
                 <div className="row">
-                    {courses.map((course, index) => (
-                        <div
-                            className="col-lg-4 col-md-6 d-flex align-items-stretch"
-                            data-aos="zoom-in"
-                            data-aos-delay={course.delay}
-                            key={index}
-                        >
-                            <a href={course.detail ? `#/course/${course.id}` : '#'}
-                                target={course.detail ? "_blank" : undefined}
-
-                                onClick={(e) => {
-                                    if (!course.detail) {
-                                        e.preventDefault(); // Impedisce l'azione del link se course.detail è vuoto
-                                    }
-                                }}
+                    {courses.map((course, index) => {
+                        const subjectEmail = `Richiesta Informazioni ${course.title}`;
+                        return (
+                            <div
+                                className="col-lg-4 col-md-6 d-flex align-items-stretch"
+                                data-aos="zoom-in"
+                                data-aos-delay={course.delay}
+                                key={index}
                             >
-                                <div className="d-flex flex-column course-item" style={{ cursor: course.detail ? "pointer" : "default" }}>
-                                    <img src={images[course.imgSrc]} className="img-fluid_rem" alt={course.title}
-                                        width="398" height="200" />
-                                    <div className="flex-fill d-flex flex-column course-content">
-                                        <div className="d-flex justify-content-between align-items-center mb-3">
-                                            <p className="category">{course.category}</p>
-                                            <p className="price">Prezzo: {course.price}</p>
-                                        </div>
-                                        <h3>
-                                            {course.title}
-                                        </h3>
-                                        <p className="flex-fill description">{course.description}</p>
-                                        <p className="description description-date">Data Inizio: {formatDate(course.startDate)}</p>
-                                        {/*
+                                <a href={course.detail ? `#/course/${course.id}` : '#'}
+                                    target={course.detail ? "_blank" : undefined}
+
+                                    onClick={(e) => {
+                                        if (!course.detail) {
+                                            e.preventDefault(); // Impedisce l'azione del link se course.detail è vuoto
+                                        }
+                                    }}
+                                >
+                                    <div className="d-flex flex-column course-item" style={{ cursor: course.detail ? "pointer" : "default" }}>
+                                        <img src={images[course.imgSrc]} className="img-fluid_rem" alt={course.title}
+                                            width="398" height="200" />
+                                        <div className="flex-fill d-flex flex-column course-content">
+                                            <div className="d-flex justify-content-between align-items-center mb-3">
+                                                <p className="category">{course.category}</p>
+                                                <p className="price">Prezzo: {course.price}</p>
+                                            </div>
+                                            <h3>
+                                                {course.title}
+                                            </h3>
+                                            <p className="flex-fill description">{course.description}</p>
+                                            {showDate && <p className="description description-date">Data Inizio: {formatDate(course.startDate)}</p>}
+                                            {subjectEmail && isHistory && (
+                                                <a
+                                                    style={{ textAlign: 'center' }}
+                                                    onClick={() => handleEmailClick(subjectEmail, 'Salve,\nho bisogno di maggiori informazioni.')}
+                                                >
+                                                    <button type="button" className="button-contact-me">
+                                                        Contattaci
+                                                    </button>
+                                                </a>
+                                            )}
+                                            {!isHistory && (
+                                                <div className="button-container" style={{ textAlign: 'center' }}>
+                                                    {!course?.registration?.isOpen ? (
+                                                        <span className="text-success text-center">Le iscrizioni apriranno a breve</span>
+                                                    ) : (
+                                                        <a
+                                                            className="load-more-button"
+                                                            href={course?.registration?.url}
+                                                            target="_blank"
+                                                        >
+                                                            Iscriviti
+                                                        </a>
+                                                    )}
+                                                </div>
+                                            )}
+                                            {/*
                                         <div className="trainer d-flex justify-content-between align-items-center">
                                             <div className="trainer-profile d-flex align-items-center">
                                                 <img src={images[course.trainerImg]} className="img-fluid" alt={course.trainerName} />
@@ -121,11 +165,12 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                             </div>
                                         </div>
                                         */}
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                    ))}
+                                </a>
+                            </div>
+                        )
+                    })}
                     {courses.length === 0 && (
                         <div className="col text-center">
                             <h3>Non ci sono corsi disponibili</h3>

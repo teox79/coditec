@@ -17,6 +17,13 @@ export type SelectedFilterType = {
     year: number | undefined;
 };
 
+export interface Registration {
+    maxParticipants?: number;
+    participants?: number;
+    url?: string;
+    isOpen?: boolean;
+}
+
 export interface Detail {
     pageTitle: string;
     pageSubtitle: string;
@@ -53,6 +60,7 @@ export interface Course {
     delay: number;
     startDate?: string;
     detail?: Detail;
+    registration?: Registration;
 }
 
 export enum Category {

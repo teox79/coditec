@@ -13,7 +13,7 @@ export const manageUiData: ManageUiState = {
         filters: {
             showPrice: false,
             showCaregory: true,
-            showYear: true,
+            showYear: false,
         }
     },
     homeUi: {
