@@ -1219,6 +1219,11 @@ section,
   height: calc(100% - 40px);
 }
 
+.courses .course-item img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+}
+
 .courses .course-content {
   padding: 15px;
 }
@@ -1238,7 +1243,7 @@ section,
 }
 
 .courses .course-content .category {
-  background: var(--accent-color);
+  background: var(--default-color);
   color: var(--contrast-color);
   font-size: 14px;
   padding: 6px 14px;
@@ -1259,10 +1264,25 @@ section,
 }
 
 .courses .course-content .description.description-date {
-  margin-top:24px;
-  font-weight: 700;
   font-size: 16px;
+  padding: 8px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
 }
+
+.courses .course-content .description.description-date span {
+  font-weight: 700;
+}
+
+.courses .course-content .course-registration-info {
+  font-weight: 700;
+  padding: 8px 25px;
+  margin: 16px auto;
+  text-align: center;
+  display: inline-block;
+  color: green;
+}
+
 
 .courses .trainer {
   padding-top: 15px;
@@ -1772,6 +1792,16 @@ section,
 .events .card:hover .card-body .card-title a {
   color: var(--accent-color);
 }
+
+.events .event-registration-info {
+  font-weight: 700;
+  padding: 8px 25px;
+  margin: 16px auto;
+  text-align: center;
+  display: inline-block;
+  color: green;
+}
+
 
 /*--------------------------------------------------------------
 # Pricing Section

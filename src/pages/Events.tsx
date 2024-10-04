@@ -41,12 +41,12 @@ const Events: React.FC = () => {
                       <div>
                         {registration && (
                           <div className="registration" style={{ textAlign: 'center' }}>
-                            <div className="button-container">
+                            <div>
                               {!isOpen ? (
-                                <span className="text-success text-center">Le iscrizioni apriranno a breve</span>
+                                <span className="event-registration-info">Le iscrizioni apriranno a breve</span>
                               ) : (
                                 <a
-                                  className="load-more-button"
+                                  className="generic-btn generic-btn-large"
                                   href={registration.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
