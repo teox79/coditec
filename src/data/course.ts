@@ -4,10 +4,10 @@ import { getPersistentUUID } from "../utils/utils";
 export const courseData: CourseState = {
     id: getPersistentUUID("course-id"),
     title: "Corsi",
-    description: "Le nostra offerta propone corsi per:\n\n1. **Bambini dai 6 ai 9 anni** dove si propongono attività per comprendere le basi del coding con giochi o piccole applicazioni.\n2. **Ragazzi dai 10 ai 13 anni** dove implementiamo un piccolo mini gioco con due livelli di difficoltà BASE e AVANZATO.\n3. **Insegnanti** che vogliono avvicinarsi al mondo del coding con scratch.\n4. Altro.",
+    description: "Le nostra offerta propone corsi per:\n\n1. **Bambini dagli 8 anni**, con attività che propongono le basi del coding attraverso giochi o piccole applicazioni.\n2. **Ragazzi dai 10 ai 13 anni**, con cui realizziamo un mini gioco con due livelli di difficoltà: BASE e AVANZATO.\n3. **Insegnanti** che desiderano avvicinarsi al mondo del coding utilizzando Scratch.\n4. Altro.",
     courses: [{
         id: getPersistentUUID("course-id"),
-        imgSrc: "banner_scratch.jpeg",
+        imgSrc: "banner_scratch_docenti.jpeg",
         category: Category.Programmazione,
         price: "Da Definire",
         title: "Introduzione a Scratch per insegnati",
@@ -23,7 +23,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-1"),
-        imgSrc: "banner_scratch.jpeg",
+        imgSrc: "banner_scratch_v1.jpeg",
         category: Category.Programmazione,
         price: "50,00 €",
         title: "Dusty Base",
@@ -80,7 +80,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-2"),
-        imgSrc: "banner_legowedo.jpeg",
+        imgSrc: "banner_legowedo_v1.jpeg",
         category: Category.LegoWedo2,
         price: "55,00 €",
         title: "Introduzione a LEGO WeDo con Scratch",
@@ -92,7 +92,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-3"),
-        imgSrc: "banner_scratch.jpeg",
+        imgSrc: "banner_scratch_docenti.jpeg",
         category: Category.Programmazione,
         price: "Da Definire",
         title: "Introduzione a Scratch per insegnati",
@@ -104,7 +104,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-4"),
-        imgSrc: "banner_scratch.jpeg",
+        imgSrc: "banner_scratch_v1.jpeg",
         category: Category.Programmazione,
         price: "50,00 €",
         title: "Dusty Base",
@@ -116,7 +116,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-5"),
-        imgSrc: "banner_3d.jpeg",
+        imgSrc: "banner_3d_v1.jpeg",
         category: Category.Stampa3D,
         price: "55,00 €",
         title: "Introduzione alla stampa 3D",
@@ -128,7 +128,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-6"),
-        imgSrc: "banner_microbit.jpeg",
+        imgSrc: "banner_microbit_v1.jpeg",
         category: Category.Microbit,
         price: "55,00 €",
         title: "Introduzione a Microbit",
@@ -140,7 +140,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-7"),
-        imgSrc: "banner_legowedo.jpeg",
+        imgSrc: "banner_legowedo_v1.jpeg",
         category: Category.LegoWedo2,
         price: "55,00 €",
         title: "Introduzione a LEGO WeDo con Scratch",
