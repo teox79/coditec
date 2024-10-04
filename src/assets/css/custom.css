@@ -260,7 +260,41 @@
     text-align: center;
     font-size: 0.8em;
     margin-top: 8px;
-    margin-bottom:24px;
+    margin-bottom: 24px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
+}
+
+/*--------------------------------------------------------------
+    # TABS
+--------------------------------------------------------------*/
+
+
+/* Colore del testo della tab */
+.nav-tabs .nav-link {
+    color: #f38100;
+    /* Colore del testo normale */
+}
+
+
+/* Colore della tab attiva */
+.nav-tabs .nav-link.active {
+    background-color: #f38100;
+    /* Sfondo della tab attiva */
+    color: #fff;
+    /* Colore del testo della tab attiva */
+    border-color: #f38100;
+    /* Bordo della tab attiva */
+}
+
+/* Colore della tab quando viene passata sopra */
+.nav-tabs .nav-link:hover {
+    color: #272828;
+    /* Colore del testo al passaggio */
+}
+
+/* Rimozione del bordo superiore se necessario */
+.nav-tabs {
+    /*border-bottom: none;*/
+    /* Rimuove il bordo inferiore standard delle tab */
 }

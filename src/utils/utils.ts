@@ -6,9 +6,9 @@ import { Trainer } from "../context/TrainerType";
 
 export const getCoursesByDateOrYear = (
     courses: Course[],
-    count: number,
     dateOrYear: Date | number,
-    sortOrder: 'asc' | 'desc' = 'asc' // Parametro per ordinamento, default è 'asc'
+    sortOrder: 'asc' | 'desc' = 'asc', // Parametro per ordinamento, default è 'asc'
+    count?: number,
 ): Course[] => {
     let filteredCourses: Course[] = [];
 
@@ -35,9 +35,41 @@ export const getCoursesByDateOrYear = (
         return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
     });
 
-    // Prendi i primi `count` corsi
-    return filteredCourses.slice(0, count);
+    // Se `count` non è definito o è zero, restituisce tutti i corsi filtrati
+    return typeof count === 'number' && count > 0
+        ? filteredCourses.slice(0, count)
+        : filteredCourses;
 };
+
+export const getPastCourses = (
+    courses: Course[],
+    sortOrder: 'asc' | 'desc' = 'asc', // Parametro per ordinamento, default è 'asc'
+    count?: number, // Parametro opzionale per limitare il numero di risultati
+): Course[] => {
+    const today = new Date(); // Data odierna
+    today.setHours(0, 0, 0, 0); // Imposta l'ora a mezzanotte per evitare problemi di precisione
+
+    // Filtra i corsi che sono iniziati prima di oggi
+    let pastCourses = courses.filter((course) => {
+        if (!course.startDate) return false;
+        const courseDate = new Date(course.startDate);
+        return courseDate < today; // Corsi prima di oggi
+    });
+
+    // Ordina i corsi per data
+    pastCourses.sort((a, b) => {
+        const dateA = new Date(a.startDate!).getTime();
+        const dateB = new Date(b.startDate!).getTime();
+        return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+
+    // Se `count` non è definito o è zero, restituisce tutti i corsi filtrati
+    return typeof count === 'number' && count > 0
+        ? pastCourses.slice(0, count)
+        : pastCourses;
+};
+
+
 
 export const sortCourses = (
     courses: Course[],
