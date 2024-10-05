@@ -46,7 +46,7 @@ const CourseDetail: React.FC = () => {
                         <div className="col-lg-8">
                             <img src={`${ui.globalUi.baseUrl}assets/img/courses/${courseImage}`} className={`${imgClass}`} alt="img" />
                             {detail?.gamesURL && (
-                                <iframe src={`${detail?.gamesURL}`} allowTransparency="true" width="840" height="558" frameborder="0" scrolling="no" allowfullscreen className="d-none d-lg-block"></iframe>
+                                <iframe src={`${detail?.gamesURL}`} width="840" height="558" scrolling="no" allowFullScreen className="d-none d-lg-block"></iframe>
                             )}
                             <h3>{detail?.title}</h3>
                             <ReactMarkdown>
