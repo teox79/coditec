@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
                             <span className="sitename">{sitename}</span>
                         </a>
                         <div className="footer-contact pt-3">
-                            <p>{contactInfo.address}</p>
+                            {/*<p>{contactInfo.address}</p> */}
                             <p>{contactInfo.city}</p>
                             <p>
                                 <strong>Email:</strong> <span>{contactInfo.email}</span>

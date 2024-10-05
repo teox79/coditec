@@ -116,7 +116,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-5"),
-        imgSrc: "banner_3d_v1.jpeg",
+        imgSrc: "banner_3d_v2.gif",
         category: Category.Stampa3D,
         price: "55,00 €",
         title: "Introduzione alla stampa 3D",
