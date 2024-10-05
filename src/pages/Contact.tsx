@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
                                 <div className="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                                     <i className="bi bi-geo-alt flex-shrink-0"></i>
                                     <div>
-                                        <h3>Indirizzo</h3>
+                                        <h3>Indirizzo Corsi Coditec</h3>
                                         <p>{contactData.contactInfo.address}</p>
                                     </div>
                                 </div>
