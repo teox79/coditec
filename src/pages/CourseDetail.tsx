@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
-import { formatDays, getCourseById } from '../utils/utils';
+import { getCourseById } from '../utils/utils';
 import { useParams } from 'react-router-dom';
 import PageTitle from '../components/Common/PageTitle';
 import { Course } from '../context/CourseTypes';
+import ReactMarkdown from 'react-markdown';
+import classNames from 'classnames';
 
 
 const CourseDetail: React.FC = () => {
@@ -27,6 +29,9 @@ const CourseDetail: React.FC = () => {
     }
 
     const courseImage = detail?.imgSrc || course?.imgSrc;
+    const imgClass = classNames("img-fluid img-rounded", {
+        'd-d-block d-lg-none': detail?.gamesURL
+    });
 
     return (
         <>
@@ -39,11 +44,14 @@ const CourseDetail: React.FC = () => {
 
                     <div className="row text-start">
                         <div className="col-lg-8">
-                            <img src={`${ui.globalUi.baseUrl}assets/img/courses/${courseImage}`} className="img-fluid img-rounded" alt="" />
+                            <img src={`${ui.globalUi.baseUrl}assets/img/courses/${courseImage}`} className={`${imgClass}`} alt="img" />
+                            {detail?.gamesURL && (
+                                <iframe src={`${detail?.gamesURL}`} allowTransparency="true" width="840" height="558" frameborder="0" scrolling="no" allowfullscreen className="d-none d-lg-block"></iframe>
+                            )}
                             <h3>{detail?.title}</h3>
-                            <p>
+                            <ReactMarkdown>
                                 {detail?.subtitle}
-                            </p>
+                            </ReactMarkdown>
                         </div>
                         <div className="col-lg-4">
                             {detail?.mentor && (
@@ -54,20 +62,23 @@ const CourseDetail: React.FC = () => {
                             )}
                             {detail?.price && (
                                 <div className="course-info d-flex justify-content-between align-items-center ">
-                                    <h5>Prezzo</h5>
+                                    <h5>Prezzo a partie da:</h5>
                                     <p>{detail?.price}</p>
                                 </div>
                             )}
                             {detail?.availableSeats && (
                                 <div className="course-info d-flex justify-content-between align-items-center">
-                                    <h5>Posti disponibili</h5>
+                                    <h5>Posti disponibili:</h5>
                                     <p>{detail?.availableSeats}</p>
                                 </div>
                             )}
                             {detail?.days && (
                                 <div className="course-info d-flex justify-content-between align-items-center " >
-                                    <h5>Giorni</h5>
+                                    <h5>{`Giornate previste ${detail.hoursForDay ? `(ore a giornata ${detail.hoursForDay})` : ""}:`}</h5>
+                                    {/* Mostra i giorni del corso 
                                     <p>{formatDays(detail.days)}</p>
+                                    */}
+                                    <p>{detail.days.length}</p>
                                 </div>
                             )}
                             {detail?.timeStart && (

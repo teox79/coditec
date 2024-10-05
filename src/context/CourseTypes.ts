@@ -31,11 +31,13 @@ export interface Detail {
     subtitle: string;
     mentor: string;
     price: string;
-    availableSeats: number;
+    availableSeats: string | number;
+    hoursForDay: number;
     days: Day[];
     timeStart: string;
-    timeEnd: string,
-    imgSrc: string,
+    timeEnd: string;
+    imgSrc?: string;
+    gamesURL?: string;
 }
 
 interface Day {

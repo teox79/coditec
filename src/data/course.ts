@@ -20,6 +20,28 @@ export const courseData: CourseState = {
             url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
             isOpen: true
         },
+        detail: {
+            pageTitle: "Dettaglio corso",
+            pageSubtitle: "Attraverso l’utilizzo di Scratch i ragazzi saranno impegnati nella creazione, progettazione di un MINI VIDEOGIOCO. Sviluppare nuove competenze, logica e tanta creatività.",
+            title: "Introduzione a Scratch per insegnanti",
+            subtitle: "Questo corso è pensato per insegnanti che vogliono avvicinarsi al mondo del Coding utilizzando Scratch, una piattaforma visiva e intuitiva per la programmazione. Attraverso esercitazioni pratiche, imparerai a creare semplici animazioni e giochi interattivi, acquisendo le competenze necessarie per introdurre il coding in classe e stimolare la creatività e il pensiero computazionale degli studenti.",
+            mentor: "",
+            price: "€50.00",
+            availableSeats: "Da definire",
+            hoursForDay: 4,
+            days: [
+                {
+                    day: "2024/11/5",
+                    tabTitle: "Lezione uno",
+                    dayTitle: "Introduzione a Scratch",
+                    dayDescription: "In questo corso intensivo di 4 ore, gli insegnanti impareranno le basi di Scratch, una piattaforma di programmazione visiva adatta per introdurre il coding in classe. Attraverso esempi pratici, esploreremo la creazione di semplici animazioni, giochi interattivi e attività educative, fornendo le competenze necessarie per avviare gli studenti al pensiero computazionale in modo creativo e coinvolgente.",
+                    imgSrc: 'corso_insegnanti/corso.png',
+                },
+            ],
+            timeStart: "",
+            timeEnd: "",
+            imgSrc: "banner_scratch_docenti.jpeg",
+        }
     },
     {
         id: getPersistentUUID("course-id-1"),
@@ -37,11 +59,12 @@ export const courseData: CourseState = {
         detail: {
             pageTitle: "Dettaglio corso",
             pageSubtitle: "Attraverso l’utilizzo di Scratch i ragazzi saranno impegnati nella creazione, progettazione di un MINI VIDEOGIOCO. Sviluppare nuove competenze, logica e tanta creatività.",
-            title: "Dusty",
-            subtitle: "Il corso prevedere l'indroduzione dei ragazzi nel mondo del Coding utilizzando Scratch. Andranno ad implementare un piccolo gioco Dusty. Un piccolo aereoplanino che dovrà catturare il maggior numero di Coin prima che il tempo scada.",
-            mentor: "Matteo",
+            title: "Dusty Base",
+            subtitle: "Il corso introduce i ragazzi al mondo del Coding attraverso Scratch. Durante il corso, i partecipanti creeranno un semplice gioco chiamato **Dusty**. Il protagonista, un piccolo aereo, dovrà raccogliere il maggior numero di monete possibile prima che il tempo scada.",
+            mentor: "",
             price: "€50.00",
             availableSeats: 9,
+            hoursForDay: 3,
             days: [
                 {
                     day: "2024/11/5",
@@ -72,10 +95,10 @@ export const courseData: CourseState = {
                     imgSrc: 'dusty/corso-Dusty-3.jpg',
                 }
             ],
-            timeStart: "15:00",
-            timeEnd: "17:15",
-            imgSrc: "course_01.jpg"
-
+            timeStart: "",
+            timeEnd: "",
+            imgSrc: "course_01.jpg",
+            gamesURL: "https://scratch.mit.edu/projects/753135989/embed",
         }
     },
     {
