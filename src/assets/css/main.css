@@ -383,7 +383,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover > a,
+  .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -422,11 +422,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover > a {
+  .navmenu .dropdown ul li:hover>a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover > ul {
+  .navmenu .dropdown:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -438,7 +438,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover > ul {
+  .navmenu .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -540,7 +540,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown > .dropdown-active {
+  .navmenu .dropdown>.dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -567,7 +567,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu > ul {
+  .mobile-nav-active .navmenu>ul {
     display: block;
   }
 }
@@ -849,11 +849,11 @@ h6 {
   font-weight: 600;
 }
 
-.page-title nav ol li + li {
+.page-title nav ol li+li {
   padding-left: 10px;
 }
 
-.page-title nav ol li + li::before {
+.page-title nav ol li+li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -873,6 +873,7 @@ section,
 }
 
 @media (max-width: 1199px) {
+
   section,
   .section {
     scroll-margin-top: 66px;
@@ -1263,18 +1264,27 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
-.courses .course-content .description.description-date {
+.courses .course-content .description.description-info {
   font-size: 16px;
   padding: 8px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  margin: 20px 0 20px 0;
 }
 
-.courses .course-content .description.description-date span {
+.courses .course-content .description.description-info span {
   font-weight: 700;
 }
 
-.courses .course-content .course-registration-info {
+.courses .course-content .description.description-info p {
+  margin: 0;
+}
+
+.courses .course-content .description.description-info .description-info-map:hover {
+  color: var(--accent-color);
+}
+
+p .courses .course-content .course-registration-info {
   font-weight: 700;
   padding: 8px 25px;
   margin: 16px auto;
@@ -1917,7 +1927,7 @@ section,
   padding-bottom: 40px;
 }
 
-.contact .info-item + .info-item {
+.contact .info-item+.info-item {
   margin-top: 40px;
 }
 

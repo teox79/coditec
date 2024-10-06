@@ -6,10 +6,10 @@ import { LinkType } from "../../context/Type";
 interface HeroProps {
     title?: string;
     description?: string;
-    link?: LinkType;
+    links?: LinkType[];
 }
 
-const Hero: React.FC<HeroProps> = ({ title = 'title', description = 'description', link }) => {
+const Hero: React.FC<HeroProps> = ({ title = 'title', description = 'description', links }) => {
     return (
         <section id="hero" className="hero section dark-background">
             <img src={heroBg} alt="Background" data-aos="fade-in" />
@@ -21,11 +21,14 @@ const Hero: React.FC<HeroProps> = ({ title = 'title', description = 'description
                 <p data-aos="fade-up" data-aos-delay="200">
                     {description}
                 </p>
-                {link?.url &&
-                    <div className="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-                        <Link className="btn-get-started" to={link?.url} target={link?.target || '_self'}> {link?.label}</Link>
+                {links?.map((link) => (
+                    <div className="d-flex" data-aos="fade-up" data-aos-delay="300" key={link.url}>
+                        <Link className="btn-get-started" to={link.url} target={link.target || '_self'}>
+                            {link.label}
+                        </Link>
                     </div>
-                }
+                ))}
+
             </div>
         </section>
     );
