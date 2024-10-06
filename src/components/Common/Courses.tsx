@@ -124,7 +124,10 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                                 <p className="category">{course.category}</p>
                                                 <p className="price">Prezzo a partire da: {course.price}</p>
                                             </div>
-                                            {showDate && <p className="description description-date">Data Inizio: <span>{formatDate(course.startDate)}</span></p>}
+                                            <div className="description description-info">
+                                                {showDate && <p className=""><i className="bi bi-calendar"></i> <span>{formatDate(course.startDate)}</span></p>}
+                                                {!isHistory && contactInfo.address && <p className="description-info-map" onClick={() => window.open(contactInfo.maps, "_blank")}><i className="bi bi-geo-alt" ></i> <span>{`${contactInfo.address} ${contactInfo.city}`}</span></p>}
+                                            </div>
                                             <h3>
                                                 {course.title}
                                             </h3>
@@ -173,7 +176,7 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                         </div>
                     )}
                 </div>
-            </div>
+            </div >
         </section >
     );
 };

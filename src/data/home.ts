@@ -5,11 +5,15 @@ export const homeData: HomeState = {
     id: getPersistentUUID("home"),
     title: "Il modo migliore per imparare è divertendosi.",
     description: "Siamo un team di professionisti che insegna ai ragazzi la logica di programmazione.",
-    link: {
+    links: [{
         url: '/courses',
         label: 'Corsi',
         target: ''
-    },
+    }, {
+        url: '/events',
+        label: 'Eventi',
+        target: ''
+    }],
     organization: {
         title: "CODITEC",
         subtitle: "Comitato per la divulgazione tecnologica al cittadino",

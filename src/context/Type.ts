@@ -20,7 +20,7 @@ export interface PageBase {
     id: string;
     title?: string;
     description?: string;
-    link?: LinkType;
+    links?: LinkType[];
 }
 
 export interface LinkType {
@@ -33,6 +33,7 @@ interface ContactInfo {
     city: string;
     phone: string;
     email: string;
+    maps?: string;
 }
 
 interface Newsletter {

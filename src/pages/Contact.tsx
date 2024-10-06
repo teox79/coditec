@@ -46,6 +46,7 @@ const Contact: React.FC = () => {
                     <div className="container" data-aos="fade-up" data-aos-delay="100">
                         <div className="row gy-4">
                             <div className="col-lg-4">
+                                {/* Informazioni di contatto 
                                 <div className="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
                                     <i className="bi bi-geo-alt flex-shrink-0"></i>
                                     <div>
@@ -53,6 +54,7 @@ const Contact: React.FC = () => {
                                         <p>{contactData.contactInfo.address}</p>
                                     </div>
                                 </div>
+                                */}
 
                                 <div className="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
                                     <i className="bi bi-envelope flex-shrink-0"></i>

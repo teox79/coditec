@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
     return (
         <main className="main">
-            <HeroSection title={homeData.title} description={homeData.description} link={homeData.link} />
+            <HeroSection title={homeData.title} description={homeData.description} links={homeData.links} />
             {homeData.organization && (
                 <AboutSection
                     title={homeData.organization?.title}
