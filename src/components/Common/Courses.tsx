@@ -122,7 +122,8 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                         >
                                             <div className="d-flex justify-content-between align-items-center mb-3">
                                                 <p className="category">{course.category}</p>
-                                                <p className="price">Prezzo a partire da: {course.price}</p>
+                                                {course.price && <p className="price">Prezzo a partire da: {course.price}</p>}
+
                                             </div>
                                             <div className="description description-info">
                                                 {showDate && <p className=""><i className="bi bi-calendar"></i> <span>{formatDate(course.startDate)}</span></p>}
