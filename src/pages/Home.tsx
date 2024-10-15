@@ -7,8 +7,7 @@ import TrainersIndexSection from '../components/Home/TrainersIndex';
 import HeroSection from '../components/Home/Hero';
 import AboutSection from '../components/Common/About';
 import { useAppContext } from '../context/AppContext';
-import { getCoursesByDateOrYear, getFutureEvents, getRandomTrainers } from '../utils/utils';
-import EventsSection from '../components/Home/Events';
+import { getCoursesByDateOrYear, getRandomTrainers } from '../utils/utils';
 import FullCalendarCustom from '../components/Common/FullCalendarCustom';
 
 const Home: React.FC = () => {
@@ -19,7 +18,6 @@ const Home: React.FC = () => {
     const today = new Date();
     const nextCourses = getCoursesByDateOrYear(courseData.courses || [], today, 'asc', 3);
     const trainers = getRandomTrainers(trainerData.trainers || [], 3);
-    const futureEvents = getFutureEvents(eventData.events || []).slice(0, 2);
 
     return (
         <main className="main">
