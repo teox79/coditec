@@ -25,10 +25,10 @@ export const homeData: HomeState = {
         ]
     },
     statistics: [
-        { description: "Partecipanti", value: 100 },
-        { description: "Corsi", value: 2 },
-        { description: "Eventi", value: 20 },
-        { description: "Mentors", value: 5 }
+        { description: "Partecipanti", value: 200 },
+        { description: "Corsi", value: 8 },
+        { description: "Eventi", value: 50 },
+        { description: "Mentors", value: 10 }
     ],
     whyUs: {
         title: "Perchè scegliere Coditec",
