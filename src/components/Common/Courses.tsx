@@ -3,8 +3,6 @@ import { formatDate } from "../../utils/utils";
 import { Course } from "../../context/CourseTypes";
 import { useAppContext } from "../../context/AppContext";
 
-
-
 // Interfaccia per le props del componente Courses
 interface CoursesProps {
     title?: string;
@@ -17,6 +15,7 @@ interface CoursesProps {
 const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = [], showDate = true, isHistory = false }) => {
 
     const [images, setImages] = useState<{ [key: string]: string }>({});
+    const [hoveredImage, setHoveredImage] = useState<{ [key: string]: boolean }>({});
     const { state } = useAppContext();
     const { ui: ui, footer: footerData } = state;
 
@@ -31,7 +30,6 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                 try {
                     const imageUrl = `${path}${imgPath}`;
 
-                    // Usa l'URL direttamente
                     const image = new Image();
                     image.src = imageUrl;
                     await new Promise((resolve, reject) => {
@@ -39,43 +37,48 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                         image.onerror = () => reject(new Error(`Failed to load image at ${imageUrl}`));
                     });
 
-                    console.log('Loaded image:', image.src);
                     return { [imgPath]: image.src };
                 } catch (error) {
                     console.error(`Failed to load image for path: ${imgPath}`, error);
-                    return { [imgPath]: "" }; // fallback path or empty string
+                    return { [imgPath]: "" };
                 }
             });
 
             try {
                 const imageResults = await Promise.all(imagePromises);
                 const imageMap = imageResults.reduce((acc, imgObj) => ({ ...acc, ...imgObj }), {});
-                return imageMap; // Restituisci l'oggetto delle immagini caricate
+                return imageMap;
             } catch (error) {
                 console.error('Error loading images:', error);
-                return {}; // Restituisci un oggetto vuoto in caso di errore
+                return {};
             }
         };
 
         const updateImages = async () => {
-            // Carica immagini per il percorso '/assets/img/courses/'
             const courseImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/courses/`, 'imgSrc', courses);
 
-            // Carica immagini per il percorso '/assets/img/trainers/'
-            //const trainerImages = await loadImages(`${ui.globalUi.baseUrl}assets/img/trainers/`, 'trainerImg', courses);
-
-            // Combina le immagini caricate con quelle esistenti
             setImages((prevImages) => ({
                 ...prevImages,
                 ...courseImages,
-                //...trainerImages
             }));
         };
 
-        // Chiama updateImages per caricare e aggiornare le immagini
         updateImages();
-
     }, [courses]);
+
+    const handleMouseEnter = (imgPath: string) => {
+        setHoveredImage((prevState) => ({
+            ...prevState,
+            [imgPath]: true
+        }));
+    };
+
+    const handleMouseLeave = (imgPath: string) => {
+        setHoveredImage((prevState) => ({
+            ...prevState,
+            [imgPath]: false
+        }));
+    };
 
     return (
         <section id="courses" className="courses section">
@@ -90,6 +93,9 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                 <div className="row">
                     {courses.map((course, index) => {
                         const subjectEmail = `Richiesta Informazioni ${course.title}`;
+                        const imgSrc = images[course.imgSrc];
+                        const imgGifSrc = imgSrc?.replace(/\.\w+$/, ".gif"); // Converti l'estensione a .gif
+
                         return (
                             <div
                                 className="col-lg-4 col-md-6 d-flex align-items-stretch"
@@ -108,7 +114,12 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                             }
                                         }}
                                     >
-                                        <img src={images[course.imgSrc]} alt={course.title} />
+                                        <img
+                                            src={hoveredImage[course.imgSrc] ? imgGifSrc : imgSrc}
+                                            alt={course.title}
+                                            onMouseEnter={() => handleMouseEnter(course.imgSrc)}
+                                            onMouseLeave={() => handleMouseLeave(course.imgSrc)}
+                                        />
                                     </a>
                                     <div className="flex-fill d-flex flex-column course-content">
                                         <a className="flex-fill" href={course.detail ? `#/course/${course.id}` : '#'}
@@ -157,19 +168,11 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                                 )}
                                             </div>
                                         )}
-                                        {/*
-                                        <div className="trainer d-flex justify-content-between align-items-center">
-                                            <div className="trainer-profile d-flex align-items-center">
-                                                <img src={images[course.trainerImg]} className="img-fluid" alt={course.trainerName} />
-                                                <a href="#" className="trainer-link">{course.trainerName}</a>
-                                            </div>
-                                        </div>
-                                        */}
                                     </div>
                                 </div>
 
                             </div>
-                        )
+                        );
                     })}
                     {courses.length === 0 && (
                         <div className="col text-center">
@@ -177,7 +180,7 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                         </div>
                     )}
                 </div>
-            </div >
+            </div>
         </section >
     );
 };

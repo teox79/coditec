@@ -2,7 +2,7 @@ import { Category, CourseState } from "../context/CourseTypes";
 import { getPersistentUUID } from "../utils/utils";
 
 export const courseData: CourseState = {
-    id: getPersistentUUID("course-id"),
+    id: getPersistentUUID("course-id-0"),
     title: "Corsi",
     description: "Le nostra offerta propone corsi per:\n\n1. **Bambini dagli 8 anni**, con attività che propongono le basi del coding attraverso giochi o piccole applicazioni.\n2. **Ragazzi dai 10 ai 13 anni**, con cui realizziamo un mini gioco con due livelli di difficoltà: BASE e AVANZATO.\n3. **Insegnanti** che desiderano avvicinarsi al mondo del coding utilizzando Scratch.\n4. Altro.",
     courses: [{
@@ -139,7 +139,7 @@ export const courseData: CourseState = {
     },
     {
         id: getPersistentUUID("course-id-5"),
-        imgSrc: "banner_3d_v2.gif",
+        imgSrc: "banner_3d_v1.jpeg",
         category: Category.Stampa3D,
         price: "",
         title: "Introduzione alla stampa 3D",
