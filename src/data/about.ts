@@ -12,28 +12,28 @@ export const aboutData: AboutState = {
         testimonials: [
             {
                 imgSrc: "testimonials-1.jpg",
-                name: "Elisa Radice",
+                name: "Elisa",
                 title: "3 elementare",
                 stars: 5,
                 quote: "Mi sono proprio divertata grazie Coditec.",
             },
             {
                 imgSrc: "testimonials-2.jpg",
-                name: "Andrea Ballabio",
+                name: "Andrea",
                 title: "5 elementare",
                 stars: 5,
                 quote: "Che soddisfazione creare un videogioco.",
             },
             {
                 imgSrc: "testimonials-3.jpg",
-                name: "Mauro Cattaneo",
+                name: "Mauro",
                 title: "1 media",
                 stars: 5,
                 quote: "Finalmente sono riuscito ad animare il mio lego con scratch e lego wedo. Grazie Coditec.",
             },
             {
                 imgSrc: "testimonials-1.jpg",
-                name: "Sara Molteni",
+                name: "Sara",
                 title: "5 elementare",
                 stars: 5,
                 quote: "Grazie d'esistere Coditec",
