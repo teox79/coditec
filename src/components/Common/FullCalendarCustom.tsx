@@ -49,7 +49,7 @@ const FullCalendarCustom: React.FC = () => {
             const registration = clickInfo.event.extendedProps.registration;
             setIsOpen(registration?.isOpen || false && registration?.url || false);
             setSelectedEvent(clickInfo.event.extendedProps as EventType);
-
+            // @ts-ignore
             const offcanvasInstance = new bootstrap.Offcanvas(myOffcanvas); // Crea un'istanza dell'Offcanvas
             offcanvasInstance.show(); // Apri l'Offcanvas
         }
@@ -134,14 +134,5 @@ function renderEventContent(eventContent: EventContentArg) {
             <b>{eventContent.timeText}</b>
             <i>{eventContent.event.title}</i>
         </>
-    )
-}
-
-function renderSidebarEvent(event: EventApi) {
-    return (
-        <li key={event.id}>
-            <b>{formatDate(event.start!, { year: 'numeric', month: 'short', day: 'numeric' })}</b>
-            <i>{event.title}</i>
-        </li>
     )
 }
