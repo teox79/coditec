@@ -10,7 +10,7 @@ interface EventCardProps {
     eventDate?: string;
 }
 
-const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage = true, eventDate = '' }) => {
+const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage = true }) => {
     if (!event) return <></>
     const eventRegistration = event?.registration;
 
