@@ -10,9 +10,9 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { useAppContext } from '../../context/AppContext'
 import classNames from 'classnames'
 import OffCanvasCustom from './OffCanvasCustom'
-import 'bootstrap'
 import EventCard from '../Home/EventCard'
 import { Event as EventType } from '../../context/EventType';
+import { Offcanvas } from 'bootstrap';
 
 const transformEvents = (events: Array<any>) => {
     return events.map(event => ({
@@ -48,7 +48,7 @@ const FullCalendarCustom: React.FC = () => {
             setIsOpen(registration?.isOpen || false && registration?.url || false);
             setSelectedEvent(clickInfo.event.extendedProps as EventType);
             // @ts-ignore
-            const offcanvasInstance = new bootstrap.Offcanvas(myOffcanvas); // Crea un'istanza dell'Offcanvas
+            const offcanvasInstance = new Offcanvas(myOffcanvas); // Crea un'istanza dell'Offcanvas
             offcanvasInstance.show(); // Apri l'Offcanvas
         }
     }
