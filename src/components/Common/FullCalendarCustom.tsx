@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    EventApi,
     EventClickArg,
     EventContentArg,
 } from '@fullcalendar/core'

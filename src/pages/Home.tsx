@@ -14,7 +14,7 @@ const Home: React.FC = () => {
 
     const { state } = useAppContext();
 
-    const { home: homeData, course: courseData, trainer: trainerData, ui: uiData, event: eventData } = state;
+    const { home: homeData, course: courseData, trainer: trainerData, ui: uiData } = state;
     const today = new Date();
     const nextCourses = getCoursesByDateOrYear(courseData.courses || [], today, 'asc', 3);
     const trainers = getRandomTrainers(trainerData.trainers || [], 3);
