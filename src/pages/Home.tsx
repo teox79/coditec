@@ -9,6 +9,7 @@ import AboutSection from '../components/Common/About';
 import { useAppContext } from '../context/AppContext';
 import { getCoursesByDateOrYear, getFutureEvents, getRandomTrainers } from '../utils/utils';
 import EventsSection from '../components/Home/Events';
+import FullCalendarCustom from '../components/Common/FullCalendarCustom';
 
 const Home: React.FC = () => {
 
@@ -54,7 +55,10 @@ const Home: React.FC = () => {
             {trainers && uiData.homeUi?.showTrainersSection && (
                 <TrainersIndexSection trainers={trainers} />
             )}
+            {/*
             <EventsSection futureEvents={futureEvents} />
+            */}
+            <FullCalendarCustom />
 
         </main>
     );

@@ -314,3 +314,95 @@
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
+
+
+
+
+/*--------------------------------------------------------------
+    # BOTTONE DI ISCRIZIONE
+--------------------------------------------------------------*/
+
+.coditec-calendar-main .fc-button-primary {
+  background: #ff8700;
+  border: #fff
+}
+
+.coditec-calendar-main .fc-button-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.coditec-calendar-main .fc-button-primary:disabled {
+  background: #444444;
+  border-color: #444444;
+}
+
+.coditec-calendar-main .fc-toolbar-chunk {
+  display: flex;
+}
+
+.coditec-calendar-main .fc-toolbar-chunk .fc-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.coditec-calendar-main .fc-toolbar-chunk .fc-button-group .fc-button {
+  background: #ff8700;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  border: none;
+  justify-content: center;
+}
+
+.coditec-calendar-main .fc-toolbar-title {
+
+  text-transform: capitalize;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.coditec-calendar-main .event {
+  border: none;
+  font-weight: bold;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.coditec-calendar-main .event.coderdojo-event {
+  background-color: #28a745;
+
+  i {
+    color: white;
+  }
+}
+
+.coditec-calendar-main .event.coderdojo-event:hover {
+  background-color: #fff;
+  border: 1px solid #28a745;
+
+  i {
+    color: #28a745;
+    ;
+  }
+}
+
+.coditec-calendar-main .event.coditec-event {
+  background-color: #ff8700;
+  color: white;
+}
+
+.coditec-calendar-main .event.coditec-event:hover {
+  background-color: #fff;
+  border: 1px solid #ff8700;
+
+  i {
+    color: #ff8700;
+    ;
+  }
+}
