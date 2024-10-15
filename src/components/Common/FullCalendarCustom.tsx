@@ -1,9 +1,7 @@
 import React from 'react'
 import {
-    EventApi,
     EventClickArg,
     EventContentArg,
-    formatDate,
 } from '@fullcalendar/core'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -55,16 +53,6 @@ const FullCalendarCustom: React.FC = () => {
         }
     }
 
-    const handleEvents = (events: EventApi[]) => {
-        /*
-        this.setState({
-            currentEvents: events
-        })
-            */
-    }
-
-
-
     // Uso della funzione con l'oggetto events
     const events = transformEvents(event.events || []);
     return (
@@ -96,7 +84,7 @@ const FullCalendarCustom: React.FC = () => {
                                     //select={this.handleDateSelect}
                                     eventContent={renderEventContent} // custom render function
                                     eventClick={handleEventClick}
-                                    eventsSet={handleEvents} // called after events are initialized/added/changed/removed
+                                    //eventsSet={handleEvents} // called after events are initialized/added/changed/removed
                                     /* you can update a remote database when these fire:
                                     eventAdd={function(){}}
                                     eventChange={function(){}}
