@@ -10,13 +10,14 @@ export interface EventState extends PageBase {
 export interface Event {
     id: string;
     title?: string;
-    date?: string;
+    eventDate?: string;
     location?: string;
     description?: string;
     imageUrl?: string;
     startDate?: string;
     registration?: Registration;
     isFreeEvent?: boolean;
+    eventType?: EventType;
 }
 
 export interface Registration {
@@ -24,4 +25,9 @@ export interface Registration {
     participants?: number;
     url?: string;
     isOpen?: boolean;
+}
+
+export enum EventType {
+    CODERDOJO = "coderdojo",
+    CODITEC = "coditec",
 }

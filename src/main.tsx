@@ -9,6 +9,7 @@ import './assets/vendor/bootstrap-icons/bootstrap-icons.css';
 
 import './assets/css/main.css';
 import './assets/css/custom.css';
+import './assets/css/responsive.css';
 
 // Importa i JavaScript dei vendor
 import './assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
