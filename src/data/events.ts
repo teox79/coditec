@@ -53,12 +53,12 @@ export const eventData: EventState = {
         {
             id: getPersistentUUID("event-4"),
             title: "Coditec",
-            eventDate: "Sabato, 09 Novembre 2024 alle 15:00",
+            eventDate: "Sabato, 9 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (1 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
-            imageUrl: "banner_coditec_base.jpg",
-            startDate: "2024-11-09",
+            imageUrl: "2024_11_corso_lego_macchina.jpg",
+            startDate: "2024-11-9",
             registration: {
                 maxParticipants: 0,
                 participants: 0,
@@ -69,12 +69,12 @@ export const eventData: EventState = {
         {
             id: getPersistentUUID("event-5"),
             title: "Coditec",
-            eventDate: "Sabato, 19 Novembre 2024 alle 15:00",
+            eventDate: "Sabato, 16 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (2 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
-            imageUrl: "banner_coditec_base.jpg",
-            startDate: "2024-11-19",
+            imageUrl: "2024_11_corso_lego_macchina.jpg",
+            startDate: "2024-11-16",
             eventType: EventType.CODITEC
         },
         {
@@ -84,7 +84,7 @@ export const eventData: EventState = {
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (3 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
-            imageUrl: "banner_coditec_base.jpg",
+            imageUrl: "2024_11_corso_lego_macchina.jpg",
             startDate: "2024-11-23",
             eventType: EventType.CODITEC
         },
