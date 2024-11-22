@@ -2,7 +2,7 @@
   "name": "coditec",
   "homepage": "https://teox79.github.io/coditec",
   "private": true,
-  "version": "1.29.0",
+  "version": "1.31.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -37,7 +37,11 @@
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
+<<<<<<< HEAD
     "@eslint/js": "^9.14.0",
+=======
+    "@eslint/js": "^9.13.0",
+>>>>>>> origin/main
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^12.0.1",
@@ -45,14 +49,22 @@
     "@types/aos": "^3.0.7",
     "@types/bootstrap": "^5.2.10",
     "@types/jest": "^29.5.14",
+<<<<<<< HEAD
     "@types/node": "^22.8.7",
+=======
+    "@types/node": "^22.8.4",
+>>>>>>> origin/main
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/uuid": "^10.0.0",
     "@vitejs/plugin-react-swc": "^3.7.1",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
+<<<<<<< HEAD
     "eslint": "^9.14.0",
+=======
+    "eslint": "^9.13.0",
+>>>>>>> origin/main
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.11.0",
