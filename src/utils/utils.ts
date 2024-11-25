@@ -121,24 +121,26 @@ export const getFilters = (courses: Course[]): FiltersType => {
 
 
 export const getFutureEvents = (events: Event[]) => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Imposta l'ora a mezzanotte per confronti accurati
 
-    // Filtra eventi futuri e con data vuota (null)
     return events
-        .filter(event => event.startDate === null || !event.startDate || event.startDate >= today)
+        .filter(event => {
+            if (!event.startDate) return true; // Include eventi senza data
+            const eventDate = new Date(event.startDate);
+            eventDate.setHours(0, 0, 0, 0); // Imposta l'ora a mezzanotte
+            return eventDate >= today; // Confronta correttamente le date
+        })
         .sort((a, b) => {
-            // Ordina per data, mettendo in fondo quelli con la data vuota
-            if (a.startDate === null) return 1;
-            if (b.startDate === null) return -1;
-            return a.startDate!.localeCompare(b.startDate!); // Usa '!' per dire che non è 'null'
+            if (!a.startDate) return 1; // Eventi senza data in fondo
+            if (!b.startDate) return -1;
+            return new Date(a.startDate).getTime() - new Date(b.startDate).getTime(); // Ordina per data
         });
 };
 
 export const getCourseById = (courses: Course[], id: string): Course | undefined => {
     return courses.find((course) => course.id === id);
 };
-
-
 
 export const formatDays = (days: { day: string }[]) => {
     const parsedDays = days.map(({ day }) => {

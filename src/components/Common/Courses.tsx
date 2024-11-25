@@ -66,17 +66,17 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
         updateImages();
     }, [courses]);
 
-    const handleMouseEnter = (imgPath: string) => {
+    const handleMouseEnter = (id: string) => {
         setHoveredImage((prevState) => ({
             ...prevState,
-            [imgPath]: true
+            [id]: true
         }));
     };
 
-    const handleMouseLeave = (imgPath: string) => {
+    const handleMouseLeave = (id: string) => {
         setHoveredImage((prevState) => ({
             ...prevState,
-            [imgPath]: false
+            [id]: false
         }));
     };
 
@@ -115,10 +115,10 @@ const Courses: React.FC<CoursesProps> = ({ title = '', subtitle = '', courses = 
                                         }}
                                     >
                                         <img
-                                            src={hoveredImage[course.imgSrc] ? imgGifSrc : imgSrc}
+                                            src={hoveredImage[course.id] ? imgGifSrc : imgSrc}
                                             alt={course.title}
-                                            onMouseEnter={() => handleMouseEnter(course.imgSrc)}
-                                            onMouseLeave={() => handleMouseLeave(course.imgSrc)}
+                                            onMouseEnter={() => handleMouseEnter(course.id)}
+                                            onMouseLeave={() => handleMouseLeave(course.id)}
                                         />
                                     </a>
                                     <div className="flex-fill d-flex flex-column course-content">

@@ -13,7 +13,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 2 Settembre 2023 alle 15:00",
             location: "Via Fratelli d'italia 21 Mariano Comense",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2023-09-02",
             registration: {
                 url: "https://www.eventbrite.it/"
@@ -27,7 +27,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 28 Settembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2024-09-28",
             registration: {
                 url: "https://docs.google.com/forms/d/1rOki8kfKIBmCYH-So_4ccMmZ0UcKMeJE2hhoyIqZBWg/prefill",
@@ -41,7 +41,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 26 Ottobre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2024-10-26",
             registration: {
                 url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
@@ -94,7 +94,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 14 Dicembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2024-12-14",
             isFreeEvent: true,
             eventType: EventType.CODERDOJO
@@ -105,7 +105,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 18 Gennaio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2025-01-18",
             isFreeEvent: true,
             eventType: EventType.CODERDOJO
@@ -116,7 +116,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 08 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Partecipa a un'esperienza unica di apprendimento e creatività dedicata ai ragazzi! Durante questo corso (1 giornata), i partecipanti scopriranno il mondo della stampa 3D, imparando a progettare e realizzare oggetti tridimensionali utilizzando software di modellazione. Attraverso attività pratiche e divertenti, i ragazzi svilupperanno competenze tecniche e creative, portando a casa le loro creazioni personalizzate. Un'occasione perfetta per esplorare le possibilità della tecnologia e dare forma alle idee!",
-            imageUrl: "banner_coditec_base.jpg",
+            imageUrl: "banner_coditec_v3.png",
             startDate: "2025-02-08",
             eventType: EventType.CODITEC
         },
@@ -126,7 +126,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 15 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Partecipa a un'esperienza unica di apprendimento e creatività dedicata ai ragazzi! Durante questo corso (2 giornata), i partecipanti scopriranno il mondo della stampa 3D, imparando a progettare e realizzare oggetti tridimensionali utilizzando software di modellazione. Attraverso attività pratiche e divertenti, i ragazzi svilupperanno competenze tecniche e creative, portando a casa le loro creazioni personalizzate. Un'occasione perfetta per esplorare le possibilità della tecnologia e dare forma alle idee!",
-            imageUrl: "banner_coditec_base.jpg",
+            imageUrl: "banner_coditec_v3.png",
             startDate: "2025-02-15",
             eventType: EventType.CODITEC
         },
@@ -136,7 +136,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 22 Febbrazio 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Partecipa a un'esperienza unica di apprendimento e creatività dedicata ai ragazzi! Durante questo corso (3 giornata), i partecipanti scopriranno il mondo della stampa 3D, imparando a progettare e realizzare oggetti tridimensionali utilizzando software di modellazione. Attraverso attività pratiche e divertenti, i ragazzi svilupperanno competenze tecniche e creative, portando a casa le loro creazioni personalizzate. Un'occasione perfetta per esplorare le possibilità della tecnologia e dare forma alle idee!",
-            imageUrl: "banner_coditec_base.jpg",
+            imageUrl: "banner_coditec_v3.png",
             startDate: "2025-02-22",
             eventType: EventType.CODITEC
         },
@@ -146,7 +146,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 22 Marzo 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2025-03-22",
             isFreeEvent: true,
             eventType: EventType.CODERDOJO
@@ -157,7 +157,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 12 Aprile 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2025-04-12",
             isFreeEvent: true,
             eventType: EventType.CODERDOJO
@@ -168,7 +168,7 @@ export const eventData: EventState = {
             eventDate: "Sabato, 07 Giugno 2025 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Appuntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
-            imageUrl: "locandina_coderdojo_groane_base.jpg",
+            imageUrl: "banner_coderdojo_v3.png",
             startDate: "2025-06-07",
             isFreeEvent: true,
             eventType: EventType.CODERDOJO
