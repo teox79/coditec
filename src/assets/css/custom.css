@@ -170,7 +170,6 @@
 }
 
 @media (max-width: 992px) {
-
   /* Stile di base per il menu nav */
   .navmenu {
     position: absolute;
@@ -210,9 +209,10 @@
     # Event Registration
 --------------------------------------------------------------*/
 
-.button-container {}
+.button-container {
+}
 
-.registration &>button {
+.registration & > button {
   background: #f6f7f6;
   padding: 30px;
   border-radius: 8px;
@@ -315,16 +315,13 @@
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
-
-
-
 /*--------------------------------------------------------------
     # BOTTONE DI ISCRIZIONE
 --------------------------------------------------------------*/
 
 .coditec-calendar-main .fc-button-primary {
   background: #ff8700;
-  border: #fff
+  border: #fff;
 }
 
 .coditec-calendar-main .fc-button-primary:not(:disabled):hover {
@@ -357,7 +354,6 @@
 }
 
 .coditec-calendar-main .fc-toolbar-title {
-
   text-transform: capitalize;
   font-size: 32px;
   line-height: 1.2;
@@ -376,8 +372,8 @@
 
 .coditec-calendar-main .event.coderdojo-event {
   background-color: #28a745;
-
-  i {
+  border: 1px solid transparent;
+  .fc-event-main {
     color: white;
   }
 }
@@ -385,24 +381,52 @@
 .coditec-calendar-main .event.coderdojo-event:hover {
   background-color: #fff;
   border: 1px solid #28a745;
-
-  i {
+  .fc-event-main {
     color: #28a745;
-    ;
   }
 }
 
 .coditec-calendar-main .event.coditec-event {
   background-color: #ff8700;
-  color: white;
+  border: 1px solid transparent;
+  .fc-event-main {
+    color: white;
+  }
 }
 
 .coditec-calendar-main .event.coditec-event:hover {
   background-color: #fff;
   border: 1px solid #ff8700;
-
-  i {
+  .fc-event-main {
     color: #ff8700;
-    ;
   }
 }
+
+.fc-daygrid-event .fc-event-main {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color:var(--default-header-color);
+}
+
+.fc .fc-daygrid-day-number {
+  color:var(--default-color);
+}
+
+@media (max-width: 992px) {
+  .coditec-calendar {
+    height: 550px;
+  }
+  .coditec-calendar-main, .fc {
+    height: 100%;
+  }
+
+  .coditec-calendar .fc .fc-daygrid-more-link {
+    background-color: #ff8700;
+    color: white;
+  }
+}
+
+

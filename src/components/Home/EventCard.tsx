@@ -15,9 +15,9 @@ const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage 
     const eventRegistration = event?.registration;
 
     return (
-        <div className="events card" style={{ justifyContent: 'space-between', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div className="events card">
             {showImage && (
-                <div className="card-img" style={{ display: 'flex', justifyContent: 'center' }}>
+                <div className="card-img">
                     <img
                         src={`${uiData.globalUi.baseUrl}assets/img/events/${event.imageUrl}`}
                         alt={event.title}
@@ -26,7 +26,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage 
                     />
                 </div>
             )}
-            <div className="card-body">
+            <div className="card-body mt-0">
                 {event.isFreeEvent && (
                     <div className='free-badge-container'>
                         <span className="free-badge">EVENTO GRATUITO</span>
