@@ -64,7 +64,7 @@ const FullCalendarCustom: React.FC = () => {
                             <h2>CALENDARIO</h2>
                             <p>PROSSIMI EVENTI</p>
                         </div>
-                        <div className='codicec-calendar'>
+                        <div className='coditec-calendar'>
                             <div className='coditec-calendar-main'>
                                 <FullCalendar
                                     plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -84,6 +84,7 @@ const FullCalendarCustom: React.FC = () => {
                                     //select={this.handleDateSelect}
                                     eventContent={renderEventContent} // custom render function
                                     eventClick={handleEventClick}
+                                    eventDisplay='block'
                                     //eventsSet={handleEvents} // called after events are initialized/added/changed/removed
                                     /* you can update a remote database when these fire:
                                     eventAdd={function(){}}

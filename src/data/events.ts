@@ -52,13 +52,13 @@ export const eventData: EventState = {
         },
         {
             id: getPersistentUUID("event-4"),
-            title: "Coditec",
+            title: "Introduzione a LEGO WeDo con Scratch",
             eventDate: "Sabato, 9 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (1 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
                 ", i partecipanti avranno l'opportunità di creare progetti interattivi, sviluppare competenze tecniche e dare vita alla loro immaginazione con attività pratiche e divertenti. Un'esperienza educativa e coinvolgente per scoprire le meraviglie della tecnologia!",
             imageUrl: "2024_11_corso_lego_macchina.jpg",
-            startDate: "2024-11-9",
+            startDate: "2024-11-09",
             registration: {
                 maxParticipants: 0,
                 participants: 0,
@@ -68,7 +68,7 @@ export const eventData: EventState = {
         },
         {
             id: getPersistentUUID("event-5"),
-            title: "Coditec",
+            title: "Introduzione a LEGO WeDo con Scratch",
             eventDate: "Sabato, 16 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (2 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
@@ -79,7 +79,7 @@ export const eventData: EventState = {
         },
         {
             id: getPersistentUUID("event-6"),
-            title: "Coditec",
+            title: "Introduzione a LEGO WeDo con Scratch",
             eventDate: "Sabato, 23 Novembre 2024 alle 15:00",
             location: "Via Cavour 1 Lentate Sul Seveso",
             description: "Unisciti a noi per un entusiasmante evento dedicato ai ragazzi (3 giornata), dove potranno esplorare il mondo della programmazione e della robotica! Utilizzando LEGO WeDo, Scratch e Micro bit" +
