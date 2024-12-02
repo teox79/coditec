@@ -38,7 +38,6 @@ const FullCalendarCustom: React.FC = () => {
   const { state } = useAppContext();
   const { event, ui } = state;
   const [selectedEvent, setSelectedEvent,] = React.useState<EventType>();
-  const [setSelectedEvents] = React.useState([]);
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const handleEventClick = (clickInfo: EventClickArg) => {
