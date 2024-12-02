@@ -35,7 +35,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage 
                 <h5 className="card-title">
                     <a href="#">{event.title}</a>
                 </h5>
-                <p className="fst-italic text-center" style={{ marginBottom: 0 }}>{event.eventDate}</p>
+                <p className="fst-italic text-center">{event.eventDate}</p>
                 <p className="fst-italic text-center">{event.location}</p>
                 <p className="card-text">{event.description}</p>
 
