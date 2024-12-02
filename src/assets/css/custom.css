@@ -415,6 +415,7 @@
   color:var(--default-color);
 }
 
+
 .fc .fc-daygrid-day-top {
   flex-direction: row;
 }

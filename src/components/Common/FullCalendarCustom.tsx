@@ -53,6 +53,7 @@ const FullCalendarCustom: React.FC = () => {
     }
   }
 
+
   // Uso della funzione con l'oggetto events
   const events = transformEvents(event.events || []);
   return (
@@ -111,6 +112,66 @@ const FullCalendarCustom: React.FC = () => {
       </OffCanvasCustom >
     </>
   )
+
+    // Uso della funzione con l'oggetto events
+    const events = transformEvents(event.events || []);
+    return (
+        <>
+            <section id="events_section" className="events section">
+                <div className="container">
+                    <div className='row'>
+                        <div className="container section-title" data-aos="fade-up">
+                            <h2>CALENDARIO</h2>
+                            <p>PROSSIMI EVENTI</p>
+                        </div>
+                        <div className='coditec-calendar'>
+                            <div className='coditec-calendar-main'>
+                                <FullCalendar
+                                    plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                                    headerToolbar={{
+                                        left: 'prev,next today',
+                                        center: 'title',
+                                        //right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                                        right: ''
+                                    }}
+                                    initialView='dayGridMonth'
+                                    //editable={true}
+                                    selectable={true}
+                                    selectMirror={true}
+                                    dayMaxEvents={true}
+                                    weekends={true}
+                                    initialEvents={events} // alternatively, use the `events` setting to fetch from a feed
+                                    //select={this.handleDateSelect}
+                                    eventContent={renderEventContent} // custom render function
+                                    eventClick={handleEventClick}
+                                    eventDisplay='block'
+                                    //eventsSet={handleEvents} // called after events are initialized/added/changed/removed
+                                    /* you can update a remote database when these fire:
+                                    eventAdd={function(){}}
+                                    eventChange={function(){}}
+                                    eventRemove={function(){}}
+                                    */
+                                    locale={'it'}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <OffCanvasCustom name="Evento" id="EventOffcanvas">
+                {selectedEvent && (
+                    <div key={event.id} className="col-md-12 d-flex align-items-stretch">
+                        <EventCard
+                            event={selectedEvent}
+                            isOpen={isOpen}
+                            uiData={ui}
+                            showImage={false}
+                        />
+                    </div>
+                )}
+            </OffCanvasCustom >
+        </>
+    )
 }
 
 
