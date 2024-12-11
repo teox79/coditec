@@ -18,6 +18,8 @@ export interface Event {
     registration?: Registration;
     isFreeEvent?: boolean;
     eventType?: EventType;
+    cardTitle?: string; // serve per visualizzare il titolo nella sidebar a destra visto che title penso sia un usato per mostrare il titolo nel 
+    //calendario e non viene passato al dettaglio quindi ho aggiungo cardTitle
 }
 
 export interface Registration {
