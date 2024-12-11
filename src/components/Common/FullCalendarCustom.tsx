@@ -21,6 +21,7 @@ const transformEvents = (events: Array<any>) => {
     start: event.startDate,
     classNames: getEventClassName(event.eventType),
     eventDate: event.date,
+    cardTitle: event.title,
     ...event
   }));
 };

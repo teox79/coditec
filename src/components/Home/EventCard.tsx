@@ -8,6 +8,7 @@ interface EventCardProps {
     uiData: ManageUiState;
     showImage?: boolean;
     eventDate?: string;
+    cardTitle: string;
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage = true }) => {
@@ -20,7 +21,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage 
                 <div className="card-img">
                     <img
                         src={`${uiData.globalUi.baseUrl}assets/img/events/${event.imageUrl}`}
-                        alt={event.title}
+                        alt={event.cardTitle}
                         className="img-fluid"
                         style={{ maxHeight: "424px" }}
                     />
@@ -33,7 +34,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage 
                     </div>
                 )}
                 <h5 className="card-title">
-                    <a href="#">{event.title}</a>
+                    <a href="#">{event.cardTitle}</a>
                 </h5>
                 <p className="fst-italic text-center">{event.eventDate}</p>
                 <p className="fst-italic text-center">{event.location}</p>
