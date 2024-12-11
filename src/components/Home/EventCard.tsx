@@ -8,7 +8,7 @@ interface EventCardProps {
     uiData: ManageUiState;
     showImage?: boolean;
     eventDate?: string;
-    cardTitle: string;
+    cardTitle?: string;
 }
 
 const EventCard: React.FC<EventCardProps> = ({ event, isOpen, uiData, showImage = true }) => {
