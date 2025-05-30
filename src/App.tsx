@@ -4,17 +4,20 @@ import Footer from './components/Footer';
 import { AppProvider } from './context/AppContext';
 import AppRoutes from './route/AppRoutes';
 import { HashRouter } from 'react-router-dom';
+import ErrorBoundary from './components/Common/ErrorBoundary';
 
 const App: React.FC = () => {
 
     return (
-        <HashRouter>
-            <AppProvider >
-                <Header />
-                <AppRoutes />
-                <Footer />
-            </AppProvider >
-        </HashRouter >
+        <ErrorBoundary>
+            <HashRouter>
+                <AppProvider >
+                    <Header />
+                    <AppRoutes />
+                    <Footer />
+                </AppProvider >
+            </HashRouter >
+        </ErrorBoundary>
     );
 }
 
