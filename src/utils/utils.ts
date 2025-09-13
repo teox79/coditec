@@ -6,9 +6,9 @@ import { Trainer } from "../context/TrainerType";
 
 export const getCoursesByDateOrYear = (
     courses: Course[],
-    count: number,
     dateOrYear: Date | number,
-    sortOrder: 'asc' | 'desc' = 'asc' // Parametro per ordinamento, default è 'asc'
+    sortOrder: 'asc' | 'desc' = 'asc', // Parametro per ordinamento, default è 'asc'
+    count?: number,
 ): Course[] => {
     let filteredCourses: Course[] = [];
 
@@ -35,9 +35,41 @@ export const getCoursesByDateOrYear = (
         return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
     });
 
-    // Prendi i primi `count` corsi
-    return filteredCourses.slice(0, count);
+    // Se `count` non è definito o è zero, restituisce tutti i corsi filtrati
+    return typeof count === 'number' && count > 0
+        ? filteredCourses.slice(0, count)
+        : filteredCourses;
 };
+
+export const getPastCourses = (
+    courses: Course[],
+    sortOrder: 'asc' | 'desc' = 'asc', // Parametro per ordinamento, default è 'asc'
+    count?: number, // Parametro opzionale per limitare il numero di risultati
+): Course[] => {
+    const today = new Date(); // Data odierna
+    today.setHours(0, 0, 0, 0); // Imposta l'ora a mezzanotte per evitare problemi di precisione
+
+    // Filtra i corsi che sono iniziati prima di oggi
+    let pastCourses = courses.filter((course) => {
+        if (!course.startDate) return false;
+        const courseDate = new Date(course.startDate);
+        return courseDate < today; // Corsi prima di oggi
+    });
+
+    // Ordina i corsi per data
+    pastCourses.sort((a, b) => {
+        const dateA = new Date(a.startDate!).getTime();
+        const dateB = new Date(b.startDate!).getTime();
+        return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
+
+    // Se `count` non è definito o è zero, restituisce tutti i corsi filtrati
+    return typeof count === 'number' && count > 0
+        ? pastCourses.slice(0, count)
+        : pastCourses;
+};
+
+
 
 export const sortCourses = (
     courses: Course[],
@@ -71,9 +103,6 @@ export const getFilters = (courses: Course[]): FiltersType => {
     // Raccogli le categorie uniche
     const categories = Array.from(new Set(courses.map(course => course.category))).sort();
 
-    // Raccogli i prezzi unici
-    const prices = Array.from(new Set(courses.map(course => course.price))).sort();
-
     // Raccogli gli anni unici a partire da startDate
     const years = Array.from(
         new Set(
@@ -87,29 +116,31 @@ export const getFilters = (courses: Course[]): FiltersType => {
         )
     ).sort((a, b) => a - b); // Ordina gli anni in ordine crescente
 
-    return { categories, years, prices };
+    return { categories, years };
 };
 
 
 export const getFutureEvents = (events: Event[]) => {
-    const today = new Date().toISOString().split('T')[0];
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Imposta l'ora a mezzanotte per confronti accurati
 
-    // Filtra eventi futuri e con data vuota (null)
     return events
-        .filter(event => event.startDate === null || !event.startDate || event.startDate >= today)
+        .filter(event => {
+            if (!event.startDate) return true; // Include eventi senza data
+            const eventDate = new Date(event.startDate);
+            eventDate.setHours(0, 0, 0, 0); // Imposta l'ora a mezzanotte
+            return eventDate >= today; // Confronta correttamente le date
+        })
         .sort((a, b) => {
-            // Ordina per data, mettendo in fondo quelli con la data vuota
-            if (a.startDate === null) return 1;
-            if (b.startDate === null) return -1;
-            return a.startDate!.localeCompare(b.startDate!); // Usa '!' per dire che non è 'null'
+            if (!a.startDate) return 1; // Eventi senza data in fondo
+            if (!b.startDate) return -1;
+            return new Date(a.startDate).getTime() - new Date(b.startDate).getTime(); // Ordina per data
         });
 };
 
 export const getCourseById = (courses: Course[], id: string): Course | undefined => {
     return courses.find((course) => course.id === id);
 };
-
-
 
 export const formatDays = (days: { day: string }[]) => {
     const parsedDays = days.map(({ day }) => {

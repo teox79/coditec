@@ -5,13 +5,17 @@ export const homeData: HomeState = {
     id: getPersistentUUID("home"),
     title: "Il modo migliore per imparare è divertendosi.",
     description: "Siamo un team di professionisti che insegna ai ragazzi la logica di programmazione.",
-    link: {
+    links: [{
         url: '/courses',
         label: 'Corsi',
         target: ''
-    },
+    }, {
+        url: '/events',
+        label: 'Eventi',
+        target: ''
+    }],
     organization: {
-        title: "CODITECT",
+        title: "CODITEC",
         subtitle: "Comitato per la divulgazione tecnologica al cittadino",
         description: "Il nostro comitato si basa su 3 punti fondamentali:",
         points: [
@@ -21,10 +25,10 @@ export const homeData: HomeState = {
         ]
     },
     statistics: [
-        { description: "Partecipanti", value: 100 },
-        { description: "Corsi", value: 2 },
-        { description: "Eventi", value: 20 },
-        { description: "Mentors", value: 5 }
+        { description: "Partecipanti", value: 200 },
+        { description: "Corsi", value: 8 },
+        { description: "Eventi", value: 50 },
+        { description: "Mentors", value: 10 }
     ],
     whyUs: {
         title: "Perchè scegliere Coditec",
@@ -54,6 +58,6 @@ export const homeData: HomeState = {
     ],
     course: {
         title: 'corsi',
-        subtitle: 'corsi più popolari',
+        subtitle: 'I prossimi corsi',
     }
 }

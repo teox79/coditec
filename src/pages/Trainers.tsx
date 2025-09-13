@@ -2,7 +2,6 @@ import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import PageTitle from '../components/Common/PageTitle';
 
-
 const Trainers: React.FC = () => {
 
     const { state } = useAppContext();

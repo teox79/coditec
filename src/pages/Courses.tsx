@@ -1,83 +1,76 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import PageTitle from '../components/Common/PageTitle';
-import CoursesSection from '../components/Common/Courses';
-import { getFilters, sortCourses } from '../utils/utils';
-import Filters from '../components/Courses/Filters';
-import { Course, FiltersType } from '../context/CourseTypes';
 import { Alignment } from '../context/UiTypes';
+import History from '../components/Courses/History';
+import { getCoursesByDateOrYear, getPastCourses } from '../utils/utils';
+import Upcaming from '../components/Courses/Upcaming';
 
 const Courses: React.FC = () => {
 
     const { state } = useAppContext();
     const { course: courseData } = state;
     const breadcrumbs = [{ label: 'Home', url: '/' }, { label: 'Corsi', url: '' }]
+    const [activeTab, setActiveTab] = useState('upcoming');
 
-    const [courses, setCourses] = useState<Course[]>([]);
-    const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
-    const [filters, setFilters] = useState<FiltersType>({
-        categories: [],
-        years: [],
-        prices: []
-    });
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
-
-    const handleSortOrderChange = () => {
-        setSortOrder(prevOrder => (prevOrder === 'asc' ? 'desc' : 'asc'));
-    };
-
-    const handleFilterChange = (newFilters: { category?: string; year?: number; price?: string }) => {
-        // Filtra i corsi in base ai filtri selezionati
-        const filtered = courses?.filter(course => {
-            const matchesCategory = newFilters.category ? course.category === newFilters.category : true;
-            const matchesYear = newFilters.year ? new Date(course.startDate || '').getFullYear() === newFilters.year : true;
-            const matchesPrice = newFilters.price ? course.price === newFilters.price : true;
-            return matchesCategory && matchesYear && matchesPrice;
-        });
-        setFilteredCourses(filtered || []);
-    };
-
-
-    useEffect(() => {
-        const fetchCourses = async () => {
-            setCourses(courseData.courses || []);
-            setFilteredCourses(courseData.courses || []); // Mostra tutti i corsi inizialmente
-
-            setFilters(getFilters(courseData.courses || []))
-        };
-
-        fetchCourses();
-    }, []);
-
-    useEffect(() => {
-        console.log("SORT")
-        setFilteredCourses(sortCourses(courseData.courses || [], sortOrder));
-    }, [sortOrder]);
-
+    const nextCourses = getCoursesByDateOrYear(courseData.courses || [], new Date(), 'asc');
+    const historyCourses = getPastCourses(courseData.courses || [], 'desc');
 
     return (
         <main className="main">
             <PageTitle description={courseData.description || ''} title={courseData.title || ''} breadcrumbs={breadcrumbs} alignDescription={Alignment.Left} />
-            <Filters filters={filters} onFilterChange={handleFilterChange} />
-            {filteredCourses && (
-                <>
-                    <div className="container my-4">
-                        <div className="row g-3">
-                            <div className="text-left mt-3">
-                                <button
-                                    className="btn btn-outline-secondary"
-                                    onClick={handleSortOrderChange}
-                                >
-                                    {sortOrder === 'asc' ? <i className="bi bi-sort-alpha-up"></i> : <i className="bi bi-sort-alpha-down"></i>}
-                                </button>
-                            </div>
+            <div className="container mt-5">
+                <ul className="nav nav-tabs" id="coursesTabs" role="tablist">
+                    <li className="nav-item" role="presentation">
+                        <button
+                            className={`nav-link ${activeTab === 'upcoming' ? 'active' : ''}`}
+                            id="upcoming-tab"
+                            data-bs-toggle="tab"
+                            role="tab"
+                            onClick={() => setActiveTab('upcoming')}
+                        >
+                            Prossimi Corsi
+                        </button>
+                    </li>
+                    <li className="nav-item" role="presentation">
+                        <button
+                            className={`nav-link ${activeTab === 'history' ? 'active' : ''}`}
+                            id="history-tab"
+                            data-bs-toggle="tab"
+                            role="tab"
+                            onClick={() => setActiveTab('history')}
+                        >
+                            Storico Corsi
+                        </button>
+                    </li>
+                </ul>
+
+                <div className="tab-content mt-3" id="coursesTabsContent">
+                    <div
+                        className={`tab-pane fade ${activeTab === 'upcoming' ? 'show active' : ''}`}
+                        id="upcoming"
+                        role="tabpanel"
+                    >
+                        <div className="container my-4">
+                            <p>I seguenti corsi stanno per iniziare! Non perdere l'opportunità di iscriverti e riserva subito il tuo posto.
+                                Iscriviti per assicurarti un posto e ricevere tutte le informazioni necessarie.</p>
                         </div>
+                        <Upcaming courseList={nextCourses} />
                     </div>
-                    <CoursesSection
-                        courses={filteredCourses} />
-                </>
-            )}
-        </main>
+
+                    <div
+                        className={`tab-pane fade ${activeTab === 'history' ? 'show active' : ''}`}
+                        id="history"
+                        role="tabpanel"
+                    >
+                        <div className="container my-4">
+                            <p>Di seguito sono riportati i corsi che possono essere richiesti per nuove sessioni. Se sei interessato, contattaci per ulteriori informazioni e dettagli specifici.</p>
+                        </div>
+                        <History courseList={historyCourses} />
+                    </div>
+                </div>
+            </div>
+        </main >
     );
 }
 

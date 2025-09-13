@@ -6,7 +6,8 @@ export const footerData: FooterState = {
         address: "Via Cesare Battisti, 14",
         city: "Lentate sul Seveso",
         phone: "+1 5589 55488 55",
-        email: "info@coditec.it"
+        email: "info@coditec.it",
+        maps: "https://maps.app.goo.gl/nBpYaxY1F227jWHz9"
     },
     socialLinks: {
         twitter: "#",

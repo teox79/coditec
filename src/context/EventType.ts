@@ -10,16 +10,26 @@ export interface EventState extends PageBase {
 export interface Event {
     id: string;
     title?: string;
-    date?: string;
+    eventDate?: string;
     location?: string;
     description?: string;
     imageUrl?: string;
     startDate?: string;
     registration?: Registration;
+    isFreeEvent?: boolean;
+    eventType?: EventType;
+    cardTitle?: string; // serve per visualizzare il titolo nella sidebar a destra visto che title penso sia un usato per mostrare il titolo nel 
+    //calendario e non viene passato al dettaglio quindi ho aggiungo cardTitle
 }
 
 export interface Registration {
     maxParticipants?: number;
     participants?: number;
     url?: string;
+    isOpen?: boolean;
+}
+
+export enum EventType {
+    CODERDOJO = "coderdojo",
+    CODITEC = "coditec",
 }

@@ -10,8 +10,19 @@ export interface CourseState extends PageBase {
 export type FiltersType = {
     categories: string[];
     years: number[];
-    prices: string[];
 };
+
+export type SelectedFilterType = {
+    category: string | undefined;
+    year: number | undefined;
+};
+
+export interface Registration {
+    maxParticipants?: number;
+    participants?: number;
+    url?: string;
+    isOpen?: boolean;
+}
 
 export interface Detail {
     pageTitle: string;
@@ -20,11 +31,13 @@ export interface Detail {
     subtitle: string;
     mentor: string;
     price: string;
-    availableSeats: number;
+    availableSeats: string | number;
+    hoursForDay: number;
     days: Day[];
     timeStart: string;
-    timeEnd: string,
-    imgSrc: string,
+    timeEnd: string;
+    imgSrc?: string;
+    gamesURL?: string;
 }
 
 interface Day {
@@ -42,13 +55,14 @@ export interface Course {
     price: string;
     title: string;
     description: string;
-    trainerName: string;
-    trainerImg: string;
+    trainerName?: string;
+    trainerImg?: string;
     usersCount: number;
     heartsCount: number;
     delay: number;
     startDate?: string;
     detail?: Detail;
+    registration?: Registration;
 }
 
 export enum Category {

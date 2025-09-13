@@ -4,7 +4,7 @@
 REMOTE="origin"
 
 # Branch da escludere dalla cancellazione
-EXCLUDE_BRANCHES=("main" "gh-pages")
+EXCLUDE_BRANCHES=("main" "gh-pages" "feature/project_editor" "HEAD")
 
 # Ottenere tutti i branch remoti
 echo "Recupero dei branch remoti da $REMOTE..."
