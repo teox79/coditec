@@ -52,8 +52,10 @@ const Courses: React.FC = () => {
                         role="tabpanel"
                     >
                         <div className="container my-4">
-                            <p>I seguenti corsi stanno per iniziare! Non perdere l'opportunità di iscriverti e riserva subito il tuo posto.
-                                Iscriviti per assicurarti un posto e ricevere tutte le informazioni necessarie.</p>
+                            <p>I corsi che proponiamo sono pensati per offrire formazione di qualità e aggiornamento continuo su tematiche attuali e rilevanti. 
+                                Scopri le nostre proposte e scegli il percorso più adatto alle tue esigenze: ogni corso è progettato per garantire competenze pratiche e teoriche, 
+                                con il supporto di mentor esperti e materiali didattici aggiornati.
+                            </p>
                         </div>
                         <Upcaming courseList={nextCourses} />
                     </div>

@@ -9,7 +9,7 @@ export const courseData: CourseState = {
         id: getPersistentUUID("course-id"),
         imgSrc: "banner_scratch_docenti_v2.png",
         category: Category.Programmazione,
-        price: "Da Definire",
+        price: "",
         title: "Introduzione a Scratch per insegnati",
         description: "Il corso è propedeutico per l’introduzione degli insegnati delle scuole primarie all’utilizzo di Scratch come strumenti didattico.",
         usersCount: 8,
@@ -48,7 +48,7 @@ export const courseData: CourseState = {
         imgSrc: "banner_scratch_v2.png",
         category: Category.Programmazione,
         price: "",
-        title: "Dusty Base",
+        title: "Mini gioco con scratch",
         description: "Attraverso l’utilizzo di Scratch i ragazzi saranno impegnati nella creazione, progettazione di un MINI VIDEOGIOCO. Sviluppare nuove competenze, logica e tanta creatività.",
         trainerName: "Matteo",
         trainerImg: "matteo_balestrini.png",
@@ -114,30 +114,6 @@ export const courseData: CourseState = {
         startDate: "2023-11-20"
     },
     {
-        id: getPersistentUUID("course-id-3"),
-        imgSrc: "banner_scratch_docenti_v2.png",
-        category: Category.Programmazione,
-        price: "",
-        title: "Introduzione a Scratch per insegnati",
-        description: "Il corso è propedeutico per l’introduzione degli insegnati delle scuole primarie all’utilizzo di Scratch come strumenti didattico.",
-        usersCount: 8,
-        heartsCount: 65,
-        delay: 100,
-        startDate: "2023-09-10"
-    },
-    {
-        id: getPersistentUUID("course-id-4"),
-        imgSrc: "banner_scratch_v2.png",
-        category: Category.Programmazione,
-        price: "",
-        title: "Dusty Base",
-        description: "Attraverso l’utilizzo di Scratch i ragazzi saranno impegnati nella creazione, progettazione di un MINI VIDEOGIOCO. Sviluppare nuove competenze, logica e tanta creatività.",
-        usersCount: 10,
-        heartsCount: 42,
-        delay: 200,
-        startDate: "2023-12-25"
-    },
-    {
         id: getPersistentUUID("course-id-5"),
         imgSrc: "banner_3d_v2.png",
         category: Category.Stampa3D,
@@ -160,22 +136,6 @@ export const courseData: CourseState = {
         heartsCount: 85,
         delay: 300,
         startDate: "2023-05-05"
-    },
-    {
-        id: getPersistentUUID("course-id-7"),
-        imgSrc: "banner_legowedo_v2.png",
-        category: Category.LegoWedo2,
-        price: "",
-        title: "Introduzione a LEGO WeDo con Scratch",
-        description: "E' pensato per avvicinare i bambini al mondo della robotica e della programmazione. Utilizzando i kit LEGO WeDo e il linguaggio visivo Scratch, i partecipanti impareranno a creare e programmare semplici robot, sviluppando capacità logiche e creative in modo divertente e interattivo.",
-        usersCount: 8,
-        heartsCount: 85,
-        delay: 300,
-        startDate: "2024-11-20",
-        registration: {
-            url: "https://docs.google.com/forms/d/1eiZ0NEciAJRqPjcidkA6TeIGZ5yoSUMe34LajogtZC8/prefill",
-            isOpen: true
-        },
     },
     ]
 
