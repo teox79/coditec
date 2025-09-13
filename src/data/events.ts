@@ -156,6 +156,16 @@ export const eventData: EventState = {
             imageUrl: "locandina_coderdojo_groane.jpg",
             startDate: "2025-06-07",
         },
+          {
+            id: getPersistentUUID("event-15"),
+            title: "Banchetto Coderdojo",
+            date: "Domenica, 19 Ottobre 2025 tutto il giorno",
+            location: "Centro Lentate Sul Seveso",
+            description: "La tecnologia unisce! Siamo un gruppo di coding aperto a chiunque voglia imparare, condividere conoscenze o semplicemente curiosare. Che tu sia principiante o esperto, passa al nostro banchetto: siamo qui per conoscerci e crescere insieme.”puntamento mensile del CoderdoJo. In queste 3 ore si cercherà di avvicinare i bambini ed i ragazzi (tra 7 e 17 anni) all’informatica attraverso la realizzazione di club di programmazione gratuiti per incentivare il pensiero computazionale e coding. Serve un PC portatile e tanta voglia d’imparare.",
+            imageUrl: "locandina_coderdojo_groane.jpg",
+            startDate: "2025-10-19",
+        },
+
     ]
 
 }
