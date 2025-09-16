@@ -55,6 +55,7 @@ export const homeData: HomeState = {
         { icon: "scratch.png", title: "Scratch", url: 'https://scratch.mit.edu/' },
         { icon: "microBit.png", title: "MicroBit", url: 'https://microbit.org/' },
         { icon: "wedo2.jpg", title: "Lego Wedo", url: '' },
+        { icon: "bambuLab.png", title: "Bambu Lab", url: 'https://bambulab.com/it' },
     ],
     course: {
         title: 'corsi',
