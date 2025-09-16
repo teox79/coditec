@@ -46,9 +46,9 @@ export const trainerData: TrainerState = {
         },
         {
             id: getPersistentUUID("trainer-5"),
-            name: "Sabina",
-            role: "Professoressa",
-            description: "Mi chiamo Sabina .........",
+            name: "Elena Nava",
+            role: "Ppedagogista",
+            description: "Mi chiamo Elena Nava e sono una Media Educator, pedagogista specializzata in ambito digitale. Mi sono laureata da poco e ora giro tra le scuole portando progetti di informatica, coding e robotica. Credo che nel mondo di oggi sia necessario educare le nuove generazioni ad un uso consapevole del mondo digitale e, allo stesso tempo, utilizzare la tecnologia digitale per sviluppare nuove competenze nelle ragazze e nei ragazzi di oggi. Oltre a questo mi piace praticare sport e stare all'aria aperta.",
             imageUrl: "trainer-2.jpg",
         },
         {
