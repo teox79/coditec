@@ -39,9 +39,9 @@ export const trainerData: TrainerState = {
         },
         {
             id: getPersistentUUID("trainer-4"),
-            name: "Gionata",
+            name: "Gionata Maran",
             role: "Software Engineer",
-            description: "Mi chiamo Gionata .........",
+            description: "Mi chiamo Gionata Maran lavoro in campo informatico da oltre 30 anni. Sono padre di 2 figli e credo che nell'epoca in cui viviamo tutti i giovani ma anche tutte le persone dovrebbero conoscere come funziona la tecnologia per poterla utilizzare al meglio in maniera attiva e non passiva. Nel tempo libero progetto oggetti che stampo con la stampante 3D. Il mio motto è: l'unica certezza è il cambiamento!",
             imageUrl: "trainer-3.jpg",
         },
         {
