@@ -251,3 +251,5 @@ Una volta modificata la variabile d'ambinete **ENABLE_FTP_DEPLOY** a `true` fare
 │   ├── utils
 │   │   ├── utils.ts          # utility varie
 
+## modifiche per test
+redeploy 2025-09-17:18:58
