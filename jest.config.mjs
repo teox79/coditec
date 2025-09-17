@@ -3,4 +3,7 @@ export default {
     testEnvironment: 'node',
     testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
     setupFiles: ['./jest.setup.ts'],
+    moduleNameMapper: {
+        '^uuid$': '<rootDir>/src/__mocks__/uuid.ts'
+    }
 }
