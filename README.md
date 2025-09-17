@@ -174,6 +174,10 @@ Nella sezione **Actions secrets and variables** di GitHub, assicurati di configu
 
 Inoltre, è disponibile una variabile d'ambiente chiamata **ENABLE_FTP_DEPLOY**. Il suo valore predefinito è `false`. Se desideri abilitare il deploy FTP su Aruba, imposta questa variabile su `true`. Se non è valorizzata o è impostata su `false`, il processo di deploy FTP sarà saltato.
 
+## Deploy in produzione
+
+Una volta modificata la variabile d'ambinete **ENABLE_FTP_DEPLOY** a `true` fare un commie e push su main.
+
 ## Struttura del progetto 
 
 ```
@@ -246,3 +250,4 @@ Inoltre, è disponibile una variabile d'ambiente chiamata **ENABLE_FTP_DEPLOY**.
 │   │   ├── AppRoutes.tsx     # gestione delle rotte del sito
 │   ├── utils
 │   │   ├── utils.ts          # utility varie
+
