@@ -77,6 +77,7 @@ const Header: React.FC = () => {
                                 to="/mentors"
                                 className={({ isActive }) => (isActive ? 'active' : '')}
                                 onClick={handleNavLinkClick}
+                                style={{ display: 'none' }}
                             >
                                 Mentors
                             </NavLink>

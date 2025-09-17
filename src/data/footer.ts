@@ -18,7 +18,7 @@ export const footerData: FooterState = {
     usefulLinks: [
         { label: "Home", url: "/" },
         { label: "Chi siamo", url: "/about" },
-        { label: "Mentors", url: "/mentors" },
+        //{ label: "Mentors", url: "/mentors" },
     ],
     services: [
         { label: "Corsi", url: "/courses" },
