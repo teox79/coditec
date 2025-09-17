@@ -69,7 +69,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({ title, subtitle, testimonia
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-pagination"></div>
       </div>
     </section>
   );

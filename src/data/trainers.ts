@@ -39,16 +39,16 @@ export const trainerData: TrainerState = {
         },
         {
             id: getPersistentUUID("trainer-4"),
-            name: "Gionata",
+            name: "Gionata Maran",
             role: "Software Engineer",
-            description: "Mi chiamo Gionata .........",
+            description: "Mi chiamo Gionata Maran lavoro in campo informatico da oltre 30 anni. Sono padre di 2 figli e credo che nell'epoca in cui viviamo tutti i giovani ma anche tutte le persone dovrebbero conoscere come funziona la tecnologia per poterla utilizzare al meglio in maniera attiva e non passiva. Nel tempo libero progetto oggetti che stampo con la stampante 3D. Il mio motto è: l'unica certezza è il cambiamento!",
             imageUrl: "trainer-3.jpg",
         },
         {
             id: getPersistentUUID("trainer-5"),
-            name: "Sabina",
-            role: "Professoressa",
-            description: "Mi chiamo Sabina .........",
+            name: "Elena Nava",
+            role: "Ppedagogista",
+            description: "Mi chiamo Elena Nava e sono una Media Educator, pedagogista specializzata in ambito digitale. Mi sono laureata da poco e ora giro tra le scuole portando progetti di informatica, coding e robotica. Credo che nel mondo di oggi sia necessario educare le nuove generazioni ad un uso consapevole del mondo digitale e, allo stesso tempo, utilizzare la tecnologia digitale per sviluppare nuove competenze nelle ragazze e nei ragazzi di oggi. Oltre a questo mi piace praticare sport e stare all'aria aperta.",
             imageUrl: "trainer-2.jpg",
         },
         {

@@ -1,8 +1,9 @@
 import { Course, FiltersType } from "../context/CourseTypes";
 import { Event } from "../context/EventType";
 import { Image } from "../context/GalleryTypes";
-import { v4 as uuidv4 } from 'uuid';
+
 import { Trainer } from "../context/TrainerType";
+import { v4 as uuidv4 } from "uuid";
 
 export const getCoursesByDateOrYear = (
     courses: Course[],
