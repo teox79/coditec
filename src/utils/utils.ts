@@ -180,10 +180,13 @@ export const formatDays = (days: { day: string }[]) => {
 export const createImagesArray = (count: number): Image[] => {
     return Array.from({ length: count }, (_, i) => {
         const srcIndex = i + 1;
+        // Determine padding width based on total count (e.g. count=21 -> width=2 -> 01..21)
+        const width = Math.max(1, String(count).length);
+        const padded = String(srcIndex).padStart(width, '0');
 
         return {
             id: i + 1,
-            src: `${srcIndex}.jpg`,
+            src: `${padded}.jpg`,
             alt: `Image ${i + 1}`
         };
     });
