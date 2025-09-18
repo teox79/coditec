@@ -121,40 +121,51 @@ Rimuovi il file dalla cartella corrispondente sotto public/assets/img. Assicurat
 
 # Gestione della Galleria di Immagini
 
-## Sintassi delle Immagini
-E' possibile eseguire lo script ```npm run rename-images``` per rinominare e aggiornare il parametro da passare alla funzione ```createImagesArray```
-Se ci dovessero essere problemi fare la modifica manualmente.
-Per garantire un corretto funzionamento della galleria, è fondamentale mantenere una sintassi coerente per le immagini:
 
-1. Numerazione: Le immagini devono essere numerate consecutivamente, partendo da 1 fino a n.
-2. Estensione: Tutte le immagini devono avere l'estensione .jpg.
-3. Esempio di nomi di file corretti:
-   1.jpg
-   2.jpg
-   3.jpg
-... e così via.
+### Rinominare le immagini della galleria (passo-passo)
 
-## Modifica del Numero di Immagini da Visualizzare
-Per configurare il numero di immagini da visualizzare nella galleria, è necessario aggiornare la funzione ```createImagesArray``` nel file ```data/gallery.ts```.
+Se le immagini nella cartella `public/assets/img/gallery` non sono numerate in modo coerente, puoi usare lo script fornito per rinominarle automaticamente. Lo script è sicuro: esegue prima una simulazione (dry-run) per mostrare le modifiche senza applicarle.
 
-## Passaggi per Aggiornare il Numero di Immagini
-E' possibile eseguire lo script ```npm run rename-images``` per rinominare e aggiornare il parametro da passare alla funzione ```createImagesArray```
-Se ci dovessero essere problemi fare la modifica manualmente.
-Apri ```data/gallery.ts```: Trova il file dove è definita la funzione createImagesArray.
-Aggiorna il numero di immagini: Modifica il parametro ```count``` passato alla funzione per impostare il numero di immagini da visualizzare.
-Esempio di utilizzo:
+1. Posizionati nella root del progetto (es. `D:/CD/SITO/coditec`).
 
-```
-export const galleryData: GalleryState = {
-    title: "Galleria",
-    description: "",
-    images: createImagesArray(10)
-}
+2. (Opzionale ma consigliato) Crea un backup della cartella gallery prima di procedere:
+
+```bash
+cp -r public/assets/img/gallery public/assets/img/gallery_backup_$(date +%Y%m%d_%H%M%S)
 ```
 
-Sostituire ```10``` con il nuovo numero d'immagini da visualizzare
+3. Esegui lo script (da root):
 
-### Note Importanti
+```bash
+npm run rename-images
+```
+
+oppure lancia direttamente lo script:
+
+```bash
+sh ./sh/rename_gallery_images.sh
+# oppure (se preferisci eseguire con bash):
+./sh/rename_gallery_sequential.sh
+```
+
+4. Interazioni durante l'esecuzione:
+- Lo script chiede prima conferma: `Vuoi procedere con la rinomina? (y/N)` — rispondi `y` per procedere.
+- Poi chiede se vuoi fare prima una simulazione (dry-run): `Vuoi fare prima una simulazione (dry-run)? (Y/n)`.
+    - Premendo Invio (o rispondendo `Y`) eseguirai solo la simulazione: vedrai tutte le modifiche proposte ma i file non verranno toccati.
+    - Rispondendo `n` la rinomina verrà applicata realmente.
+
+5. Regola di padding (come vengono nominati i file):
+- Lo script applica un padding automatico in base al numero totale di immagini:
+    - Se sono meno di 10: `1.jpg`, `2.jpg`, ... (width = 1)
+    - Se sono tra 10 e 99: `01.jpg`, `02.jpg`, ... (width = 2)
+    - Se sono tra 100 e 999: `001.jpg`, `002.jpg`, ... (width = 3)
+- Questa stessa regola è usata anche dalla funzione `createImagesArray` in `src/utils/utils.ts`.
+
+6. Nota sulla sicurezza:
+- Lo script usa una directory temporanea per evitare collisioni durante la rinomina.
+- Esegui sempre prima la simulazione (dry-run) per verificare l'output.
+
+s### Note Importanti
 1. Verifica il percorso: Assicurati che imageDirectory punti alla cartella corretta dove sono memorizzate le immagini.
 2. Assicurati che tutte le immagini necessarie siano presenti e numerate correttamente.
 
@@ -251,5 +262,3 @@ Una volta modificata la variabile d'ambinete **ENABLE_FTP_DEPLOY** a `true` fare
 │   ├── utils
 │   │   ├── utils.ts          # utility varie
 
-## modifiche per test
-redeploy 2025-09-17:18:58
