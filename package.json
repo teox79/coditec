@@ -6,13 +6,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build --mode development",
-    "build:production": "tsc -b && vite build --mode production",
+  "build": "npm run generate:gallery-count && tsc -b && vite build --mode development",
+  "build:production": "npm run generate:gallery-count && tsc -b && vite build --mode production",
     "lint": "eslint .",
     "test": "jest",
     "prepare": "husky && ts-patch install",
     "commit": "cz",
-    "rename-images": "sh ./sh/rename_gallery_images.sh"
+    "rename-images": "sh ./sh/rename_gallery_images.sh",
+    "generate:gallery-count": "node scripts/generate-gallery-count.cjs"
   },
   "dependencies": {
     "@fullcalendar/core": "^6.1.19",
