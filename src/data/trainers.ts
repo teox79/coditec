@@ -10,7 +10,7 @@ export const trainerData: TrainerState = {
             id: getPersistentUUID("trainer-1"),
             name: "Matteo Balestrini",
             role: "Software Engineer",
-            description: "Sono Papà di due splendide bambine, lavoro da più di 20 anni nel mondo della programmazione. Ritengo importante per i bambini e non solo avvicinarsi al mondo dell’informatica.",
+            description: "Sono papà di due splendide bambine e lavoro da oltre vent’anni come web developer. La programmazione è sempre stata la mia passione e credo fortemente che avvicinare i bambini — e non solo — al mondo dell’informatica sia un passo importante per il loro futuro. Nel tempo libero mi piace dedicarmi allo sport e fare giri in moto, due passioni che mi regalano energia e libertà.",
             imageUrl: "matteo_balestrini.png",
             socialLinks: {
                 linkedin: "www.linkedin.com/in/matteo-balestrini-64a13225",
@@ -21,7 +21,7 @@ export const trainerData: TrainerState = {
             id: getPersistentUUID("trainer-2"),
             name: "Andrea Sironi",
             role: "Designer",
-            description: "Lavoro nel mondo del Design ormadi da più di 10 anni. Mi piace dilettarmi con il bricolage.",
+            description: "Sono Andrea Sironi. Come designer della comunicazione, in ormai 20 anni di esperienza ho sempre lavorato in ambito web/digital unendo la mia passione per la grafica con un forte interesse per il mondo della tecnologia e la sua continua ecoluzione. Nel tempo libero invece mi piace fuggire dagli schermi e tuffarmi nella natura, in particolare in montagna, e con cammini anche di più giorni.",
             imageUrl: "andrea_sironi.png",
             /*socialLinks: {
                 twitter: "#",
@@ -47,9 +47,16 @@ export const trainerData: TrainerState = {
         {
             id: getPersistentUUID("trainer-5"),
             name: "Elena Nava",
-            role: "Ppedagogista",
+            role: "Pedagogista",
             description: "Mi chiamo Elena Nava e sono una Media Educator, pedagogista specializzata in ambito digitale. Mi sono laureata da poco e ora giro tra le scuole portando progetti di informatica, coding e robotica. Credo che nel mondo di oggi sia necessario educare le nuove generazioni ad un uso consapevole del mondo digitale e, allo stesso tempo, utilizzare la tecnologia digitale per sviluppare nuove competenze nelle ragazze e nei ragazzi di oggi. Oltre a questo mi piace praticare sport e stare all'aria aperta.",
             imageUrl: "trainer-2.jpg",
+        },
+        {
+            id: getPersistentUUID("trainer-5"),
+            name: "Daniele Gallo",
+            role: "Ingegnere",
+            description: "Mi chiamo Daniele Gallo e sono uno studente della facoltá di ingegneria dell'automazione presso il Politecnico di Milano. Nel mio tempo libero mi dedico all'oratorio del mio paese, allo sport e alle mie passioni tra cui i fumetti, i film, i videogiochi e le nuove frontiere della tecnologia. Quest'ultime trovano sempre il modo di stupirmi ed è per questo che cerco sempre di informarmi e di rimanere aggiornato su tutto ciò che riguarda il mondo tecnologico.",
+            imageUrl: "trainer-3.jpg",
         },
         {
             id: getPersistentUUID("trainer-6"),
