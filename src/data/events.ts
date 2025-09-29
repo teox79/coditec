@@ -179,7 +179,7 @@ export const eventData: EventState = {
             eventDate: "Domenica, 19 Ottobre 2025 tutto il giorno",
             location: "Lentate Sul Seveso",
             description: "La tecnologia unisce! Siamo un gruppo di coding aperto a chiunque voglia imparare, condividere conoscenze o semplicemente curiosare. Che tu sia principiante o esperto, passa al nostro gazebo : siamo qui per conoscerci e crescere insieme.",
-            imageUrl: "banner_coditec_v3.png",
+            imageUrl: "banner_gazebo_v3.png",
             startDate: "2025-10-19",
             isFreeEvent: true,
             eventType: EventType.CODITEC
