@@ -1676,6 +1676,8 @@ p .courses .course-content .course-registration-info {
 .trainers .member .member-img img {
   position: relative;
   z-index: 1;
+  height: 240px;
+  width: 240px;
 }
 
 .trainers .member .member-img .social {
