@@ -62,7 +62,7 @@ export const trainerData: TrainerState = {
             id: getPersistentUUID("trainer-7"),
             name: "Emanuela",
             role: "Impiegata",
-            description: "Mi chiamo Emanuela e lavoro come impiegata presso uno studio di un notaio.",
+            description: "Mi chiamo Emanuela Terraneo sono la collaboratrice di un notaio da quasi trent'anni. Sono mamma di 2 ragazzi. Sono da sempre stata impegnata nelle realtà lentatesi, in vari ambiti (parrocchia, scuola, sport). Credo nell'importanza di insegnare un uso consapevole della tecnologia. Sono una creativa e nel tempo libero mi piace sperimentare nuove tecniche per creare oggetti.",
             imageUrl: "emanuela.png",
         },
         {
